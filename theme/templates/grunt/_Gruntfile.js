@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
+        separator: ';',
         stripBanners: true,
         banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
           ' * <%%= pkg.homepage %>\n' +
@@ -180,7 +181,7 @@ module.exports = function(grunt) {
         expand: true,
 
         cwd: 'assets/css/',
-        src: ['main.css'],
+        src: ['main.css', 'font-awesome.css'],
 
         dest: 'assets/css/',
         ext: '.min.css'
