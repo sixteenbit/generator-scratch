@@ -29,7 +29,6 @@ Scratch ships with two default project types, each invoked with a subgenerator.
 
 For each project type you get:
 
-- Composer to manage server-side dependencies
 - Bower to manage front-end dependencies
 - NPM to manage development dependencies (like Grunt)
 - Grunt to streamline development
