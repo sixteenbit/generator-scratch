@@ -1,15 +1,8 @@
 <?php
 /**
- * Scripts and stylesheets
+ * Enqueue scripts and stylesheets
  *
- * Enqueue stylesheets in the following order:
- * 1. /assets/css/main.css
- * 2. /assets/css/font-awesome.css
- *
- * Enqueue scripts in the following order:
- * 1. /theme/assets/js/vendor/modernizr.min.js
- * 2. /theme/assets/js/scripts.js (in footer)
- *
+ * @package <%= opts.projectTitle %>
  */
 function <%= opts.funcPrefix %>_scripts() {
 
@@ -19,7 +12,7 @@ function <%= opts.funcPrefix %>_scripts() {
 	if ( true !== $minification ) {
 		$assets = array(
 			'css'       	=> '/assets/css/main.css',
-			'icons'  			=> '/assets/css/font-awesome.css',
+			<% if ( opts.sass ) { %>'icons'  			=> '/assets/css/font-awesome.css',<% } %>
 			'ie'					=> '/assets/js/ie.css',
 			'child'     	=> '/style.css',
 			'js'        	=> '/assets/js/scripts.js',
@@ -29,7 +22,7 @@ function <%= opts.funcPrefix %>_scripts() {
 	} else {
 		$assets     = array(
 			'css'       	=> '/assets/css/main.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
-			'icons'  			=> '/assets/css/font-awesome.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
+			<% if ( opts.sass ) { %>'icons'  			=> '/assets/css/font-awesome.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
 			'ie'					=> '/assets/js/ie.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			'child'     	=> '/style.css',
 			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.min.js' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
@@ -38,7 +31,7 @@ function <%= opts.funcPrefix %>_scripts() {
 	}
 
 	wp_enqueue_style( '<%= opts.funcPrefix %>-css', <%= opts.funcPrefix.toUpperCase() %>_URL . $assets['css'], false, null);
-	wp_enqueue_style( '<%= opts.funcPrefix %>-icons', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['icons'], false, null);
+	<% if ( opts.sass ) { %>wp_enqueue_style( '<%= opts.funcPrefix %>-icons', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['icons'], false, null);<% } %>
 
 	wp_enqueue_style( '<%= opts.funcPrefix %>-ie', <%= opts.funcPrefix.toUpperCase() %>_URL . $assets['ie'], false, null);
 	wp_style_add_data( '<%= opts.funcPrefix %>-ie', 'conditional', 'lt IE 9' );

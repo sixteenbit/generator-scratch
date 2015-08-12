@@ -17,12 +17,12 @@
     "package.json",
     "composer.json",
     "phpunit.xml.dist"
-  ],
+  ]<% if ( opts.sass ) { %>,
   "dependencies": {
-    <% if ( opts.sass ) { %>"foundation": "~5.5.2",
+    "foundation": "~5.5.2",
     "fontawesome": "~4.4.0",
-    "bourbon": "~4.2.0",<% } %>
+    "bourbon": "~4.2.0",
     "selectivizr": "~1.0.2",
     "respond": "~1.4.2"
-  }
+  }<% } %>
 }

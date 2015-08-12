@@ -16,7 +16,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 					skipped: [],
 					run: []
 				},
-				installers = ['npm', 'bower', 'composer'];
+				installers = ['npm', 'bower'];
 
 			this.log(chalk.green.bold('Your theme has been generated.'));
 
