@@ -38,7 +38,7 @@
 	      <?php endif; ?>
 	      </li>
 	       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	      <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo esc_html( 'Menu' , 'scratch' ); ?></span></a></li>
+	      <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo esc_html( 'Menu' , '<%= opts.funcPrefix %>' ); ?></span></a></li>
 	    </ul><!-- .title-area -->
 
 	    <section class="top-bar-section">
@@ -61,7 +61,7 @@
 		          'menu_id' => 'primary-menu',
 		          'theme_location' => 'primary',
 		          'menu_class'     => 'left',
-		          'walker' => new scratch_topbar_walker(),
+		          'walker' => new <%= opts.funcPrefix %>_topbar_walker(),
 		          'container' => ''
 		        ) );
 		      ?>

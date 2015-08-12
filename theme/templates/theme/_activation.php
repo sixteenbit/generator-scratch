@@ -224,44 +224,6 @@ function <%= opts.funcPrefix %>_theme_activation_action() {
 				  </li>
 				</ul>
 
-				<ul class="circle">
-				  <li>This is the first item in an unordered list.</li>
-				  <li>This is the second item in an unordered list with a sub-ordered list.
-				    <ol>
-				      <li>This is an ordered list item.</li>
-				      <li>This is an ordered list item</li>
-				      <li>This is an ordered list item</li>
-				    </ol>
-				  </li>
-				  <li>This is the third item in an unordered list.</li>
-				  <li>This is the fourth item in an unordered list with a sub-unordered list.
-				    <ul>
-				      <li>This is an unordered list item</li>
-				      <li>This is an unordered list item</li>
-				      <li>This is an unordered list item</li>
-				    </ul>
-				  </li>
-				</ul>
-
-				<ul class="square">
-				  <li>This is the first item in an unordered list.</li>
-				  <li>This is the second item in an unordered list with a sub-ordered list.
-				    <ol>
-				      <li>This is an ordered list item.</li>
-				      <li>This is an ordered list item</li>
-				      <li>This is an ordered list item</li>
-				    </ol>
-				  </li>
-				  <li>This is the third item in an unordered list.</li>
-				  <li>This is the fourth item in an unordered list with a sub-unordered list.
-				    <ul>
-				      <li>This is an unordered list item</li>
-				      <li>This is an unordered list item</li>
-				      <li>This is an unordered list item</li>
-				    </ul>
-				  </li>
-				</ul>
-
 				<h3>Definition Lists</h3>
 				<dl>
 				  <dt>Startup</dt>
