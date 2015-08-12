@@ -1,0 +1,36 @@
+{
+  "name": "<%= opts.projectSlug %>",
+  "title": "<%= opts.projectTitle %>",
+  "description": "<%= opts.description %>",
+  "version": "0.0.1",
+  "homepage": "<%= opts.projectHome %>",
+  "repository": {
+    "type": "git",
+    "url": "<%= opts.projectHome %>"
+  },
+  "author": {
+    "name": "<%= opts.authorName %>",
+    "email": "<%= opts.authorEmail %>",
+    "url": "<%= opts.authorUrl %>"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1",<% if ( opts.sass ) { %>
+    "grunt-sass": "^1.0.0",<% } if ( opts.autoprefixer ) { %>
+    "autoprefixer-core": "^5.2.1",
+    "grunt-postcss": "^0.5.5",<% } %>
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "load-grunt-tasks": "^3.2.0",
+    "grunt-version-check": "^0.2.1",
+    "versioncheck": "^2.1.1",
+    "grunt-cssjanus": "^0.2.4",
+    "time-grunt": "^1.2.1",
+    "grunt-notify": "^0.4.1"
+  }
+}

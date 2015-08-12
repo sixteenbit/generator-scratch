@@ -1,0 +1,24 @@
+{
+  "name": "<%= opts.projectSlug %>",
+  "version": "0.0.1",
+  "main": "/",
+  "license": "GPLv2+",
+  "ignore": [
+    "**/.*",
+    "*.md",
+    "assets/css/sass/*",
+    "assets/css/src/*",
+    "assets/js/src/*",
+    "assets/js/vendor/*",
+    "assets/img/src/*",
+    "Gruntfile.js",
+    "package.json"
+  ]<% if ( opts.sass ) { %>,
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "fontawesome": "~4.4.0",
+    "bourbon": "~4.2.0",
+    "selectivizr": "~1.0.2",
+    "respond": "~1.4.2"
+  }<% } %>
+}

@@ -133,7 +133,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 		this.template('theme/_template-tags.php', 'inc/template-tags.php');
 		this.template('theme/_customizer.php', 'inc/customizer.php');
 		this.template('theme/_activation.php', 'inc/activation.php');
-		this.copy('theme/screenshot.png', 'screenshot.png');
+		this.copy('../../shared/screenshot.png', 'screenshot.png');
 		this.copy('theme/_readme.txt', 'readme.txt');
 		this.copy('theme/_README.md', 'README.md');
 		this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
@@ -157,9 +157,9 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 		if (this.opts.sass) {
 			this.directory('sass', 'assets/css/sass');
 		} else if (this.opts.autoprefixer) {
-			this.template('css/_style.css', 'assets/css/src/main.css');
+			this.template('../../shared/css/_style.css', 'assets/css/src/main.css');
 		} else {
-			this.template('css/_style.css', 'assets/css/main.css');
+			this.template('../../shared/css/_style.css', 'assets/css/main.css');
 		}
 		this.copy('../../shared/css/readme.md', 'assets/css/readme.md');
 	},
@@ -171,7 +171,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 	},
 
 	bower: function() {
-		this.template('../../shared/bower/_bower.json', 'bower.json');
+		this.template('bower/_bower.json', 'bower.json');
 		this.copy('../../shared/bower/bowerrc', '.bowerrc');
 	},
 

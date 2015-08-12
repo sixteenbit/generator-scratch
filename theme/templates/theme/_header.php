@@ -18,9 +18,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-<!--[if lt IE 9]>
+<% if ( opts.sass ) { %><!--[if lt IE 9]>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/js/ie.js"></script>
-<![endif]-->
+<![endif]--><% } %>
 </head>
 
 <body <?php body_class(); ?>>
