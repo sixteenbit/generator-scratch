@@ -114,8 +114,7 @@ module.exports = function(grunt) {
         }]
       }
     },
-    <% if ( opts.sass ) { %>
-    /**
+    <% if ( opts.sass ) { %>/**
      * grunt-sass
      *
      * Compile Sass to CSS using node-sass
@@ -140,14 +139,13 @@ module.exports = function(grunt) {
           'assets/css/main.css': 'assets/css/sass/main.scss'
         }
       }
-    },
-    <% } %>
+    },<% } %>
     <% if ( opts.autoprefixer ) { %>/**
-     * grunt-pixrem
+     * grunt-postcss
      *
      * Apply several post-processors to your CSS using PostCSS
      *
-     * @link https://www.npmjs.com/package/grunt-pixrem
+     * @link https://www.npmjs.com/package/grunt-postcss
      */
     postcss: {
       dist: {
@@ -159,11 +157,7 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          <% if ( opts.sass ) { %>
-          'assets/css/main.css': ['assets/css/main.css']
-          <% } else { %>
-          'assets/css/main.css': ['assets/css/src/main.css']
-          <% } %>
+          <% if ( opts.sass ) { %>'assets/css/main.css': ['assets/css/main.css']<% } else { %>'assets/css/main.css': ['assets/css/src/main.css']<% } %>
         }
       }
     },<% } %>
@@ -208,13 +202,10 @@ module.exports = function(grunt) {
         }
       },
       styles: {
-        <% if ( opts.sass ) { %>
-        files: ['assets/css/sass/**/*.scss'],
-          tasks: ['css'], <% } else if ( opts.autoprefixer ) { %>
-        files: ['assets/css/src/*.css'],
-          tasks: ['css'], <% } else { %>
-        files: ['assets/css/*.css', '!assets/css/*.min.css'],
-          tasks: ['css'], <% } %>
+        <% if ( opts.sass ) { %>files: ['assets/css/sass/**/*.scss'],
+        tasks: ['css'],<% } else if ( opts.autoprefixer ) { %>files: ['assets/css/src/*.css'],
+        tasks: ['css'],<% } else { %>files: ['assets/css/*.css', '!assets/css/*.min.css'],
+        tasks: ['css'],<% } %>
         options: {
           debounceDelay: 500
         }
@@ -339,7 +330,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
   /**
    * load-grunt-tasks
    *
