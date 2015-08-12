@@ -45,3 +45,7 @@ This subgenerator scaffolds out a standard WordPress child theme.
 ## License
 
 MIT
+
+## Credit
+
+glass by juan manjarrez from the Noun Project

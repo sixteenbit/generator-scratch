@@ -5,7 +5,7 @@ Description: <%= opts.description %>
 Author:      <%= opts.authorName %>
 Author URI:  <%= opts.authorUrl %>
 Version:     0.1.0
-Tags: responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, rtl-language-support
+Tags: responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, rtl-language-support, translation-ready, custom-background
 Text Domain: <%= opts.funcPrefix %>
 
 License:     GPLv2+

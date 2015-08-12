@@ -19,9 +19,9 @@ function <%= opts.funcPrefix %>_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on <%= opts.projectTitle %>, use a find and replace
-	 * to change 'sfcc' to the name of your theme in all the template files
+	 * to change '<%= opts.funcPrefix %>' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'sfcc', <%= opts.funcPrefix.toUpperCase() %>_PATH . '/languages' );
+	load_theme_textdomain( '<%= opts.funcPrefix %>', <%= opts.funcPrefix.toUpperCase() %>_PATH . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -43,8 +43,8 @@ function <%= opts.funcPrefix %>_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'sfcc' ),
-		'social' => esc_html__( 'Social Menu', 'sfcc' )
+		'primary' => esc_html__( 'Primary Menu', '<%= opts.funcPrefix %>' ),
+		'social' => esc_html__( 'Social Menu', '<%= opts.funcPrefix %>' )
 	) );
 
 	/*

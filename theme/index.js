@@ -73,7 +73,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 		}, {
 			type: 'confirm',
 			name: 'sass',
-			message: 'Use Foundation?',
+			message: 'Use Foundation (Sass Framework)?',
 			default: true
 		}];
 		// gather initial settings
@@ -112,13 +112,35 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 	theme: function() {
 		this.template('theme/_style.css', 'style.css');
 		this.template('theme/_index.php', 'index.php');
+		this.template('theme/_archive.php', 'archive.php');
+		this.template('theme/_page.php', 'page.php');
+		this.template('theme/_single.php', 'single.php');
+		this.template('theme/_search.php', 'search.php');
 		this.template('theme/_header.php', 'header.php');
 		this.template('theme/_footer.php', 'footer.php');
+		this.template('theme/_sidebar.php', 'sidebar.php');
 		this.template('theme/_functions.php', 'functions.php');
-		this.template('../../shared/theme/_core.php', 'inc/core.php');
-		this.template('../../shared/theme/_assets.php', 'inc/assets.php');
+		this.template('theme/_404.php', '404.php');
+		this.template('theme/_comments.php', 'comments.php');
+		this.template('theme/_content.php', 'template-parts/content.php');
+		this.template('theme/_content-single.php', 'template-parts/content-single.php');
+		this.template('theme/_content-page.php', 'template-parts/content-page.php');
+		this.template('theme/_content-search.php', 'template-parts/content-search.php');
+		this.template('theme/_content-none.php', 'template-parts/content-none.php');
+		this.template('theme/_core.php', 'inc/core.php');
+		this.template('theme/_assets.php', 'inc/assets.php');
+		this.template('theme/_extras.php', 'inc/extras.php');
+		this.template('theme/_template-tags.php', 'inc/template-tags.php');
+		this.template('theme/_customizer.php', 'inc/customizer.php');
+		this.template('theme/_activation.php', 'inc/activation.php');
 		this.copy('theme/screenshot.png', 'screenshot.png');
+		this.copy('theme/_readme.txt', 'readme.txt');
+		this.copy('theme/_README.md', 'README.md');
 		this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
+		this.copy('../../shared/theme/editorconfig', '.editorconfig');
+		if (this.opts.sass) {
+			this.template('theme/_walker.php', 'inc/walker.php');
+		}
 	},
 
 	images: function() {
@@ -133,7 +155,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
 
 	css: function() {
 		if (this.opts.sass) {
-			this.template('css/_style.css', 'assets/css/sass/main.scss');
+			this.directory('sass', 'assets/css/sass');
 		} else if (this.opts.autoprefixer) {
 			this.template('css/_style.css', 'assets/css/src/main.css');
 		} else {

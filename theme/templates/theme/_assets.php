@@ -13,8 +13,8 @@
  */
 function <%= opts.funcPrefix %>_scripts() {
 
-	$live_reload 	= false;
-	$minification = false;
+	$live_reload 	= get_theme_mod( '<%= opts.funcPrefix %>_reload' );;
+	$minification = get_theme_mod( '<%= opts.funcPrefix %>_minify' );;
 
 	if ( true !== $minification ) {
 		$assets = array(
@@ -23,7 +23,7 @@ function <%= opts.funcPrefix %>_scripts() {
 			'ie'					=> '/assets/js/ie.css',
 			'child'     	=> '/style.css',
 			'js'        	=> '/assets/js/scripts.js',
-			'modernizr' 	=> '/assets/js/vendor/modernizr.js',
+			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.js',<% } %>
 			'livereload'  => '//localhost:35729/livereload.js'
 		);
 	} else {
@@ -32,8 +32,8 @@ function <%= opts.funcPrefix %>_scripts() {
 			'icons'  			=> '/assets/css/font-awesome.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			'ie'					=> '/assets/js/ie.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			'child'     	=> '/style.css',
-			'js'        	=> '/assets/js/scripts.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
-			'modernizr' 	=> '/assets/js/vendor/modernizr.min.js' . <%= opts.funcPrefix.toUpperCase() %>_VERSION
+			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.min.js' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
+			'js'        	=> '/assets/js/scripts.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION
 		);
 	}
 
@@ -51,7 +51,7 @@ function <%= opts.funcPrefix %>_scripts() {
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_script( '<%= opts.funcPrefix %>-modernizr', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['modernizr'], array(), null, false);
+	<% if ( opts.sass ) { %>wp_enqueue_script( '<%= opts.funcPrefix %>-modernizr', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['modernizr'], array(), null, false);<% } %>
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( '<%= opts.funcPrefix %>-js', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['js'], array(), null, true);
 

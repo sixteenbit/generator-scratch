@@ -10,6 +10,7 @@
  * theme's file, so the child theme functions would be used.
  *
  * @package <%= opts.projectTitle %>
+ *
  * @since 0.1.0
  */
 
@@ -21,5 +22,10 @@ define( '<%= opts.funcPrefix.toUpperCase() %>_PATH',         get_template_direct
 define( '<%= opts.funcPrefix.toUpperCase() %>_INC',          <%= opts.funcPrefix.toUpperCase() %>_PATH . 'inc/' );
 
 // Includes
-require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'core.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'activation.php';
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'assets.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'core.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'customizer.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'extras.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'template-tags.php';
+<% if ( opts.sass ) { %>require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'walker.php';<% } %>

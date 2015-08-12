@@ -1,0 +1,32 @@
+// Center block
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Font Awesome
+// @link http://fontawesome.io
+@mixin fontawesome {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: inherit;
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    font-variant: normal;
+    line-height: inherit;
+    speak: none;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    vertical-align: top;
+}
+
+// Vertically align
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -14,6 +14,26 @@ module.exports = function(grunt) {
       },
       main: {
         src: [
+          'bower_components/foundation/js/vendor/fastclick.js',
+          'bower_components/foundation/js/vendor/placeholder.js',
+
+          'bower_components/foundation/js/foundation/foundation.js',
+          'bower_components/foundation/js/foundation/foundation.abide.js',
+          'bower_components/foundation/js/foundation/foundation.accordion.js',
+          'bower_components/foundation/js/foundation/foundation.alert.js',
+          'bower_components/foundation/js/foundation/foundation.clearing.js',
+          'bower_components/foundation/js/foundation/foundation.dropdown.js',
+          'bower_components/foundation/js/foundation/foundation.equalizer.js',
+          'bower_components/foundation/js/foundation/foundation.interchange.js',
+          'bower_components/foundation/js/foundation/foundation.joyride.js',
+          'bower_components/foundation/js/foundation/foundation.magellan.js',
+          'bower_components/foundation/js/foundation/foundation.offcanvas.js',
+          'bower_components/foundation/js/foundation/foundation.orbit.js',
+          'bower_components/foundation/js/foundation/foundation.reveal.js',
+          'bower_components/foundation/js/foundation/foundation.slider.js',
+          'bower_components/foundation/js/foundation/foundation.tab.js',
+          'bower_components/foundation/js/foundation/foundation.tooltip.js',
+          'bower_components/foundation/js/foundation/foundation.topbar.js',
           'assets/js/src/init.js'
         ],
         dest: 'assets/js/scripts.js'
@@ -71,6 +91,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    <% if ( opts.sass ) { %>
     modernizr: {
       dev: {
         devFile: 'bower_components/modernizr/modernizr.js',
@@ -99,7 +120,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    <% if ( opts.sass ) { %>
     sass: {
       all: {
         options: {
@@ -113,7 +133,18 @@ module.exports = function(grunt) {
         files: {
           'assets/css/main.css': 'assets/css/sass/main.scss',
           'assets/css/font-awesome.css': ['bower_components/fontawesome/scss/font-awesome.scss'],
+          'editor-style.css': ['assets/css/sass/editor-style.scss'],
         }
+      }
+    },
+    pixrem: {
+      options: {
+        rootvalue: '16px',
+        replace: true
+      },
+      dev: {
+        src: ['assets/css/main.css'],
+        dest: 'assets/css/ie.css'
       }
     },
     <% } %>
@@ -137,16 +168,6 @@ module.exports = function(grunt) {
       }
     },
     <% } %>
-    pixrem: {
-      options: {
-        rootvalue: '16px',
-        replace: true
-      },
-      dev: {
-        src: ['assets/css/main.css'],
-        dest: 'assets/css/ie.css'
-      }
-    },
     cssmin: {
       options: {
         banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
@@ -175,18 +196,18 @@ module.exports = function(grunt) {
       styles: {
         <% if ( opts.sass ) { %>
         files: ['assets/css/sass/**/*.scss'],
-          tasks: ['sass', 'autoprefixer', 'cssmin'], <% } else if ( opts.autoprefixer ) { %>
+          tasks: ['css'], <% } else if ( opts.autoprefixer ) { %>
         files: ['assets/css/src/*.css'],
-          tasks: ['autoprefixer', 'cssmin'], <% } else { %>
+          tasks: ['css'], <% } else { %>
         files: ['assets/css/*.css', '!assets/css/*.min.css'],
-          tasks: ['cssmin'], <% } %>
+          tasks: ['css'], <% } %>
         options: {
           debounceDelay: 500
         }
       },
       scripts: {
         files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
-        tasks: ['jshint', 'concat', 'uglify'],
+        tasks: ['js'],
         options: {
           debounceDelay: 500
         }
@@ -203,21 +224,25 @@ module.exports = function(grunt) {
           '!**/.*',
           '!**/readme.md',
           '!node_modules/**',
+          '!bower_components/**',
           '!vendor/**',
-          '!tests/**',
           '!release/**',
           '!assets/css/sass/**',
           '!assets/css/src/**',
           '!assets/js/src/**',
-          '!images/src/**',
-          '!bootstrap.php',
+          '!assets/img/src/**',
           '!bower.json',
-          '!composer.json',
-          '!composer.lock',
           '!Gruntfile.js',
           '!package.json'
         ],
         dest: 'release/<%%= pkg.version %>/'
+      },
+      fonts: {
+        expand: true,
+        flatten: true,
+        filter: 'isFile',
+        src: ['bower_components/fontawesome/fonts/**'],
+        dest: 'assets/fonts/'
       }
     },
     compress: {
@@ -247,14 +272,14 @@ module.exports = function(grunt) {
   <% if ( opts.sass ) { %>
   grunt.registerTask('css', ['sass', 'pixrem', 'postcss', 'cssmin', 'cssjanus']);
   <% } else if ( opts.autoprefixer ) { %>
-  grunt.registerTask('css', ['pixrem', 'postcss', 'cssmin', 'cssjanus']);
+  grunt.registerTask('css', ['postcss', 'cssmin', 'cssjanus']);
   <% } else { %>
-  grunt.registerTask('css', ['pixrem', 'cssmin', 'cssjanus']);
+  grunt.registerTask('css', ['cssmin', 'cssjanus']);
   <% } %>
 
-  grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'modernizr']);
+  grunt.registerTask('js', ['jshint', 'concat', 'uglify'<% if ( opts.sass ) { %>, 'modernizr'<% } %>]);
 
-  grunt.registerTask('default', ['css', 'js', 'makepot']);
+  grunt.registerTask('default', ['copy:fonts', 'css', 'js', 'makepot']);
 
   grunt.registerTask('build', ['default', 'clean', 'copy', 'compress']);
 
