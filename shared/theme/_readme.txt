@@ -9,8 +9,6 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme built using "scratch" called <%= opts.projectTitle %>.
-
 == Description ==
 
 <%= opts.description %>
@@ -25,8 +23,6 @@ A starter theme built using "scratch" called <%= opts.projectTitle %>.
 
 == Changelog ==
 
-= 1.0 - June 2 2015 =
-* Initial release
 
 == Credits ==
 
