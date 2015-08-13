@@ -12,7 +12,7 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 	$wp_customize->add_section( '<%= opts.funcPrefix %>_advanced_settings' , array(
 	  'title'      => __('Advanced Settings','<%= opts.funcPrefix %>'),
-	  'priority'   => 100,
+	  'priority'   => 120,
 	) );
 
 
