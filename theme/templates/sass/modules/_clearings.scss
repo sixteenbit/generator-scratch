@@ -10,8 +10,8 @@
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-    content: "";
-    display: table;
+	display: table;
+	content: "";
 }
 .clear:after,
 .entry-content:after,
@@ -19,5 +19,5 @@
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-    clear: both;
+	clear: both;
 }

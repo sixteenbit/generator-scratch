@@ -1,40 +1,41 @@
 .gallery {
-    @include clearfix;
-    margin: $paragraph-margin-bottom 0 !important;
+	@include clearfix;
+
+	margin: $paragraph-margin-bottom 0 !important;
 }
 .gallery-item {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    margin: rem-calc(0 4 4 0);
-    text-align: center;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	margin: rem-calc(0 4 4 0);
+	text-align: center;
 }
 .gallery-columns-1 .gallery-item {
-    width: 100%;
+	width: 100%;
 }
 .gallery-columns-2 .gallery-item {
-    width: 48%;
+	width: 48%;
 }
 .gallery-columns-3 .gallery-item {
-    width: 32%;
+	width: 32%;
 }
 .gallery-columns-4 .gallery-item {
-    width: 23%;
+	width: 23%;
 }
 .gallery-columns-5 .gallery-item {
-    width: 19%;
+	width: 19%;
 }
 .gallery-columns-6 .gallery-item {
-    width: 15%;
+	width: 15%;
 }
 .gallery-columns-7 .gallery-item {
-    width: 13%;
+	width: 13%;
 }
 .gallery-columns-8 .gallery-item {
-    width: 11%;
+	width: 11%;
 }
 .gallery-columns-9 .gallery-item {
-    width: 9%;
+	width: 9%;
 }
 .gallery-columns-1 .gallery-item:nth-of-type(1n),
 .gallery-columns-2 .gallery-item:nth-of-type(2n),
@@ -45,11 +46,11 @@
 .gallery-columns-7 .gallery-item:nth-of-type(7n),
 .gallery-columns-8 .gallery-item:nth-of-type(8n),
 .gallery-columns-9 .gallery-item:nth-of-type(9n) {
-    margin-right: 0;
+	margin-right: 0;
 }
 .gallery-icon {
-    line-height: 0;
+	line-height: 0;
 }
 .gallery-caption {
-    display: none;
+	display: none;
 }

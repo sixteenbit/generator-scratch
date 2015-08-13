@@ -1,15 +1,15 @@
 audio,
 canvas {
-    display: inline-block;
+	display: inline-block;
 }
 figure,
 picture,
 img,
 video {
-    display: block;
-    height: auto;
-    max-width: 100%;
-    width: auto;
+	display: block;
+	width: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -17,25 +17,25 @@ embed,
 iframe,
 object,
 video {
-    margin-bottom: $paragraph-margin-bottom;
-    max-width: 100%;
-    vertical-align: middle;
-    p > & {
-        margin-bottom: 0;
-    }
+	max-width: 100%;
+	margin-bottom: $paragraph-margin-bottom;
+	vertical-align: middle;
+	p > & {
+		margin-bottom: 0;
+	}
 }
 
 /* Responsive video wrapper */
 .embed-container:not([data-twttr-id]) {
-    @extend .flex-video;
-    @extend .widescreen;
+	@extend .flex-video;
+	@extend .widescreen;
 }
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	border: none;
 }
 @import "galleries";

@@ -30,19 +30,20 @@ $editor-width: 640px;
 # Foundation Components
 --------------------------------------------------------------*/
 @import "foundation-components";
+
 html,
 body {
-    height: auto;
+	height: auto;
 }
 body {
-    margin: $column-gutter;
-    max-width: $editor-width;
+	max-width: $editor-width;
+	margin: $column-gutter;
 }
 img {
-    border: 0;
-    height: auto;
-    max-width: $editor-width;
-    vertical-align: middle;
+	max-width: $editor-width;
+	height: auto;
+	border: 0;
+	vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
