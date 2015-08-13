@@ -69,7 +69,7 @@ function <%= opts.funcPrefix %>_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'assets/css/editor-style.css' ) );
+	add_editor_style( array( 'assets/css/editor-style.css', <%= opts.funcPrefix %>_fonts_url() ) );
 }
 endif; // <%= opts.funcPrefix %>_setup
 add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_setup' );
@@ -104,3 +104,40 @@ function <%= opts.funcPrefix %>_widgets_init()
     ));
 }
 add_action('widgets_init', '<%= opts.funcPrefix %>_widgets_init');
+
+if ( ! function_exists( '<%= opts.funcPrefix %>_fonts_url' ) ) :
+/**
+ * Register Google fonts for <%= opts.projectTitle %>.
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function <%= opts.funcPrefix %>_fonts_url() {
+  $fonts_url = '';
+  $fonts     = array();
+  $subsets   = 'latin,latin-ext';
+
+  /* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', '<%= opts.funcPrefix %>' ) ) {
+    $fonts[] = 'Open Sans:400,300,400italic,600,700,800';
+  }
+
+  /* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
+  $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', '<%= opts.funcPrefix %>' );
+  if ( 'cyrillic' == $subset ) {
+    $subsets .= ',cyrillic,cyrillic-ext';
+  } elseif ( 'greek' == $subset ) {
+    $subsets .= ',greek,greek-ext';
+  } elseif ( 'devanagari' == $subset ) {
+    $subsets .= ',devanagari';
+  } elseif ( 'vietnamese' == $subset ) {
+    $subsets .= ',vietnamese';
+  }
+  if ( $fonts ) {
+    $fonts_url = add_query_arg( array(
+      'family' => urlencode( implode( '|', $fonts ) ),
+      'subset' => urlencode( $subsets ),
+    ), '//fonts.googleapis.com/css' );
+  }
+  return $fonts_url;
+}
+endif;

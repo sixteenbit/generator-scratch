@@ -29,6 +29,7 @@ function <%= opts.funcPrefix %>_scripts() {
 	}
 
 	wp_enqueue_style( '<%= opts.funcPrefix %>-css', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['css'], false, null);
+	wp_enqueue_style( '<%= opts.funcPrefix %>-fonts', <%= opts.funcPrefix %>_fonts_url(), array(), null );
 	<% if ( opts.sass ) { %>wp_enqueue_style( '<%= opts.funcPrefix %>-icons', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['icons'], false, null);<% } %>
 
 	wp_enqueue_style( '<%= opts.funcPrefix %>-ie', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['ie'], false, null);
