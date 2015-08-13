@@ -67,8 +67,7 @@
 		      ?>
 	      <?php endif; ?>
 	    </section><!-- .top-bar-section -->
-	  </nav><!-- #site-navigation -->
-		<% } else { %><div class="site-branding">
+	  </nav><!-- #site-navigation --><% } else { %><div class="site-branding">
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>

@@ -138,6 +138,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     this.copy('../../shared/theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
     this.copy('../../shared/theme/editorconfig', '.editorconfig');
+    this.copy('../../shared/theme/csscomb.json', '.csscomb.json');
     if (this.opts.sass) {
       this.template('theme/_walker.php', 'inc/walker.php');
     }
