@@ -198,7 +198,7 @@ module.exports = function(grunt) {
         files: {
           'assets/css/main.css': 'assets/css/sass/main.scss',
           'assets/css/font-awesome.css': ['bower_components/fontawesome/scss/font-awesome.scss'],
-          'editor-style.css': ['assets/css/sass/editor-style.scss'],
+          'assets/css/editor-style.css': ['assets/css/sass/editor-style.scss'],
         }
       }
     },
