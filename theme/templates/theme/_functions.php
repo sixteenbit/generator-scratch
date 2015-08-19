@@ -23,9 +23,9 @@ define( '<%= opts.funcPrefix.toUpperCase() %>_INC',          <%= opts.funcPrefix
 
 // Includes
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'activation.php';
-require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'assets.php';
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'core.php';
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'customizer.php';
+require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'assets.php';
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'extras.php';
 require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'template-tags.php';
 <% if ( opts.sass ) { %>require_once <%= opts.funcPrefix.toUpperCase() %>_INC . 'walker.php';<% } %>

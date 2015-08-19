@@ -91,17 +91,16 @@ add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_content_width', 0 );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function <%= opts.funcPrefix %>_widgets_init()
-{
-    register_sidebar(array(
-        'name' => esc_html__('Sidebar', '<%= opts.funcPrefix %>'),
-        'id' => 'sidebar-1',
-        'description' => '',
-        'before_widget' => '<li><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></li>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ));
+function <%= opts.funcPrefix %>_widgets_init() {
+	register_sidebar(array(
+	  'name' => esc_html__('Sidebar', '<%= opts.funcPrefix %>'),
+	  'id' => 'sidebar-1',
+	  'description' => '',
+	  'before_widget' => '<li><aside id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</aside></li>',
+	  'before_title' => '<h3 class="widget-title">',
+	  'after_title' => '</h3>',
+	));
 }
 add_action('widgets_init', '<%= opts.funcPrefix %>_widgets_init');
 

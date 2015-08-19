@@ -23,7 +23,7 @@ function <%= opts.funcPrefix %>_scripts() {
 			'css'       	=> '/assets/css/main.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			<% if ( opts.sass ) { %>'icons'  			=> '/assets/css/font-awesome.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
 			'ie'					=> '/assets/js/ie.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
-			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.min.js' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
+			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
 			'js'        	=> '/assets/js/scripts.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION
 		);
 	}
