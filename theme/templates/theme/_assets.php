@@ -6,8 +6,8 @@
  */
 function <%= opts.funcPrefix %>_scripts() {
 
-	$live_reload 	= get_theme_mod( '<%= opts.funcPrefix %>_reload' );;
-	$minification = get_theme_mod( '<%= opts.funcPrefix %>_minify' );;
+	$live_reload 	= get_theme_mod( '<%= opts.funcPrefix %>_reload' );
+	$minification = get_theme_mod( '<%= opts.funcPrefix %>_minify' );
 
 	if ( true !== $minification ) {
 		$assets = array(

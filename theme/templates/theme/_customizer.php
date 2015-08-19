@@ -28,7 +28,7 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 	$wp_customize->add_control(
 	  // $id
-	  '<%= opts.funcPrefix %>_asset_minify',
+	  '<%= opts.funcPrefix %>_minify',
 	  // $args
 	  array(
 		  'settings' => '<%= opts.funcPrefix %>_minify',
@@ -51,7 +51,7 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 	$wp_customize->add_control(
 	  // $id
-	  '<%= opts.funcPrefix %>_live_reload',
+	  '<%= opts.funcPrefix %>_reload',
 	  // $args
 	  array(
 		  'settings' => '<%= opts.funcPrefix %>_reload',
