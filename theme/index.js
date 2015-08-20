@@ -135,6 +135,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     this.template('theme/_activation.php', 'inc/activation.php');
     this.copy('theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/_readme.txt', 'readme.txt');
+    this.copy('../../shared/theme/icon.png', 'icon.png');
     this.copy('../../shared/theme/_README.md', 'README.md');
     this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
     this.copy('../../shared/theme/editorconfig', '.editorconfig');
