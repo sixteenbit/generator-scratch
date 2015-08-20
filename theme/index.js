@@ -133,9 +133,9 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     this.template('theme/_template-tags.php', 'inc/template-tags.php');
     this.template('theme/_customizer.php', 'inc/customizer.php');
     this.template('theme/_activation.php', 'inc/activation.php');
+    this.copy('theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/_readme.txt', 'readme.txt');
     this.copy('../../shared/theme/_README.md', 'README.md');
-    this.copy('../../shared/theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
     this.copy('../../shared/theme/editorconfig', '.editorconfig');
     this.copy('../../shared/theme/csscomb.json', '.csscomb.json');

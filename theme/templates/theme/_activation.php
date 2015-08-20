@@ -273,7 +273,7 @@ The <code>code</code> tag is useful for websites who intend to share computer co
 }</code></pre>
 <h2>Tabular Data</h2>
 The <code>table</code> tag is best used for presenting tabular data. This tag should always contain the <code>thead</code>, <code>tfoot</code> and <code>tbody</code> tags and should be marked up in that order. The <code>table</code> tag can also contain the <code>caption</code> tag for accessibility.
-<table width="100%"><caption>Convert Font Sizes from Pixels to Ems or Percentages</caption>
+<table style="width:100%;><caption>Convert Font Sizes from Pixels to Ems or Percentages</caption>
 <thead>
 <tr>
 <th>Pixels</th>

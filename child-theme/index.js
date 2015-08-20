@@ -114,9 +114,9 @@ var ChildThemeGenerator = yeoman.generators.Base.extend({
 
   theme: function() {
     this.copy('theme/_style.css', 'style.css');
+    this.copy('theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/_readme.txt', 'readme.txt');
     this.copy('../../shared/theme/_README.md', 'README.md');
-    this.copy('../../shared/theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/editorconfig', '.editorconfig');
     this.copy('../../shared/theme/csscomb.json', '.csscomb.json');
     this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
