@@ -274,26 +274,43 @@ module.exports = function(grunt) {
      * @link https://www.npmjs.com/package/grunt-contrib-watch
      */
     watch: {
-      livereload: {
-        files: ['assets/css/*.css'],
-        options: {
-          livereload: true
-        }
-      },
       styles: {
         <% if ( opts.sass ) { %>files: ['assets/css/sass/**/*.scss'],
         tasks: ['css'],<% } else if ( opts.autoprefixer ) { %>files: ['assets/css/src/*.css'],
         tasks: ['css'],<% } else { %>files: ['assets/css/*.css', '!assets/css/*.min.css'],
         tasks: ['css'],<% } %>
-        options: {
-          debounceDelay: 500
-        }
       },
       scripts: {
         files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
-        tasks: ['js'],
+        tasks: ['js']
+      },
+      browserSync: {
+        files: [
+          '*.php',
+          '**/*.php',
+          'Gruntfile.js',
+          'assets/js/*.js',
+          'assets/css/*.css'
+        ],
         options: {
-          debounceDelay: 500
+          watchTask: true
+        }
+      }
+    },
+    /**
+     * grunt-browser-sync
+     *
+     * Live CSS reload & Browser Syncing
+     *
+     * @link https://www.npmjs.com/package/grunt-browser-sync
+     */
+    browserSync: {
+      options: {
+        proxy: 'localhost' // update to local dev URL
+      },
+      dev: {
+        bsFiles: {
+          src: 'assets/css/*.css'
         }
       }
     },
