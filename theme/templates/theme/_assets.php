@@ -6,7 +6,6 @@
  */
 function <%= opts.funcPrefix %>_scripts() {
 
-	$live_reload 	= get_theme_mod( '<%= opts.funcPrefix %>_reload' );
 	$minification = get_theme_mod( '<%= opts.funcPrefix %>_minify' );
 
 	if ( true !== $minification ) {
@@ -14,9 +13,8 @@ function <%= opts.funcPrefix %>_scripts() {
 			'css'       	=> '/assets/css/main.css',
 			<% if ( opts.sass ) { %>'icons'  			=> '/assets/css/font-awesome.css',<% } %>
 			'ie'					=> '/assets/js/ie.css',
-			'js'        	=> '/assets/js/scripts.js',
 			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.js',<% } %>
-			'livereload'  => '//localhost:35729/livereload.js'
+			'js'        	=> '/assets/js/scripts.js'
 		);
 	} else {
 		$assets     = array(
@@ -46,9 +44,5 @@ function <%= opts.funcPrefix %>_scripts() {
 	<% if ( opts.sass ) { %>wp_enqueue_script( '<%= opts.funcPrefix %>-modernizr', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['modernizr'], array(), null, false);<% } %>
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( '<%= opts.funcPrefix %>-js', <%= opts.funcPrefix.toUpperCase() %>_URL . $assets['js'], array(), null, true);
-
-	if ( true == $live_reload ) {
-		wp_enqueue_script( 'livereload', $assets['livereload'], '', false, true );
-	}
 }
 add_action('wp_enqueue_scripts', '<%= opts.funcPrefix %>_scripts', 100);

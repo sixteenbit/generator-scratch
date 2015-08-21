@@ -5,12 +5,11 @@
 	position: absolute !important;
 	width: 1px;
 	height: 1px;
-	&:hover,
-	&:active,
+
 	&:focus {
 		display: block;
 		clip: auto !important;
-		z-index: 100000;
+		z-index: 100000; /* Above WP toolbar. */
 		top: 5px;
 		left: 5px;
 		width: auto;
@@ -24,6 +23,5 @@
 		font-weight: bold;
 		line-height: normal;
 		text-decoration: none;
-		/* Above WP toolbar. */
 	}
 }

@@ -31,3 +31,14 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+// Clearfix
+@mixin clearfix() {
+	display: table;
+	content: "";
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}

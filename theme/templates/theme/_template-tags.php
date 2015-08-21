@@ -7,64 +7,6 @@
  * @package <%= opts.projectTitle %>
  */
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_posts_navigation() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', '<%= opts.funcPrefix %>' ); ?></h2>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', '<%= opts.funcPrefix %>' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', '<%= opts.funcPrefix %>' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
-if ( ! function_exists( 'the_post_navigation' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_post_navigation() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', '<%= opts.funcPrefix %>' ); ?></h2>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
-				next_post_link( '<div class="nav-next">%link</div>', '%title' );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( '<%= opts.funcPrefix %>_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -89,7 +31,7 @@ function <%= opts.funcPrefix %>_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', '<%= opts.funcPrefix %>' ),
-		'<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -124,100 +66,6 @@ function <%= opts.funcPrefix %>_entry_footer() {
 	}
 
 	edit_post_link( esc_html__( 'Edit', '<%= opts.funcPrefix %>' ), '<span class="edit-link">', '</span>' );
-}
-endif;
-
-if ( ! function_exists( 'the_archive_title' ) ) :
-/**
- * Shim for `the_archive_title()`.
- *
- * Display the archive title based on the queried object.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the title. Default empty.
- * @param string $after  Optional. Content to append to the title. Default empty.
- */
-function the_archive_title( $before = '', $after = '' ) {
-	if ( is_category() ) {
-		$title = sprintf( esc_html__( 'Category: %s', '<%= opts.funcPrefix %>' ), single_cat_title( '', false ) );
-	} elseif ( is_tag() ) {
-		$title = sprintf( esc_html__( 'Tag: %s', '<%= opts.funcPrefix %>' ), single_tag_title( '', false ) );
-	} elseif ( is_author() ) {
-		$title = sprintf( esc_html__( 'Author: %s', '<%= opts.funcPrefix %>' ), '<span class="author">' . get_the_author() . '</span>' );
-	} elseif ( is_year() ) {
-		$title = sprintf( esc_html__( 'Year: %s', '<%= opts.funcPrefix %>' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', '<%= opts.funcPrefix %>' ) ) );
-	} elseif ( is_month() ) {
-		$title = sprintf( esc_html__( 'Month: %s', '<%= opts.funcPrefix %>' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', '<%= opts.funcPrefix %>' ) ) );
-	} elseif ( is_day() ) {
-		$title = sprintf( esc_html__( 'Day: %s', '<%= opts.funcPrefix %>' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', '<%= opts.funcPrefix %>' ) ) );
-	} elseif ( is_tax( 'post_format' ) ) {
-		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = esc_html_x( 'Asides', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = esc_html_x( 'Galleries', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = esc_html_x( 'Images', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = esc_html_x( 'Videos', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = esc_html_x( 'Quotes', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = esc_html_x( 'Links', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = esc_html_x( 'Statuses', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = esc_html_x( 'Audio', 'post format archive title', '<%= opts.funcPrefix %>' );
-		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = esc_html_x( 'Chats', 'post format archive title', '<%= opts.funcPrefix %>' );
-		}
-	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( esc_html__( 'Archives: %s', '<%= opts.funcPrefix %>' ), post_type_archive_title( '', false ) );
-	} elseif ( is_tax() ) {
-		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( esc_html__( '%1$s: %2$s', '<%= opts.funcPrefix %>' ), $tax->labels->singular_name, single_term_title( '', false ) );
-	} else {
-		$title = esc_html__( 'Archives', '<%= opts.funcPrefix %>' );
-	}
-
-	/**
-	 * Filter the archive title.
-	 *
-	 * @param string $title Archive title to be displayed.
-	 */
-	$title = apply_filters( 'get_the_archive_title', $title );
-
-	if ( ! empty( $title ) ) {
-		echo $before . $title . $after;  // WPCS: XSS OK.
-	}
-}
-endif;
-
-if ( ! function_exists( 'the_archive_description' ) ) :
-/**
- * Shim for `the_archive_description()`.
- *
- * Display category, tag, or term description.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the description. Default empty.
- * @param string $after  Optional. Content to append to the description. Default empty.
- */
-function the_archive_description( $before = '', $after = '' ) {
-	$description = apply_filters( 'get_the_archive_description', term_description() );
-
-	if ( ! empty( $description ) ) {
-		/**
-		 * Filter the archive description.
-		 *
-		 * @see term_description()
-		 *
-		 * @param string $description Archive description to be displayed.
-		 */
-		echo $before . $description . $after;  // WPCS: XSS OK.
-	}
 }
 endif;
 

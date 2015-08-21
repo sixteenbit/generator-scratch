@@ -10,14 +10,14 @@
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	display: table;
-	content: "";
+	@include clearfix;
 }
+
 .clear:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	clear: both;
+	@include clearfix-after;
 }

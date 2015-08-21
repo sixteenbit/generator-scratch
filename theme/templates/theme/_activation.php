@@ -139,14 +139,14 @@ function <%= opts.funcPrefix %>_theme_activation_action() {
 				'post_title' => $new_page_title,
 				'post_content' => '<h1>h1. This is a very large header.</h1>
 Above is an example of a top level header element, or the
-<code>h1</code> tag. All page titles and ledes have been set in this tag. The Second Level Header tag,
-<code>h2</code>, has been relegated to any important page level headings.
+<code>h1</code> tag. All page titles and ledes have been set in this tag. The Second Level Header tag,
+<code>h2</code>, has been relegated to any important page level headings.
 
 <hr />
 
 <h2>h2. This is a large header.</h2>
-As mentioned above, the Second Level Header has been assigned to important page level headings. Though there is no hard and fast rule regarding the amount of
-<code>h1</code> tags allowed on a page, but we tend to always only use one and rely on
+As mentioned above, the Second Level Header has been assigned to important page level headings. Though there is no hard and fast rule regarding the amount of
+<code>h1</code> tags allowed on a page, but we tend to always only use one and rely on
 <code>h2</code> for critical page headings.
 <h3>h3. This is a medium header.</h3>
 The Third Level Header may be used for any form of page level headings which falls below the
@@ -213,7 +213,7 @@ Unordered lists, or <code>ul</code> are used to list items without any hierarchi
 </li>
 </ul>
 <h3>Definition Lists</h3>
-<dl><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I’ll let Bill O’Reilly will <a title="We\'ll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
+<dl><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I’ll let Bill O’Reilly will <a title="We\'ll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
 <h3>Links</h3>
 Links are commonly used to link one page to another, either <a title="Home" href="http://google.com">internally</a> or <a title="The random thoughts of Erik Ford" href="http://google.com" target="_blank">externally</a> and are wrapped by the <code>a</code> tag.
 <h3>Button Links</h3>
@@ -244,7 +244,7 @@ The <code>mark</code> tag is used for indicating text as marked or highlighted f
 
 Despite the stock market crash in 2008, the value of my share portfolio <mark>increased by 100 percent</mark>. I must be doing something right.
 <h3>Small Print</h3>
-The <code>small</code> element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements. For example:
+The <code>small</code> element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as \'small print\'). It can also be used for attributions or satisfying licensing requirements. For example:
 
 <small>Copyright © 2015. Your Company.</small>
 <h3>Delete &amp; Insert</h3>
@@ -254,7 +254,7 @@ The <code>cite</code> element is used to represent the title of a work (e.g. a b
 
 I highly recommend reading <cite>Invisible Man</cite> by Ralph Ellison. It changed my life when I was 15 years old.
 <h3>Abbreviations &amp; Acronyms</h3>
-The <code>abbr</code> element is used for any abbreviated text, whether it be acronym, initialism, or otherwise. Any text in the title attribute will appear when the user’s mouse hovers the abbreviation. The <code>acronym</code> tag has been dropped from the HTML 5 specs because of the confusion between these two tags. You should exclusively use <code>abbr</code> but both are styled for this theme. For example:
+The <code>abbr</code> element is used for any abbreviated text, whether it be acronym, initialism, or otherwise. Any text in the title attribute will appear when the user\'s mouse hovers the abbreviation. The <code>acronym</code> tag has been dropped from the HTML 5 specs because of the confusion between these two tags. You should exclusively use <code>abbr</code> but both are styled for this theme. For example:
 
 The abbreviation for the National Football League is <abbr title="National Football League">NFL</abbr> and the acronym for as soon as possible is <acronym title="as soon as possible">ASAP</acronym>.
 <h3>Subscript &amp; Superscript</h3>
@@ -313,13 +313,13 @@ The <code>table</code> tag is best used for presenting tabular data. This tag sh
 <h2>Image Alignment</h2>
 Welcome to image alignment! The best way to demonstrate the ebb and flow of the various image positioning options is to nestle them snuggly among an ocean of words. Grab a paddle and let\'s get started.
 
-On the topic of alignment, it should be noted that users can choose from the options of <em>None</em>, <em>Left</em>, <em>Right, </em>and <em>Center</em>. In addition, they also get the options of <em>Thumbnail</em>, <em>Medium</em>, <em>Large</em> &amp; <em>Fullsize</em>.
+On the topic of alignment, it should be noted that users can choose from the options of <em>None</em>, <em>Left</em>, <em>Right, </em>and<em>Center</em>. In addition, they also get the options of <em>Thumbnail</em>, <em>Medium</em>, <em>Large</em> &amp; <em>Fullsize</em>.
 <p style="text-align: center;"><img class="size-full aligncenter" title="Image Alignment 580x300" src="http://i.mrdk.in/580x300/1d1d1d/eee.png" alt="Image Alignment 580x300" width="580" height="300" /></p>
-The image above happens to be <em><strong>centered</strong></em>.
+The image above happens to be <em><strong>centered</strong></em>.
 
-<strong><img class="size-full alignleft" title="Image Alignment 150x150" src="http://i.mrdk.in/150x150/1d1d1d/eee.png" alt="Image Alignment 150x150" width="150" height="150" /></strong>The rest of this paragraph is filler for the sake of seeing the text wrap around the 150x150 image, which is <em><strong>left aligned</strong></em>.
+<strong><img class="size-full alignleft" title="Image Alignment 150x150" src="http://i.mrdk.in/150x150/1d1d1d/eee.png" alt="Image Alignment 150x150" width="150" height="150" /></strong>The rest of this paragraph is filler for the sake of seeing the text wrap around the 150x150 image, which is <em><strong>left aligned</strong></em>.
 
-As you can see the should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we\'ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it\'s thang. Mission accomplished!
+As you can see the should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we\'ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it\'s thang. Mission accomplished!
 
 And now for a <em><strong>massively large image</strong></em>. It also has <em><strong>no alignment</strong></em>.
 
@@ -331,19 +331,19 @@ The image above, though 1200px wide, should not overflow the content area. It sh
 
 And now we\'re going to shift things to the <em><strong>right align</strong></em>. Again, there should be plenty of room above, below, and to the left of the image. Just look at him there... Hey guy! Way to rock that right side. I don\'t care what the left aligned image says, you look great. Don\'t let anyone else tell you differently.
 
-In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah... Just like that. It never felt so good to be right.
+In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah... Just like that. It never felt so good to be right.
 
 And just when you thought we were done, we\'re going to do them all over again with captions!
 
 [caption id="" align="aligncenter" width="580"]<img class="size-full" title="Image Alignment 580x300" src="http://i.mrdk.in/580x300/1d1d1d/eee.png" alt="Image Alignment 580x300" width="580" height="300" /> Look at 580x300 getting some <a title="Image Settings" href="http://en.support.wordpress.com/images/image-settings/">caption</a> love.[/caption]
 
-The image above happens to be <em><strong>centered</strong></em>. The caption also has a link in it, just to see if it does anything funky.
+The image above happens to be <em><strong>centered</strong></em>. The caption also has a link in it, just to see if it does anything funky.
 
 [caption id="" align="alignleft" width="150"]<img class="size-full" title="Image Alignment 150x150" src="http://i.mrdk.in/150x150/1d1d1d/eee.png" alt="Image Alignment 150x150" width="150" height="150" /> Itty-bitty caption.[/caption]
 
-The rest of this paragraph is filler for the sake of seeing the text wrap around the 150x150 image, which is <em><strong>left aligned</strong></em>.
+The rest of this paragraph is filler for the sake of seeing the text wrap around the 150x150 image, which is <em><strong>left aligned</strong></em>.
 
-As you can see the should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we\'ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it\'s thang. Mission accomplished!
+As you can see the should be some space above, below, and to the right of the image. The text should not be creeping on the image. Creeping is just not right. Images need breathing room too. Let them speak like you words. Let them do their jobs without any hassle from the text. In about one more sentence here, we\'ll see that the text moves from the right of the image down below the image in seamless transition. Again, letting the do it\'s thang. Mission accomplished!
 
 And now for a <em><strong>massively large image</strong></em>. It also has <em><strong>no alignment</strong></em>.
 
@@ -357,7 +357,7 @@ And now we\'re going to shift things to the <em><strong>right align</strong></em
 
 In just a bit here, you should see the text start to wrap below the right aligned image and settle in nicely. There should still be plenty of room and everything should be sitting pretty. Yeah... Just like that. It never felt so good to be right.
 
-And that\'s a wrap, yo! You survived the tumultuous waters of alignment. Image alignment achievement unlocked!
+And that\'s a wrap, yo! You survived the tumultuous waters of alignment. Image alignment achievement unlocked!
 
 <!--nextpage-->
 <h2>Embeds</h2>

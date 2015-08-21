@@ -38,29 +38,6 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 		  'description' => __('Use production ready files', '<%= opts.funcPrefix %>'),
 	  )
 	);
-
-	$wp_customize->add_setting(
-	  '<%= opts.funcPrefix %>_reload',
-	  array(
-	    'default' => false,
-			'type' => 'theme_mod',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> '<%= opts.funcPrefix %>_sanitize_checkbox'
-	  )
-	);
-
-	$wp_customize->add_control(
-	  // $id
-	  '<%= opts.funcPrefix %>_reload',
-	  // $args
-	  array(
-		  'settings' => '<%= opts.funcPrefix %>_reload',
-		  'section' => '<%= opts.funcPrefix %>_advanced_settings',
-		  'type' => 'checkbox',
-		  'label' => __('Live Reload', '<%= opts.funcPrefix %>'),
-		  'description' => __('For development purposes only', '<%= opts.funcPrefix %>'),
-	  )
-	);
 } // end <%= opts.funcPrefix %>_register_theme_customizer
 add_action('customize_register', '<%= opts.funcPrefix %>_register_theme_customizer');
 
