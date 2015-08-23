@@ -95,9 +95,9 @@ function <%= opts.funcPrefix %>_widgets_init() {
 	register_sidebar(array(
 	  'name' => esc_html__('Sidebar', '<%= opts.funcPrefix %>'),
 	  'id' => 'sidebar-1',
-	  'description' => '',
-	  'before_widget' => '<li><aside id="%1$s" class="widget %2$s">',
-	  'after_widget' => '</aside></li>',
+	  'description' => 'Add widgets here to appear in your sidebar.',
+	  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</aside>',
 	  'before_title' => '<h3 class="widget-title">',
 	  'after_title' => '</h3>',
 	));
