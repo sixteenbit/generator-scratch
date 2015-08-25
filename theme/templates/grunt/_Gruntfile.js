@@ -304,16 +304,20 @@ module.exports = function(grunt) {
      *
      * @link https://www.npmjs.com/package/grunt-browser-sync
      */
-    browserSync: {
-      options: {
-        proxy: 'localhost' // update to local dev URL
-      },
-      dev: {
-        bsFiles: {
-          src: 'assets/css/*.css'
-        }
-      }
-    },
+     browserSync: {
+       options: {
+         proxy: 'localhost' // update to local dev URL
+       },
+       dev: {
+         src: [
+           '*.php',
+           '**/*.php',
+           'Gruntfile.js',
+           'assets/js/*.js',
+           'assets/css/*.css'
+         ]
+       }
+     },
     /**
      * grunt-contrib-clean
      *
