@@ -304,7 +304,7 @@ module.exports = function(grunt) {
      *
      * @link https://www.npmjs.com/package/grunt-browser-sync
      */
-     browserSync: {
+    browserSync: {
       dev: {
         bsFiles: {
           src: [
@@ -320,7 +320,7 @@ module.exports = function(grunt) {
           debugInfo: true,
           logConnections: true,
           notify: true,
-          proxy: 'localhost', // change to local dev URL
+          proxy: 'local.wordpress.dev',
           ghostMode: {
             scroll: true,
             links: true,
@@ -462,7 +462,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('sync', ['browserSync', 'watch']);
-  
+
   <% if ( opts.sass ) { %>grunt.registerTask('css', ['copy:fonts', 'sass', 'pixrem', 'postcss', 'cssmin', 'cssjanus', 'notify:css']);<% } else if ( opts.autoprefixer ) { %>grunt.registerTask('css', ['postcss', 'cssmin', 'cssjanus', 'notify:css']);<% } else { %>grunt.registerTask('css', ['cssmin', 'cssjanus', 'notify:css']);<% } %>
 
   grunt.registerTask('js', ['jshint', 'concat', 'uglify'<% if ( opts.sass ) { %>, 'modernizr'<% } %>, 'notify:js']);

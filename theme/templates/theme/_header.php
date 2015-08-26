@@ -37,8 +37,9 @@
 	        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 	      <?php endif; ?>
 	      </li>
-	       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	      <li class="toggle-topbar menu-icon"><a href="#"><span><?php echo esc_html( 'Menu' , '<%= opts.funcPrefix %>' ); ?></span></a></li>
+				<li class="toggle-topbar toggle-icon">
+					<a href="#"><span><?php echo esc_html( 'Menu' , '<%= opts.funcPrefix %>' ); ?></span></a>
+				</li>
 	    </ul><!-- .title-area -->
 
 	    <section class="top-bar-section">

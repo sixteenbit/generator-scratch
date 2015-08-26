@@ -2,16 +2,16 @@
    Comments
    ========================================================================== */
 .comments-area {
-	padding: 20px;
+	padding: rem-calc(20);
 	& > :last-child {
 		margin-bottom: 0;
 	}
 }
 .comment-list + .comment-respond {
-	padding-top: 30px;
+	padding-top: rem-calc(30);
 }
 .comment-navigation + .comment-respond {
-	padding-top: 30px;
+	padding-top: rem-calc(30);
 }
 .comments-title,
 .comment-reply-title {
@@ -27,13 +27,13 @@
 	article,
 	.pingback,
 	.trackback {
-		padding: 30px 0;
+		padding: rem-calc(30 0);
 	}
 	.children {
 		margin: 0;
 		list-style: none;
 		& > li {
-			padding-left: 10px;
+			padding-left: rem-calc(10);
 		}
 	}
 }
@@ -72,7 +72,7 @@
 			margin-bottom: 0;
 		}
 	}
-	> :last-child {
+	& > :last-child {
 		margin-bottom: 0;
 	}
 }
@@ -95,9 +95,6 @@
 		text-transform: uppercase;
 	}
 	input {
-		&[type="text"],
-		&[type="email"],
-		&[type="url"],
 		&[type="submit"] {
 			@extend .button;
 		}
