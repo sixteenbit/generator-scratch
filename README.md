@@ -23,6 +23,8 @@ Finally, in the desired project directory, initiate the generator:
 $ yo scratch
 ```
 
+![yo scratch:theme](/screens/scratch-theme.gif?raw=true "yo scratch:theme")
+
 ## Project Types
 
 Scratch ships with two default project types, each invoked with a subgenerator.
