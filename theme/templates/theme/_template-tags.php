@@ -45,7 +45,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_entry_footer' ) ) :
  */
 function <%= opts.funcPrefix %>_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
+	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', '<%= opts.funcPrefix %>' ) );
 		if ( $categories_list && <%= opts.funcPrefix %>_categorized_blog() ) {
@@ -112,3 +112,34 @@ function <%= opts.funcPrefix %>_category_transient_flusher() {
 }
 add_action( 'edit_category', '<%= opts.funcPrefix %>_category_transient_flusher' );
 add_action( 'save_post',     '<%= opts.funcPrefix %>_category_transient_flusher' );
+
+if ( ! function_exists( '<%= opts.funcPrefix %>_post_thumbnail' ) ) :
+/**
+ * Display an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index views, or a div
+ * element when on single views.
+ *
+ * @since <%= opts.projectTitle %> 1.0
+ */
+function <%= opts.funcPrefix %>_post_thumbnail() {
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( is_singular() ) :
+	?>
+
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail(); ?>
+	</div><!-- .post-thumbnail -->
+
+	<?php else : ?>
+
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+	</a>
+
+	<?php endif; // End is_singular()
+}
+endif;

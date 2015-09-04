@@ -1,7 +1,8 @@
 <?php
-
 /**
- * <%= opts.projectTitle %> functions and definitions
+ * <%= opts.projectTitle %> functions and definitions.
+ *
+ * @link https://codex.wordpress.org/Functions_File_Explained
  *
  * @package <%= opts.projectTitle %>
  */
@@ -19,9 +20,9 @@ function <%= opts.funcPrefix %>_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on <%= opts.projectTitle %>, use a find and replace
-	 * to change '<%= opts.funcPrefix %>' to the name of your theme in all the template files
+	 * to change '<%= opts.funcPrefix %>' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '<%= opts.funcPrefix %>', <%= opts.funcPrefix.toUpperCase() %>_PATH . '/languages' );
+	load_theme_textdomain( '<%= opts.funcPrefix %>', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -37,7 +38,7 @@ function <%= opts.funcPrefix %>_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -59,13 +60,25 @@ function <%= opts.funcPrefix %>_setup() {
 		'caption',
 	) );
 
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+	) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '<%= opts.funcPrefix %>_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
-	/*
+  /*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */

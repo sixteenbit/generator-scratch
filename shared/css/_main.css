@@ -635,25 +635,25 @@ a:active {
 
 
 .main-navigation ul ul li {
-  
+
 }
 
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-  
+
 }
 
 
 .main-navigation ul ul:hover > a,
 .main-navigation ul ul .focus > a {
-  
+
 }
 
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
-  
+
 }
 
 
@@ -672,7 +672,7 @@ a:active {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
-  
+
 }
 
 
@@ -687,7 +687,7 @@ a:active {
   .menu-toggle {
     display: none;
   }
-  
+
 
   .main-navigation ul {
     display: block;

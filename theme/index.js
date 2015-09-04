@@ -132,7 +132,10 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     this.template('theme/_extras.php', 'inc/extras.php');
     this.template('theme/_template-tags.php', 'inc/template-tags.php');
     this.template('theme/_customizer.php', 'inc/customizer.php');
+    this.template('theme/_jetpack.php', 'inc/jetpack.php');
+    this.template('theme/_custom-header.php', 'inc/custom-header.php');
     this.template('theme/_activation.php', 'inc/activation.php');
+    this.template('theme/_back-combat.php', 'inc/back-combat.php');
     this.copy('theme/screenshot.png', 'screenshot.png');
     this.copy('../../shared/theme/_readme.txt', 'readme.txt');
     this.copy('../../shared/theme/icon.png', 'icon.png');

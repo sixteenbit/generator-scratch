@@ -135,7 +135,7 @@ function <%= opts.funcPrefix %>_theme_activation_action() {
 		$pages_to_create = array_diff($default_pages, $temp);
 
 		foreach ($pages_to_create as $new_page_title) {
-			$add_default_pages = array(
+			$add_theme_page = array(
 				'post_title' => $new_page_title,
 				'post_content' => '<h1>h1. This is a very large header.</h1>
 Above is an example of a top level header element, or the
@@ -213,7 +213,7 @@ Unordered lists, or <code>ul</code> are used to list items without any hierarchi
 </li>
 </ul>
 <h3>Definition Lists</h3>
-<dl><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I’ll let Bill O’Reilly will <a title="We\'ll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
+<dl><dt>Startup</dt><dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.</dd><dt>#dowork</dt><dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self motivator, to motivating your friends.</dd><dt>Do It Live</dt><dd>I\'ll let Bill O\'Reilly will <a title="We\'ll Do It Live" href="https://www.youtube.com/watch?v=O_HyZ5aW76c">explain</a> this one.</dd></dl>
 <h3>Links</h3>
 Links are commonly used to link one page to another, either <a title="Home" href="http://google.com">internally</a> or <a title="The random thoughts of Erik Ford" href="http://google.com" target="_blank">externally</a> and are wrapped by the <code>a</code> tag.
 <h3>Button Links</h3>
@@ -246,7 +246,7 @@ Despite the stock market crash in 2008, the value of my share portfolio <mark>in
 <h3>Small Print</h3>
 The <code>small</code> element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as \'small print\'). It can also be used for attributions or satisfying licensing requirements. For example:
 
-<small>Copyright © 2015. Your Company.</small>
+<small>Copyright &copy; 2015. Your Company.</small>
 <h3>Delete &amp; Insert</h3>
 This tag will let you <del>strikeout text</del>, but this tag is no longer supported in HTML5 (use the <code>&lt;strike&gt;</code> instead). This tag should denote <ins>inserted</ins> text.
 <h3>Citation</h3>
@@ -372,7 +372,7 @@ http://youtu.be/OTRmyXX6ipU',
 				'post_type' => 'page'
 			);
 
-			wp_insert_post($add_default_pages);
+			wp_insert_post($add_theme_page);
 		}
 
 		$guide = get_page_by_title(__('Style Guide', '<%= opts.funcPrefix %>'));

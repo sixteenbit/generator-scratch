@@ -18,6 +18,8 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
+	<?php <%= opts.funcPrefix %>_post_thumbnail(); ?>
+
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php

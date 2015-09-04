@@ -2,8 +2,9 @@
   "name": "<%= opts.projectSlug %>",
   "title": "<%= opts.projectTitle %>",
   "description": "<%= opts.description %>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "<%= opts.projectHome %>",
+  "license": "GPL-2.0",
   "repository": {
     "type": "git",
     "url": "<%= opts.projectHome %>"

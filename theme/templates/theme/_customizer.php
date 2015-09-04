@@ -17,7 +17,7 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 
 	$wp_customize->add_setting(
-	  '<%= opts.funcPrefix %>_minify',
+	  '<%= opts.funcPrefix %>_production',
 	  array(
 	    'default' => false,
 			'type' => 'theme_mod',
@@ -28,14 +28,14 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 	$wp_customize->add_control(
 	  // $id
-	  '<%= opts.funcPrefix %>_minify',
+	  '<%= opts.funcPrefix %>_production',
 	  // $args
 	  array(
-		  'settings' => '<%= opts.funcPrefix %>_minify',
+		  'settings' => '<%= opts.funcPrefix %>_production',
 		  'section' => '<%= opts.funcPrefix %>_advanced_settings',
 		  'type' => 'checkbox',
-		  'label' => __('Minify', '<%= opts.funcPrefix %>'),
-		  'description' => __('Use production ready files', '<%= opts.funcPrefix %>'),
+		  'label' => __('Production', '<%= opts.funcPrefix %>'),
+		  'description' => __('Use minified assets.', '<%= opts.funcPrefix %>'),
 	  )
 	);
 } // end <%= opts.funcPrefix %>_register_theme_customizer
