@@ -13,7 +13,6 @@ function <%= opts.funcPrefix %>_scripts() {
 		$assets = array(
 			'styles' => '/assets/css/main.css',
 			<% if ( opts.sass ) { %>'icons' => '/assets/css/font-awesome.css',<% } %>
-			'ie-styles' => '/assets/js/ie.css',
 			<% if ( opts.sass ) { %>'modernizr' => '/assets/js/vendor/modernizr.js',<% } %>
 			'scripts' => '/assets/js/scripts.js',
       'ie-scripts' => '/assets/js/ie.js'
@@ -22,7 +21,6 @@ function <%= opts.funcPrefix %>_scripts() {
 		$assets = array(
 			'styles' => '/assets/css/main.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			<% if ( opts.sass ) { %>'icons' => '/assets/css/font-awesome.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
-			'ie-styles' => '/assets/js/ie.min.css?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
 			<% if ( opts.sass ) { %>'modernizr' 	=> '/assets/js/vendor/modernizr.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,<% } %>
 			'scripts' => '/assets/js/scripts.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION,
       'ie-scripts' => '/assets/js/ie.min.js?' . <%= opts.funcPrefix.toUpperCase() %>_VERSION
@@ -32,9 +30,6 @@ function <%= opts.funcPrefix %>_scripts() {
 	wp_enqueue_style( '<%= opts.funcPrefix %>-css', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['styles'], false, null);
 	wp_enqueue_style( '<%= opts.funcPrefix %>-fonts', <%= opts.funcPrefix %>_fonts_url(), array(), null );
 	<% if ( opts.sass ) { %>wp_enqueue_style( '<%= opts.funcPrefix %>-icons', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['icons'], false, null);<% } %>
-
-	wp_enqueue_style( '<%= opts.funcPrefix %>-ie', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . $assets['ie-styles'], false, null);
-	wp_style_add_data( '<%= opts.funcPrefix %>-ie', 'conditional', 'lt IE 9' );
 
 	if ( is_child_theme() ){
 		wp_enqueue_style( '<%= opts.funcPrefix %>-child', <%= opts.funcPrefix.toUpperCase() %>_URL . $assets['styles'], false, null);
