@@ -141,24 +141,26 @@ module.exports = function(grunt) {
       }
     },<% } %>
     <% if ( opts.autoprefixer ) { %>/**
-     * grunt-postcss
+     * grunt-autoprefixer
      *
-     * Apply several post-processors to your CSS using PostCSS
+     * Parse CSS and add vendor-prefixed CSS properties using
+     * the Can I Use database. Based on Autoprefixer.
      *
-     * @link https://www.npmjs.com/package/grunt-postcss
+     * @link https://www.npmjs.com/package/grunt-autoprefixer
      */
-    postcss: {
-      dist: {
-        options: {
-          processors: [
-            require('autoprefixer-core')({
-              browsers: 'last 2 versions'
-            })
-          ]
-        },
-        files: {
-          <% if ( opts.sass ) { %>'assets/css/main.css': ['assets/css/main.css']<% } else { %>'assets/css/main.css': ['assets/css/src/main.css']<% } %>
-        }
+    autoprefixer: {
+      options: {
+        browsers: [
+          'last 2 versions',
+          'ie 8',
+          'ie 9',
+          'android 2.3',
+          'android 4',
+          'opera 12'
+        ]
+      },
+      dev: {
+        src: 'assets/css/main.css'
       }
     },<% } %>
     /**
@@ -343,7 +345,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Register tasks
-  <% if ( opts.sass ) { %>grunt.registerTask('css', ['sass', 'postcss', 'cssmin', 'cssjanus', 'notify:css']);<% } else if ( opts.autoprefixer ) { %>grunt.registerTask('css', ['postcss', 'cssmin', 'cssjanus', 'notify:css']);<% } else { %>grunt.registerTask('css', ['cssmin', 'cssjanus', 'notify:css']);<% } %>
+  <% if ( opts.sass ) { %>grunt.registerTask('css', ['sass', 'autoprefixer', 'cssmin', 'cssjanus', 'notify:css']);<% } else if ( opts.autoprefixer ) { %>grunt.registerTask('css', ['autoprefixer', 'cssmin', 'cssjanus', 'notify:css']);<% } else { %>grunt.registerTask('css', ['cssmin', 'cssjanus', 'notify:css']);<% } %>
 
   grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'notify:js']);
 
