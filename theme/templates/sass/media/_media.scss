@@ -2,6 +2,7 @@ audio,
 canvas {
 	display: inline-block;
 }
+
 figure,
 picture,
 img,
@@ -25,11 +26,6 @@ video {
 	}
 }
 
-/* Responsive video wrapper */
-.embed-container:not([data-twttr-id]) {
-	@extend .flex-video;
-	@extend .widescreen;
-}
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -38,4 +34,3 @@ video {
 	padding: 0;
 	border: none;
 }
-@import "galleries";

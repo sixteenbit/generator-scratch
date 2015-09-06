@@ -35,10 +35,12 @@ html,
 body {
 	height: auto;
 }
+
 body {
 	max-width: $editor-width;
 	margin: $column-gutter;
 }
+
 img {
 	max-width: $editor-width;
 	height: auto;
@@ -55,3 +57,5 @@ img {
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+@import "media/galleries";
+@import "media/captions";

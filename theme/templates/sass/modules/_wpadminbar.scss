@@ -1,3 +1,10 @@
+.admin-bar .fixed {
+	top: 32px;
+	@media screen and (max-width: 782px) {
+		top: 46px;
+	}
+}
+
 /* admin bar fix */
 @media screen and (max-width: 600px) {
 	#wpadminbar {
