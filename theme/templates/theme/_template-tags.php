@@ -120,7 +120,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_post_thumbnail' ) ) :
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  *
- * @since <%= opts.projectTitle %> 1.0
+ * @since <%= opts.projectTitle %> 0.1.0
  */
 function <%= opts.funcPrefix %>_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {

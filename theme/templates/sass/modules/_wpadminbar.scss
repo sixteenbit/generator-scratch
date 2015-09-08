@@ -1,13 +1,15 @@
-.admin-bar .fixed {
-	top: 32px;
-	@media screen and (max-width: 782px) {
-		top: 46px;
-	}
-}
-
 /* admin bar fix */
 @media screen and (max-width: 600px) {
 	#wpadminbar {
 		position: fixed;
 	}
 }
+
+// If using fixed or sticky top bar
+//
+// .admin-bar .site-header {
+// 	top: 32px;
+// 	@media screen and (max-width: 782px) {
+// 		top: 46px;
+// 	}
+// }

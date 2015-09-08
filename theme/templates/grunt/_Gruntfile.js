@@ -134,7 +134,7 @@ module.exports = function(grunt) {
       prod: {
         options: {
           domainPath: '/languages/',
-          potFilename: '<%= opts.funcPrefix %>.pot',
+          potFilename: '<%%= pkg.name %>.pot',
           type: 'wp-theme'
         }
       }
@@ -185,7 +185,7 @@ module.exports = function(grunt) {
       all: {
         options: {
           precision: 2,
-          sourceMap: true,
+          sourceMap: false,
           includePaths: [
             /**
              * Bourbon and Foundation are imported here so we can
@@ -228,6 +228,7 @@ module.exports = function(grunt) {
      */
     autoprefixer: {
       options: {
+        map: false,
         browsers: [
           'last 2 versions',
           'ie 8',
@@ -258,10 +259,8 @@ module.exports = function(grunt) {
       },
       minify: {
         expand: true,
-
         cwd: 'assets/css/',
         src: ['main.css', 'font-awesome.css'],
-
         dest: 'assets/css/',
         ext: '.min.css'
       }
@@ -390,12 +389,12 @@ module.exports = function(grunt) {
       main: {
         options: {
           mode: 'zip',
-          archive: './release/<%= opts.funcPrefix %>.<%%= pkg.version %>.zip'
+          archive: './release/<%%= pkg.name %>.<%%= pkg.version %>.zip'
         },
         expand: true,
         cwd: 'release/<%%= pkg.version %>/',
         src: ['**/*'],
-        dest: '<%= opts.funcPrefix %>/'
+        dest: '<%%= pkg.name %>/'
       }
     },
     /**

@@ -125,7 +125,7 @@ module.exports = function(grunt) {
       all: {
         options: {
           precision: 2,
-          sourceMap: true,
+          sourceMap: false,
           includePaths: [
             /**
              * Bourbon and Foundation are imported here so we can
@@ -150,6 +150,7 @@ module.exports = function(grunt) {
      */
     autoprefixer: {
       options: {
+        map: false,
         browsers: [
           'last 2 versions',
           'ie 8',
@@ -180,10 +181,8 @@ module.exports = function(grunt) {
       },
       minify: {
         expand: true,
-
         cwd: 'assets/css/',
         src: ['main.css'],
-
         dest: 'assets/css/',
         ext: '.min.css'
       }
@@ -208,16 +207,10 @@ module.exports = function(grunt) {
         tasks: ['css'],<% } else if ( opts.autoprefixer ) { %>files: ['assets/css/src/*.css'],
         tasks: ['css'],<% } else { %>files: ['assets/css/*.css', '!assets/css/*.min.css'],
         tasks: ['css'],<% } %>
-        options: {
-          debounceDelay: 500
-        }
       },
       scripts: {
         files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
-        tasks: ['js'],
-        options: {
-          debounceDelay: 500
-        }
+        tasks: ['js']
       }
     },
     /**
@@ -273,12 +266,12 @@ module.exports = function(grunt) {
       main: {
         options: {
           mode: 'zip',
-          archive: './release/<%= opts.funcPrefix %>.<%%= pkg.version %>.zip'
+          archive: './release/<%%= pkg.name %>.<%%= pkg.version %>.zip'
         },
         expand: true,
         cwd: 'release/<%%= pkg.version %>/',
         src: ['**/*'],
-        dest: '<%= opts.funcPrefix %>/'
+        dest: '<%%= pkg.name %>/'
       }
     },
     /**
