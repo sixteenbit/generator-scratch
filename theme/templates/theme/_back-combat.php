@@ -28,7 +28,7 @@ add_action( 'after_switch_theme', '<%= opts.funcPrefix %>_switch_theme' );
  * <%= opts.projectTitle %> on WordPress versions prior to 4.2.
  */
 function <%= opts.funcPrefix %>_upgrade_notice() {
-	$message = sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.funcPrefix %>' ), $GLOBALS['wp_version'] );
+	$message = sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.projectSlug %>' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -36,7 +36,7 @@ function <%= opts.funcPrefix %>_upgrade_notice() {
  * Prevent the Customizer from being loaded on WordPress versions prior to 4.2.
  */
 function <%= opts.funcPrefix %>_customize() {
-	wp_die( sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.funcPrefix %>' ), $GLOBALS['wp_version'] ), '', array(
+	wp_die( sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.projectSlug %>' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -47,7 +47,7 @@ add_action( 'load-customize.php', '<%= opts.funcPrefix %>_customize' );
  */
 function <%= opts.funcPrefix %>_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.funcPrefix %>' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.projectSlug %>' ), $GLOBALS['wp_version'] ) );
 	}
 }
 add_action( 'template_redirect', '<%= opts.funcPrefix %>_preview' );

@@ -25,12 +25,12 @@ function <%= opts.funcPrefix %>_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', '<%= opts.funcPrefix %>' ),
+		esc_html_x( 'Posted on %s', 'post date', '<%= opts.projectSlug %>' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', '<%= opts.funcPrefix %>' ),
+		esc_html_x( 'by %s', 'post author', '<%= opts.projectSlug %>' ),
 		'<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -47,25 +47,25 @@ function <%= opts.funcPrefix %>_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', '<%= opts.funcPrefix %>' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', '<%= opts.projectSlug %>' ) );
 		if ( $categories_list && <%= opts.funcPrefix %>_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '<%= opts.funcPrefix %>' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '<%= opts.projectSlug %>' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', '<%= opts.funcPrefix %>' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', '<%= opts.projectSlug %>' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '<%= opts.funcPrefix %>' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '<%= opts.projectSlug %>' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', '<%= opts.funcPrefix %>' ), esc_html__( '1 Comment', '<%= opts.funcPrefix %>' ), esc_html__( '% Comments', '<%= opts.funcPrefix %>' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', '<%= opts.projectSlug %>' ), esc_html__( '1 Comment', '<%= opts.projectSlug %>' ), esc_html__( '% Comments', '<%= opts.projectSlug %>' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', '<%= opts.funcPrefix %>' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', '<%= opts.projectSlug %>' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 

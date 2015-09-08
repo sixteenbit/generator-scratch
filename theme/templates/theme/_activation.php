@@ -25,8 +25,8 @@ function <%= opts.funcPrefix %>_theme_activation_options_add_page() {
 
 	if (!$<%= opts.funcPrefix %>_activation_options) {
 		add_theme_page(
-			__('Theme Activation', '<%= opts.funcPrefix %>'),
-			__('Theme Activation', '<%= opts.funcPrefix %>'),
+			__('Theme Activation', '<%= opts.projectSlug %>'),
+			__('Theme Activation', '<%= opts.projectSlug %>'),
 			'edit_theme_options',
 			'theme_activation_options',
 			'<%= opts.funcPrefix %>_theme_activation_options_render_page'
@@ -47,9 +47,9 @@ function <%= opts.funcPrefix %>_get_theme_activation_options() {
 
 function <%= opts.funcPrefix %>_theme_activation_options_render_page() { ?>
 	<div class="wrap">
-		<h2><?php printf(__('%s Theme Activation', '<%= opts.funcPrefix %>'), wp_get_theme()); ?></h2>
+		<h2><?php printf(__('%s Theme Activation', '<%= opts.projectSlug %>'), wp_get_theme()); ?></h2>
 		<div class="updated">
-			<?php _e('<p>These settings are optional and should usually be used only on a fresh installation.</p>', '<%= opts.funcPrefix %>'); ?>
+			<?php _e('<p>These settings are optional and should usually be used only on a fresh installation.</p>', '<%= opts.projectSlug %>'); ?>
 		</div>
 
 		<?php settings_errors(); ?>
@@ -57,51 +57,51 @@ function <%= opts.funcPrefix %>_theme_activation_options_render_page() { ?>
 		<form method="post" action="options.php">
 			<?php settings_fields('<%= opts.funcPrefix %>_activation_options'); ?>
 			<table class="form-table">
-				<tr valign="top"><th scope="row"><?php _e('Create a style guide?', '<%= opts.funcPrefix %>'); ?></th>
+				<tr valign="top"><th scope="row"><?php _e('Create a style guide?', '<%= opts.projectSlug %>'); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><span><?php _e('Create a style guide?', '<%= opts.funcPrefix %>'); ?></span></legend>
+							<legend class="screen-reader-text"><span><?php _e('Create a style guide?', '<%= opts.projectSlug %>'); ?></span></legend>
 							<select name="<%= opts.funcPrefix %>_theme_activation_options[create_style_guide]" id="create_style_guide">
-								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.funcPrefix %>'); ?></option>
-								<option value="false"><?php echo _e('No', '<%= opts.funcPrefix %>'); ?></option>
+								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.projectSlug %>'); ?></option>
+								<option value="false"><?php echo _e('No', '<%= opts.projectSlug %>'); ?></option>
 							</select>
-							<p class="description"><?php printf(__('Create a page called Style Guide to show theme styles', '<%= opts.funcPrefix %>')); ?></p>
+							<p class="description"><?php printf(__('Create a page called Style Guide to show theme styles', '<%= opts.projectSlug %>')); ?></p>
 						</fieldset>
 					</td>
 				</tr>
-				<tr valign="top"><th scope="row"><?php _e('Change permalink structure?', '<%= opts.funcPrefix %>'); ?></th>
+				<tr valign="top"><th scope="row"><?php _e('Change permalink structure?', '<%= opts.projectSlug %>'); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><span><?php _e('Update permalink structure?', '<%= opts.funcPrefix %>'); ?></span></legend>
+							<legend class="screen-reader-text"><span><?php _e('Update permalink structure?', '<%= opts.projectSlug %>'); ?></span></legend>
 							<select name="<%= opts.funcPrefix %>_theme_activation_options[change_permalink_structure]" id="change_permalink_structure">
-								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.funcPrefix %>'); ?></option>
-								<option value="false"><?php echo _e('No', '<%= opts.funcPrefix %>'); ?></option>
+								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.projectSlug %>'); ?></option>
+								<option value="false"><?php echo _e('No', '<%= opts.projectSlug %>'); ?></option>
 							</select>
-							<p class="description"><?php printf(__('Change permalink structure to /&#37;postname&#37;/', '<%= opts.funcPrefix %>')); ?></p>
+							<p class="description"><?php printf(__('Change permalink structure to /&#37;postname&#37;/', '<%= opts.projectSlug %>')); ?></p>
 						</fieldset>
 					</td>
 				</tr>
-				<tr valign="top"><th scope="row"><?php _e('Create navigation menu?', '<%= opts.funcPrefix %>'); ?></th>
+				<tr valign="top"><th scope="row"><?php _e('Create navigation menu?', '<%= opts.projectSlug %>'); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><span><?php _e('Create navigation menu?', '<%= opts.funcPrefix %>'); ?></span></legend>
+							<legend class="screen-reader-text"><span><?php _e('Create navigation menu?', '<%= opts.projectSlug %>'); ?></span></legend>
 							<select name="<%= opts.funcPrefix %>_theme_activation_options[create_navigation_menus]" id="create_navigation_menus">
-								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.funcPrefix %>'); ?></option>
-								<option value="false"><?php echo _e('No', '<%= opts.funcPrefix %>'); ?></option>
+								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.projectSlug %>'); ?></option>
+								<option value="false"><?php echo _e('No', '<%= opts.projectSlug %>'); ?></option>
 							</select>
-							<p class="description"><?php printf(__('Create the Primary Navigation menu and set the location', '<%= opts.funcPrefix %>')); ?></p>
+							<p class="description"><?php printf(__('Create the Primary Navigation menu and set the location', '<%= opts.projectSlug %>')); ?></p>
 						</fieldset>
 					</td>
 				</tr>
-				<tr valign="top"><th scope="row"><?php _e('Add pages to menu?', '<%= opts.funcPrefix %>'); ?></th>
+				<tr valign="top"><th scope="row"><?php _e('Add pages to menu?', '<%= opts.projectSlug %>'); ?></th>
 					<td>
 						<fieldset>
-							<legend class="screen-reader-text"><span><?php _e('Add pages to menu?', '<%= opts.funcPrefix %>'); ?></span></legend>
+							<legend class="screen-reader-text"><span><?php _e('Add pages to menu?', '<%= opts.projectSlug %>'); ?></span></legend>
 							<select name="<%= opts.funcPrefix %>_theme_activation_options[add_pages_to_primary_navigation]" id="add_pages_to_primary_navigation">
-								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.funcPrefix %>'); ?></option>
-								<option value="false"><?php echo _e('No', '<%= opts.funcPrefix %>'); ?></option>
+								<option selected="selected" value="true"><?php echo _e('Yes', '<%= opts.projectSlug %>'); ?></option>
+								<option value="false"><?php echo _e('No', '<%= opts.projectSlug %>'); ?></option>
 							</select>
-							<p class="description"><?php printf(__('Add all current published pages to the Primary Navigation', '<%= opts.funcPrefix %>')); ?></p>
+							<p class="description"><?php printf(__('Add all current published pages to the Primary Navigation', '<%= opts.projectSlug %>')); ?></p>
 						</fieldset>
 					</td>
 				</tr>
@@ -124,7 +124,7 @@ function <%= opts.funcPrefix %>_theme_activation_action() {
 	if ($<%= opts.funcPrefix %>_theme_activation_options['create_style_guide'] === 'true') {
 		$<%= opts.funcPrefix %>_theme_activation_options['create_style_guide'] = false;
 
-		$default_pages = array(__('Style Guide', '<%= opts.funcPrefix %>'));
+		$default_pages = array(__('Style Guide', '<%= opts.projectSlug %>'));
 		$existing_pages = get_pages();
 		$temp = array();
 
@@ -375,7 +375,7 @@ http://youtu.be/OTRmyXX6ipU',
 			wp_insert_post($add_theme_page);
 		}
 
-		$guide = get_page_by_title(__('Style Guide', '<%= opts.funcPrefix %>'));
+		$guide = get_page_by_title(__('Style Guide', '<%= opts.projectSlug %>'));
 		update_option('show_on_front', 'page');
 		update_option('page_on_front', $guide->ID);
 
@@ -401,10 +401,10 @@ http://youtu.be/OTRmyXX6ipU',
 
 		$<%= opts.funcPrefix %>_nav_theme_mod = false;
 
-		$primary_nav = wp_get_nav_menu_object(__('Primary Navigation', '<%= opts.funcPrefix %>'));
+		$primary_nav = wp_get_nav_menu_object(__('Primary Navigation', '<%= opts.projectSlug %>'));
 
 		if (!$primary_nav) {
-			$primary_nav_id = wp_create_nav_menu(__('Primary Navigation', '<%= opts.funcPrefix %>'), array('slug' => 'primary_navigation'));
+			$primary_nav_id = wp_create_nav_menu(__('Primary Navigation', '<%= opts.projectSlug %>'), array('slug' => 'primary_navigation'));
 			$<%= opts.funcPrefix %>_nav_theme_mod['primary_navigation'] = $primary_nav_id;
 		} else {
 			$<%= opts.funcPrefix %>_nav_theme_mod['primary_navigation'] = $primary_nav->term_id;
@@ -418,7 +418,7 @@ http://youtu.be/OTRmyXX6ipU',
 	if ($<%= opts.funcPrefix %>_theme_activation_options['add_pages_to_primary_navigation'] === 'true') {
 		$<%= opts.funcPrefix %>_theme_activation_options['add_pages_to_primary_navigation'] = false;
 
-		$primary_nav = wp_get_nav_menu_object(__('Primary Navigation', '<%= opts.funcPrefix %>'));
+		$primary_nav = wp_get_nav_menu_object(__('Primary Navigation', '<%= opts.projectSlug %>'));
 		$primary_nav_term_id = (int) $primary_nav->term_id;
 		$menu_items= wp_get_nav_menu_items($primary_nav_term_id);
 

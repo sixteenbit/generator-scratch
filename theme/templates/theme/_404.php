@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '<%= opts.funcPrefix %>' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '<%= opts.projectSlug %>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
@@ -26,7 +26,7 @@ get_header(); ?>
 
 					<?php if ( <%= opts.funcPrefix %>_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', '<%= opts.funcPrefix %>' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', '<%= opts.projectSlug %>' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories( array(

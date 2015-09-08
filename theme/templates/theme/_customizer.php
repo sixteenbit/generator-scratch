@@ -11,7 +11,7 @@
 function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 
 	$wp_customize->add_section( '<%= opts.funcPrefix %>_advanced_settings' , array(
-	  'title'      => __('Advanced Settings','<%= opts.funcPrefix %>'),
+	  'title'      => __('Advanced Settings','<%= opts.projectSlug %>'),
 	  'priority'   => 120,
 	) );
 
@@ -34,8 +34,8 @@ function <%= opts.funcPrefix %>_register_theme_customizer($wp_customize) {
 		  'settings' => '<%= opts.funcPrefix %>_production',
 		  'section' => '<%= opts.funcPrefix %>_advanced_settings',
 		  'type' => 'checkbox',
-		  'label' => __('Production', '<%= opts.funcPrefix %>'),
-		  'description' => __('Use minified assets.', '<%= opts.funcPrefix %>'),
+		  'label' => __('Production', '<%= opts.projectSlug %>'),
+		  'description' => __('Use minified assets.', '<%= opts.projectSlug %>'),
 	  )
 	);
 } // end <%= opts.funcPrefix %>_register_theme_customizer

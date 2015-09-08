@@ -20,9 +20,9 @@ function <%= opts.funcPrefix %>_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on <%= opts.projectTitle %>, use a find and replace
-	 * to change '<%= opts.funcPrefix %>' to the name of your theme in all the template files.
+	 * to change '<%= opts.projectSlug %>' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( '<%= opts.funcPrefix %>', get_template_directory() . '/languages' );
+	load_theme_textdomain( '<%= opts.projectSlug %>', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ function <%= opts.funcPrefix %>_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', '<%= opts.funcPrefix %>' ),
-		'social' => esc_html__( 'Social Menu', '<%= opts.funcPrefix %>' )
+		'primary' => esc_html__( 'Primary Menu', '<%= opts.projectSlug %>' ),
+		'social' => esc_html__( 'Social Menu', '<%= opts.projectSlug %>' )
 	) );
 
 	/*
@@ -106,7 +106,7 @@ add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_content_width', 0 );
  */
 function <%= opts.funcPrefix %>_widgets_init() {
 	register_sidebar(array(
-	  'name' => esc_html__('Sidebar', '<%= opts.funcPrefix %>'),
+	  'name' => esc_html__('Sidebar', '<%= opts.projectSlug %>'),
 	  'id' => 'sidebar-1',
 	  'description' => 'Add widgets here to appear in your sidebar.',
 	  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -129,12 +129,12 @@ function <%= opts.funcPrefix %>_fonts_url() {
   $subsets   = 'latin,latin-ext';
 
   /* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', '<%= opts.funcPrefix %>' ) ) {
+  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', '<%= opts.projectSlug %>' ) ) {
     $fonts[] = 'Open Sans:400,300,400italic,600,700,800';
   }
 
   /* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
-  $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', '<%= opts.funcPrefix %>' );
+  $subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', '<%= opts.projectSlug %>' );
   if ( 'cyrillic' == $subset ) {
     $subsets .= ',cyrillic,cyrillic-ext';
   } elseif ( 'greek' == $subset ) {

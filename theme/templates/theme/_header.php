@@ -23,7 +23,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '<%= opts.funcPrefix %>' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '<%= opts.projectSlug %>' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<% if ( opts.sass ) { %><nav id="site-navigation" class="main-navigation top-bar" data-topbar role="navigation">
@@ -36,7 +36,7 @@
 	      <?php endif; ?>
 	      </li>
 				<li class="toggle-topbar toggle-icon">
-					<a href="#"><span><?php echo esc_html( 'Menu' , '<%= opts.funcPrefix %>' ); ?></span></a>
+					<a href="#"><span><?php echo esc_html( 'Menu' , '<%= opts.projectSlug %>' ); ?></span></a>
 				</li>
 	    </ul><!-- .title-area -->
 
@@ -76,7 +76,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', '<%= opts.funcPrefix %>' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', '<%= opts.projectSlug %>' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation --><% } %>
 	</header><!-- #masthead -->
