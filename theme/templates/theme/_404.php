@@ -18,7 +18,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '<%= opts.funcPrefix %>' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '<%= opts.projectSlug %>' ); ?></p>
 
 					<?php get_search_form(); ?>
 
