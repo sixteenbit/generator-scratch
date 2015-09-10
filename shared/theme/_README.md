@@ -1,7 +1,5 @@
 # <%= opts.projectTitle %>
 
-## Getting Started
-
 ### What you'll need
 
 **[Node.js](https://nodejs.org/)**
@@ -18,13 +16,7 @@ $ brew cask install npm
 $ npm install -g bower
 ```
 
-**[Yeoman](http://yeoman.io/)**
-
-```
-$ npm install -g yo
-```
-
-### Core commands
+#### Core commands
 
 Compile Sass to CSS and minify
 ```
@@ -46,9 +38,21 @@ Copy theme to a versioned release directory and compresses to a zip
 $ grunt build
 ```
 
-### Useful commands
+#### Useful commands
 
 Checks if your NPM or Bower dependencies are out of date.
 ```
 $ grunt versioncheck
 ```
+
+## Sass Development
+
+Sass files are located in the `assets/css/sass` directory.
+
+All variables are located in `assets/css/sass/_settings.scss`.
+
+## Javascript Development
+
+`grunt js` concatenates all js files on ln 24 of `Gruntfile.js`.
+
+Initialize all js within `assets/js/src/init.js`.

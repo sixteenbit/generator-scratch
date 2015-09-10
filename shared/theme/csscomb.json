@@ -33,7 +33,6 @@
       "$include",
       "$import"
     ],
-
     [
       "display",
       "visibility",
@@ -50,14 +49,12 @@
       "flex-order",
       "flex-pack",
       "flex-align",
-
       "position",
       "z-index",
       "top",
       "right",
       "bottom",
       "left",
-
       "-webkit-box-sizing",
       "-moz-box-sizing",
       "box-sizing",
@@ -141,7 +138,6 @@
       "caption-side",
       "border-spacing",
       "border-collapse",
-
       "outline",
       "outline-width",
       "outline-style",
@@ -230,7 +226,6 @@
       "-webkit-hyphens",
       "-moz-hyphens",
       "hyphens",
-
       "list-style",
       "list-style-position",
       "list-style-type",
