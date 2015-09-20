@@ -19,6 +19,7 @@ function <%= opts.funcPrefix %>_switch_theme() {
 	unset( $_GET['activated'] );
 	add_action( 'admin_notices', '<%= opts.funcPrefix %>_upgrade_notice' );
 }
+
 add_action( 'after_switch_theme', '<%= opts.funcPrefix %>_switch_theme' );
 
 /**
@@ -40,6 +41,7 @@ function <%= opts.funcPrefix %>_customize() {
 		'back_link' => true,
 	) );
 }
+
 add_action( 'load-customize.php', '<%= opts.funcPrefix %>_customize' );
 
 /**
@@ -50,4 +52,5 @@ function <%= opts.funcPrefix %>_preview() {
 		wp_die( sprintf( esc_html__( '<%= opts.projectTitle %> requires at least WordPress version 4.2. You are running version %s. Please upgrade and try again.', '<%= opts.projectSlug %>' ), $GLOBALS['wp_version'] ) );
 	}
 }
+
 add_action( 'template_redirect', '<%= opts.funcPrefix %>_preview' );

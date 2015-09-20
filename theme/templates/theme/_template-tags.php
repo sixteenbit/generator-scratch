@@ -31,7 +31,7 @@ function <%= opts.funcPrefix %>_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', '<%= opts.projectSlug %>' ),
-		'<span class="author"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -65,7 +65,15 @@ function <%= opts.funcPrefix %>_entry_footer() {
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', '<%= opts.projectSlug %>' ), '<span class="edit-link">', '</span>' );
+	edit_post_link(
+		sprintf(
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', '<%= opts.projectSlug %>' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
 }
 endif;
 
@@ -112,34 +120,3 @@ function <%= opts.funcPrefix %>_category_transient_flusher() {
 }
 add_action( 'edit_category', '<%= opts.funcPrefix %>_category_transient_flusher' );
 add_action( 'save_post',     '<%= opts.funcPrefix %>_category_transient_flusher' );
-
-if ( ! function_exists( '<%= opts.funcPrefix %>_post_thumbnail' ) ) :
-/**
- * Display an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- *
- * @since <%= opts.projectTitle %> 0.1.0
- */
-function <%= opts.funcPrefix %>_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
-
-	if ( is_singular() ) :
-	?>
-
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
-
-	<?php else : ?>
-
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
-	</a>
-
-	<?php endif; // End is_singular()
-}
-endif;

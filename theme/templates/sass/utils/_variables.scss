@@ -1,0 +1,121 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Use these to define default font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// Useful colors
+$white: #fff;
+$ghost: #fafafa;
+$snow: #f9f9f9;
+$vapor: #f6f6f6;
+$white-smoke: #f5f5f5;
+$silver: #efefef;
+$smoke: #eee;
+$gainsboro: #ddd;
+$iron: #ccc;
+$base: #aaa;
+$aluminum: #999;
+$jumbo: #888;
+$monsoon: #777;
+$steel: #666;
+$charcoal: #555;
+$tuatara: #444;
+$oil: #333;
+$jet: #222;
+$black: #000;
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+// Body background color
+// @type Background Color
+$background-body: #fff !default;
+$background-body-screen: #f1f1f1 !default;
+
+/// Copy text color
+/// @type Color
+$text-color: $jet !default;
+$text-color-screen: #21759b !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #4cd8b0 !default;
+
+/// Light grey
+/// @type Color
+$light-grey: #ededed !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: $aluminum !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: $tuatara !default;
+
+/// Container's maximum width
+/// Below that is 100%
+/// @type Length
+$max-width: em(1200) !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+				'small': (min-width: em(320)),
+				'medium': (min-width: em(768)),
+				'large': (min-width: em(1024)),
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+// Use these to make sure border radius matches unless we want it different.
+$global-radius: rem(3);
+$global-rounded: rem(1000);
+
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Use these to control header font styles
+$header-font-family: $text-font-stack;
+$header-font-weight: $font-weight-normal;
+$header-font-style: normal;
+$header-font-color: $jet;
+$header-line-height: 1.4;
+$header-top-margin: 0.2rem;
+$header-bottom-margin: 0.5rem;
+$header-text-rendering: optimizeLegibility;
+
+// Use these to control header font sizes
+$h1-font-size: rem(44);
+$h2-font-size: rem(37);
+$h3-font-size: rem(27);
+$h4-font-size: rem(23);
+$h5-font-size: rem(18);
+$h6-font-size: 1rem;
+
+// A general <small> styling
+$small-font-size: 60%;
+
+// We use these to style paragraphs
+$paragraph-font-family: inherit;
+$paragraph-font-weight: $font-weight-normal;
+$paragraph-font-size: 1rem;
+$paragraph-line-height: 1.6;
+$paragraph-margin-bottom: rem(20);
+$paragraph-text-rendering: optimizeLegibility;

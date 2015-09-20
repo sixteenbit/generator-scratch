@@ -9,91 +9,107 @@
  * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
  *
- * <%= opts.projectTitle %>
- * <%= opts.projectHome %>
+ * Scratch
+ * https://github.com/mrdink/generator-scratch
  *
- * Copyright (c) <%= new Date().getFullYear() %> <%= opts.authorName %>
+ * Copyright (c) 2015 Justin Peacock
  * Licensed under the GPLv2+ license.
  * ======================================================================== */
 
-(function($) {
+(function ($) {
 
-  // Use this variable to set up the common and page specific functions. If you
-  // rename this variable, you will also need to rename the namespace below.
-  var <%= opts.funcPrefix.toUpperCase() %> = {
-    // All pages
-    common: {
-      init: function() {
-        // JavaScript to be fired on all pages
+    // Use this variable to set up the common and page specific functions. If you
+    // rename this variable, you will also need to rename the namespace below.
+    var <%= opts.funcPrefix.toUpperCase() %> = {
+        // All pages
+        common: {
+            init: function () {
+                // JavaScript to be fired on all pages
 
-        /**
-         * skip-link-focus-fix.js
-         *
-         * Helps with accessibility for keyboard only users.
-         *
-         * Learn more: https://github.com/Automattic/Scratch/pull/136
-         */
-        ( function() {
-        	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-        	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-        	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
+                // iPhone scaling bug fix by @mathias, @cheeaun and @jdalton
+                (function (doc) {
 
-        	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
-        		window.addEventListener( 'hashchange', function() {
-        			var id = location.hash.substring( 1 ),
-        				element;
+                    var addEvent = 'addEventListener',
+                        type = 'gesturestart',
+                        qsa = 'querySelectorAll',
+                        scales = [1, 1],
+                        meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
 
-        			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-        				return;
-        			}
+                    function fix() {
+                        meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+                        doc.removeEventListener(type, fix, true);
+                    }
 
-        			element = document.getElementById( id );
+                    if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+                        fix();
+                        scales = [0.25, 1.6];
+                        doc[addEvent](type, fix, true);
+                    }
 
-        			if ( element ) {
-        				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-        					element.tabIndex = -1;
-        				}
+                }(document));
 
-        				element.focus();
-        			}
-        		}, false );
-        	}
-        })();
+                /**
+                 * skip-link-focus-fix.js
+                 *
+                 * Helps with accessibility for keyboard only users.
+                 */
+                (function () {
+                    var is_webkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
+                        is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
+                        is_ie = navigator.userAgent.toLowerCase().indexOf('msie') > -1;
 
-        <% if ( opts.sass ) { %>// Foundation JavaScript
-        // Documentation can be found at: http://foundation.zurb.com/docs
-        $(document).foundation();<% } %>
+                    if (( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener) {
+                        window.addEventListener('hashchange', function () {
+                            var id = location.hash.substring(1),
+                                element;
 
-      }
-    },
-    // Home page
-    home: {
-      init: function() {
-        // JavaScript to be fired on the home page
+                            if (!( /^[A-z0-9_-]+$/.test(id) )) {
+                                return;
+                            }
 
-      }
-    }
-  };
+                            element = document.getElementById(id);
 
-  // The routing fires all common scripts, followed by the page specific scripts.
-  // Add additional events for more control over timing e.g. a finalize event
-  var UTIL = {
-    fire: function(func, funcname, args) {
-      var namespace = <%= opts.funcPrefix.toUpperCase() %>;
-      funcname = (funcname === undefined) ? 'init' : funcname;
-      if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
-        namespace[func][funcname](args);
-      }
-    },
-    loadEvents: function() {
-      UTIL.fire('common');
+                            if (element) {
+                                if (!( /^(?:a|select|input|button|textarea)$/i.test(element.tagName) )) {
+                                    element.tabIndex = -1;
+                                }
 
-      $.each(document.body.className.replace(/-/g, '_').split(/\s+/), function(i, classnm) {
-        UTIL.fire(classnm);
-      });
-    }
-  };
+                                element.focus();
+                            }
+                        }, false);
+                    }
+                })();
 
-  $(document).ready(UTIL.loadEvents);
+            }
+        },
+        // Home page
+        home: {
+            init: function () {
+                // JavaScript to be fired on the home page
+
+            }
+        }
+    };
+
+    // The routing fires all common scripts, followed by the page specific scripts.
+    // Add additional events for more control over timing e.g. a finalize event
+    var UTIL = {
+        fire: function (func, funcname, args) {
+            var namespace = <%= opts.funcPrefix.toUpperCase() %>;
+            funcname = (funcname === undefined) ? 'init' : funcname;
+            if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
+                namespace[func][funcname](args);
+            }
+        },
+        loadEvents: function () {
+            UTIL.fire('common');
+
+            $.each(document.body.className.replace(/-/g, '_').split(/\s+/), function (i, classnm) {
+                UTIL.fire(classnm);
+            });
+        }
+    };
+
+    $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.

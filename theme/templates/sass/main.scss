@@ -1,101 +1,42 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Foundation
-# Accessibility
-# Alignments
-# Clearings
-# Media
-    ## Galleries
-    ## Captions
-# Comments
-# Content
-# Widgets
-# Navigation
-# Layout
-    ## Header
-    ## Footer
-    ## Sidebar
-# Print
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
+@charset "UTF-8";
 
-////////////////////////////////////////////////////////////////
-// Bourbon Mixin Library
-////////////////////////////////////////////////////////////////
-@import "bourbon";
+// 1. Vendors
+@import
+	'../../../bower_components/bourbon/app/assets/stylesheets/bourbon',
+  'vendor/normalize';
 
-////////////////////////////////////////////////////////////////
-// Global Variables
-////////////////////////////////////////////////////////////////
-@import "settings";
+// 2. Configuration and helpers
+@import
+  'utils/variables',
+  'utils/functions',
+  'utils/mixins';
 
-////////////////////////////////////////////////////////////////
-// Custom Mixins
-////////////////////////////////////////////////////////////////
-@import "mixins";
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+	'base/lists',
+	'base/tables',
+  'base/helpers';
 
-/*--------------------------------------------------------------
-# Foundation
---------------------------------------------------------------*/
-@import "foundation-components";
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/content',
+  'layout/footer';
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-@import "modules/wpadminbar";
+// 5. Components
+@import
+  'components/accessibility',
+  'components/buttons',
+	'components/galleries',
+	'components/captions';
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
+// 6. Page-specific styles
+@import
+  'pages/home';
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
-@import "media/galleries";
-@import "media/captions";
-
-/*--------------------------------------------------------------
-# Comments
---------------------------------------------------------------*/
-@import "modules/comments";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "modules/content";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "modules/widgets";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/post";
-@import "navigation/social";
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@import "layout/header";
-@import "layout/footer";
-@import "layout/sidebar";
-
-/*--------------------------------------------------------------
-# Print
---------------------------------------------------------------*/
-@import "modules/print";
+// 7. Themes
+@import
+  'themes/default';

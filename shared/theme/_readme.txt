@@ -21,6 +21,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Frequently Asked Questions ==
 
+= Does this theme support any plugins? =
+
+Scratch includes support for Infinite Scroll in Jetpack.
+
 == Changelog ==
 
 

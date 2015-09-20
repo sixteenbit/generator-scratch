@@ -15,8 +15,8 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			&copy; <?php echo date( "Y" ); echo " "; bloginfo( 'name' ); ?>
-		</div>
+			<?php echo '&copy; ', date( "Y" ); echo " "; bloginfo( 'name' ); ?>
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
