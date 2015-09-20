@@ -22,7 +22,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 		 * If you're building a theme based on <%= opts.projectTitle %>, use a find and replace
 		 * to change '<%= opts.projectSlug %>' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( '<%= opts.projectSlug %>', SCRATCH_TEMPLATE_URL . '/languages' );
+		load_theme_textdomain( '<%= opts.projectSlug %>', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -121,9 +121,9 @@ add_action( 'widgets_init', '<%= opts.funcPrefix %>_widgets_init' );
  */
 function <%= opts.funcPrefix %>_scripts() {
 
-	wp_enqueue_style( 'scratch-main', SCRATCH_TEMPLATE_URL . '/assets/css/main.css', false, SCRATCH_VERSION, null);
+	wp_enqueue_style( 'scratch-main', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
 
-	wp_enqueue_script( 'scratch-scripts', SCRATCH_TEMPLATE_URL . '/assets/js/scripts.js', array( 'jquery' ), SCRATCH_VERSION, false );
+	wp_enqueue_script( 'scratch-scripts', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/scripts.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, false );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
