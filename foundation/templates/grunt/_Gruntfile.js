@@ -25,9 +25,9 @@ module.exports = function (grunt) {
             options: {
                 separator: ';',
                 stripBanners: true,
-                banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +
-                ' * <%= pkg.homepage %>\n' +
-                ' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
+                banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
+                ' * <%%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
                 ' * Licensed GPLv2+' +
                 ' */\n'
             },
@@ -80,9 +80,9 @@ module.exports = function (grunt) {
          */
         uglify: {
             options: {
-                banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +
-                ' * <%= pkg.homepage %>\n' +
-                ' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
+                banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
+                ' * <%%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
                 ' * Licensed GPLv2+' +
                 ' */\n',
                 mangle: {
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'nested'
+                    style: 'expanded'
                 },
                 files: {
                     'assets/css/main.css': 'assets/css/sass/main.scss',
@@ -165,7 +165,7 @@ module.exports = function (grunt) {
             prod: {
                 options: {
                     domainPath: '/languages/',
-                    potFilename: '<%= pkg.name %>.pot',
+                    potFilename: '<%%= pkg.name %>.pot',
                     type: 'wp-theme'
                 }
             }
@@ -240,7 +240,7 @@ module.exports = function (grunt) {
          * @link https://www.npmjs.com/package/grunt-contrib-clean
          */
         clean: {
-            main: ['release/<%= pkg.name %>']
+            main: ['release/<%%= pkg.name %>']
         },
         /**
          * grunt-contrib-copy
@@ -269,7 +269,7 @@ module.exports = function (grunt) {
                     '!Gruntfile.js',
                     '!package.json'
                 ],
-                dest: 'release/<%= pkg.name %>/'
+                dest: 'release/<%%= pkg.name %>/'
             }
         },
         /**
@@ -285,12 +285,12 @@ module.exports = function (grunt) {
             main: {
                 options: {
                     mode: 'zip',
-                    archive: './release/ <%=pkg.name %>.<%= pkg.version %>.zip'
+                    archive: './release/ <%%=pkg.name %>.<%%= pkg.version %>.zip'
                 },
                 expand: true,
-                cwd: 'release/<%= pkg.name %>/',
+                cwd: 'release/<%%= pkg.name %>/',
                 src: ['**/*'],
-                dest: '<%= pkg.name %>/'
+                dest: '<%%= pkg.name %>/'
             }
         },
         /**
