@@ -1,3 +1,10 @@
+/**
+ * 1.0 Normalize
+ *
+ * Normalizing styles have been helped along thanks to the fine work of
+ * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+ */
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -45,27 +52,17 @@ a {
 	background-color: transparent;
 }
 
-a:active,
-a:hover {
-	outline: 0;
-}
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
 	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 mark {
@@ -102,7 +99,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 0;
 }
 
 hr {
@@ -132,13 +129,20 @@ textarea {
 	margin: 0;
 }
 
+button,
+select {
+	text-transform: none;
+}
+
 button {
 	overflow: visible;
 }
 
 button,
-select {
-	text-transform: none;
+input,
+select,
+textarea {
+	max-width: 100%;
 }
 
 button,
@@ -152,6 +156,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
 	cursor: default;
+	opacity: .5;
 }
 
 button::-moz-focus-inner,
@@ -167,6 +172,7 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box;
+	margin-right: 0.4375em;
 	padding: 0;
 }
 
@@ -177,7 +183,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
 	-webkit-appearance: textfield;
-	box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -186,9 +191,13 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
+	border: 1px solid #e8e8e8;
+	margin: 0 0 1.75em;
+	padding: 0.875em;
+}
+
+fieldset > :last-child {
+	margin-bottom: 0;
 }
 
 legend {
@@ -198,6 +207,7 @@ legend {
 
 textarea {
 	overflow: auto;
+	vertical-align: top;
 }
 
 optgroup {

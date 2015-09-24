@@ -95,30 +95,29 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     },
 
     theme: function () {
-        this.template('theme/_style.css', 'style.css');
-        this.template('theme/_index.php', 'index.php');
-        this.template('theme/_archive.php', 'archive.php');
-        this.template('theme/_page.php', 'page.php');
-        this.template('theme/_single.php', 'single.php');
-        this.template('theme/_search.php', 'search.php');
         this.template('theme/_header.php', 'header.php');
-        this.template('theme/_footer.php', 'footer.php');
-        this.template('theme/_sidebar.php', 'sidebar.php');
         this.template('theme/_functions.php', 'functions.php');
-        this.template('theme/_404.php', '404.php');
-        this.template('theme/_comments.php', 'comments.php');
-        this.template('theme/_content.php', 'template-parts/content.php');
-        this.template('theme/_content-single.php', 'template-parts/content-single.php');
-        this.template('theme/_content-page.php', 'template-parts/content-page.php');
-        this.template('theme/_content-search.php', 'template-parts/content-search.php');
-        this.template('theme/_content-none.php', 'template-parts/content-none.php');
-        this.template('theme/_core.php', 'inc/core.php');
-        this.template('theme/_extras.php', 'inc/extras.php');
-        this.template('theme/_template-tags.php', 'inc/template-tags.php');
-        this.template('theme/_jetpack.php', 'inc/jetpack.php');
-        this.template('theme/_custom-header.php', 'inc/custom-header.php');
-        this.template('theme/_back-combat.php', 'inc/back-combat.php');
-        this.copy('theme/screenshot.png', 'screenshot.png');
+        this.template('../../shared/theme/_index.php', 'index.php');
+        this.template('../../shared/theme/_archive.php', 'archive.php');
+        this.template('../../shared/theme/_page.php', 'page.php');
+        this.template('../../shared/theme/_single.php', 'single.php');
+        this.template('../../shared/theme/_search.php', 'search.php');
+        this.template('../../shared/theme/_footer.php', 'footer.php');
+        this.template('../../shared/theme/_sidebar.php', 'sidebar.php');
+        this.template('../../shared/theme/_404.php', '404.php');
+        this.template('../../shared/theme/_comments.php', 'comments.php');
+        this.template('../../shared/theme/_content.php', 'template-parts/content.php');
+        this.template('../../shared/theme/_content-single.php', 'template-parts/content-single.php');
+        this.template('../../shared/theme/_content-page.php', 'template-parts/content-page.php');
+        this.template('../../shared/theme/_content-search.php', 'template-parts/content-search.php');
+        this.template('../../shared/theme/_content-none.php', 'template-parts/content-none.php');
+        this.template('../../shared/theme/_core.php', 'inc/core.php');
+        this.template('../../shared/theme/_extras.php', 'inc/extras.php');
+        this.template('../../shared/theme/_template-tags.php', 'inc/template-tags.php');
+        this.template('../../shared/theme/_jetpack.php', 'inc/jetpack.php');
+        this.template('../../shared/theme/_custom-header.php', 'inc/custom-header.php');
+        this.template('../../shared/theme/_back-combat.php', 'inc/back-combat.php');
+        this.copy('../../shared/theme/screenshot.png', 'screenshot.png');
         this.copy('../../shared/theme/_readme.txt', 'readme.txt');
         this.copy('../../shared/theme/icon.png', 'icon.png');
         this.copy('../../shared/theme/_README.md', 'README.md');
@@ -131,12 +130,13 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     },
 
     js: function () {
-        this.template('../../shared/js/_init.js', 'assets/js/src/init.js');
+        this.template('js/_init.js', 'assets/js/src/init.js');
         this.copy('../../shared/js/readme-vendor.md', 'assets/js/vendor/readme.md');
     },
 
     css: function () {
         this.directory('sass', 'assets/css/sass');
+        this.template('../../shared/css/_style.css', 'style.css');
         this.copy('../../shared/css/readme.md', 'assets/css/readme.md');
     },
 

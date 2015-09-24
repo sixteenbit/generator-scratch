@@ -1,9 +1,29 @@
 @charset "UTF-8";
+/**
+ * Table of Contents
+ *
+ * Normalize
+ * Base
+ * 		Fonts
+ *		Typography
+ *		Lists
+ *		Tables
+ * 		Helpers
+ * Layout
+ * 		Header
+ *		Content
+ *		Footer
+ * Components
+ *		Accessibility
+ *		Buttons
+ *		Galleries
+ *		Captions
+ */
 
 // 1. Vendors
 @import
 	'../../../bower_components/bourbon/app/assets/stylesheets/bourbon',
-  'vendor/normalize';
+	'vendor/normalize';
 
 // 2. Configuration and helpers
 @import
@@ -11,7 +31,7 @@
   'utils/functions',
   'utils/mixins';
 
-// 3. Base stuff
+// 3. Base
 @import
   'base/base',
   'base/fonts',

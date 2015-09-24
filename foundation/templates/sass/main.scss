@@ -1,101 +1,60 @@
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Foundation
-# Accessibility
-# Alignments
-# Clearings
-# Media
-    ## Galleries
-    ## Captions
-# Comments
-# Content
-# Widgets
-# Navigation
-# Layout
-    ## Header
-    ## Footer
-    ## Sidebar
-# Print
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
+@charset "UTF-8";
+/**
+ * Table of Contents
+ *
+ * Normalize
+ * Foundation
+ * Base
+ * 		Fonts
+ *		Typography
+ *		Lists
+ *		Tables
+ * 		Helpers
+ * Layout
+ * 		Header
+ *		Content
+ *		Footer
+ * Components
+ *		Accessibility
+ *		Buttons
+ *		Galleries
+ *		Captions
+ */
 
-////////////////////////////////////////////////////////////////
-// Bourbon Mixin Library
-////////////////////////////////////////////////////////////////
-@import "bourbon";
+// 1. Vendors
+@import
+	'../../../bower_components/bourbon/app/assets/stylesheets/bourbon',
+	'../../../bower_components/foundation/scss/normalize';
 
-////////////////////////////////////////////////////////////////
-// Global Variables
-////////////////////////////////////////////////////////////////
-@import "settings";
+// 2. Configuration and helpers
+@import
+'utils/variables',
+'utils/functions',
+'utils/mixins';
 
-////////////////////////////////////////////////////////////////
-// Custom Mixins
-////////////////////////////////////////////////////////////////
-@import "mixins";
+@import '../../../bower_components/foundation/scss/foundation';
 
-/*--------------------------------------------------------------
-# Foundation
---------------------------------------------------------------*/
-@import "foundation-components";
+// 3. Base
+@import
+  'base/fonts',
+  'base/helpers';
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-@import "modules/wpadminbar";
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/content',
+  'layout/footer';
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
+// 5. Components
+@import
+  'components/accessibility',
+	'components/galleries',
+	'components/captions';
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
+// 6. Page-specific styles
+@import
+  'pages/home';
 
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
-@import "media/galleries";
-@import "media/captions";
-
-/*--------------------------------------------------------------
-# Comments
---------------------------------------------------------------*/
-@import "modules/comments";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "modules/content";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "modules/widgets";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/post";
-@import "navigation/social";
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@import "layout/header";
-@import "layout/footer";
-@import "layout/sidebar";
-
-/*--------------------------------------------------------------
-# Print
---------------------------------------------------------------*/
-@import "modules/print";
+// 7. Themes
+@import
+  'themes/default';

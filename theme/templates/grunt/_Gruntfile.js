@@ -85,10 +85,11 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'nested'
+                    style: 'expanded'
                 },
                 files: {
-                    'assets/css/main.css': 'assets/css/sass/main.scss'
+                    'assets/css/main.css': 'assets/css/sass/main.scss',
+                    'assets/css/editor-style.css': 'assets/css/sass/editor-style.scss'
                 }
             }
         },
@@ -197,7 +198,7 @@ module.exports = function (grunt) {
          * @link https://www.npmjs.com/package/grunt-contrib-clean
          */
         clean: {
-            main: ['release/<%%= pkg.version %>']
+            main: ['release/<%%= pkg.name %>']
         },
         /**
          * grunt-contrib-copy
@@ -226,7 +227,7 @@ module.exports = function (grunt) {
                     '!Gruntfile.js',
                     '!package.json'
                 ],
-                dest: 'release/<%%= pkg.version %>/'
+                dest: 'release/<%%= pkg.name %>/'
             }
         },
         /**
@@ -245,7 +246,7 @@ module.exports = function (grunt) {
                     archive: './release/ <%%=pkg.name %>.<%%= pkg.version %>.zip'
                 },
                 expand: true,
-                cwd: 'release/<%%= pkg.version %>/',
+                cwd: 'release/<%%= pkg.name %>/',
                 src: ['**/*'],
                 dest: '<%%= pkg.name %>/'
             }

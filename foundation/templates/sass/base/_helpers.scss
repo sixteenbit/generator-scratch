@@ -1,24 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
-/**
- * Helpers
- */
-.clearfix::after {
-	clear: both;
-	content: '';
-	display: table;
-}
-
-.container {
-	max-width: $max-width;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 20px;
-	padding-right: 20px;
-	width: 100%;
-}
-
 .alignleft {
 	display: inline;
 	float: left;
@@ -36,20 +18,4 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.left {
-	float: left !important;
-}
-
-.right {
-	float: right !important;
-}
-
-.hide {
-	display: none;
-}
-
-.invisible {
-	visibility: hidden;
 }

@@ -1,6 +1,7 @@
 bower_components
 node_modules
 release
-vendor
 language
 .sass-cache
+.idea
+.DS_Store

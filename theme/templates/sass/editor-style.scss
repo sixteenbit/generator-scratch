@@ -2,7 +2,6 @@
 /**
  * Table of Contents
  *
- * Foundation
  * Base
  * 		Fonts
  *		Typography
@@ -20,20 +19,21 @@ $editor-width: 800px;
 
 // 1. Vendors
 @import
-'../../../bower_components/bourbon/app/assets/stylesheets/bourbon',
-'../../../bower_components/foundation/scss/normalize';
+'../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
 // 2. Configuration and helpers
 @import
-'utils/variables',
-'utils/functions',
-'utils/mixins';
-
-@import '../../../bower_components/foundation/scss/foundation';
+	'utils/variables',
+	'utils/functions',
+	'utils/mixins';
 
 // 3. Base
 @import
+	'base/base',
 	'base/fonts',
+	'base/typography',
+	'base/lists',
+	'base/tables',
 	'base/helpers';
 
 html,
@@ -56,5 +56,6 @@ img {
 // 4. Components
 @import
 	'components/accessibility',
+	'components/buttons',
 	'components/galleries',
 	'components/captions';

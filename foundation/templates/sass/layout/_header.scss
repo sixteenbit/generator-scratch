@@ -1,29 +1,6 @@
+/**
+ * Header
+ */
 .site-header {
-	.top-bar .name h1 a,
-	.top-bar .name h2 a,
-	.top-bar .name h3 a,
-	.top-bar .name h4 a,
-	.top-bar .name p a,
-	.top-bar .name span a {
-		width: auto;
-	}
-	.social-navigation {
-		@media #{$small-only} {
-			display: none;
-		}
-	}
-}
 
-.toggle-icon {
-	a:after {
-		@include fontawesome;
-
-		padding-left: rem-calc(5);
-		content: "\f067";
-	}
-	.expanded & {
-		a:after {
-			content: "\f00d";
-		}
-	}
 }

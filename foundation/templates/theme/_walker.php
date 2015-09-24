@@ -1,15 +1,15 @@
 <?php
-/**
-* Customize the menu output for use with Foundation
-*
-* @package <%= opts.projectTitle %>
-*/
 
+/**
+ * Customize the menu output for use with Foundation
+ *
+ * @package <%= opts.projectTitle %>
+ */
 class <%= opts.funcPrefix %>_topbar_walker extends Walker_Nav_Menu {
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
-		$element->has_children = !empty( $children_elements[$element->ID] );
-		$element->classes[] = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
-		$element->classes[] = ( $element->has_children ) ? 'has-dropdown' : '';
+	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+		$element->has_children = ! empty( $children_elements[ $element->ID ] );
+		$element->classes[]    = ( $element->current || $element->current_item_ancestor ) ? 'active' : '';
+		$element->classes[]    = ( $element->has_children ) ? 'has-dropdown' : '';
 
 		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 	}
@@ -20,12 +20,13 @@ class <%= opts.funcPrefix %>_topbar_walker extends Walker_Nav_Menu {
 
 		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 
-		if( in_array('label', $classes) ) {
+		if ( in_array( 'label', $classes ) ) {
 			$output .= '<li class="divider"></li>';
 			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
 		}
 		$output .= $item_html;
 	}
+
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= "\n<ul class=\"sub-menu dropdown\">\n";
 	}

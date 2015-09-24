@@ -67,6 +67,7 @@ $dark-grey: $tuatara !default;
 /// Below that is 100%
 /// @type Length
 $max-width: em(1200) !default;
+$column-gutter: 30px;
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
