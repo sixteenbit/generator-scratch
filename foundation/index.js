@@ -46,11 +46,11 @@ var ThemeGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'projectTitle',
             message: 'Theme name',
-            default: 'Scratch'
+            default: 'Scratch Foundation'
         }, {
             name: 'funcPrefix',
             message: 'PHP function prefix ( lowercase letters and underscores only )',
-            default: 'scratch'
+            default: 'scratch_foundation'
         }, {
             name: 'description',
             message: 'Description',

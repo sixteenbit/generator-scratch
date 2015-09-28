@@ -76,6 +76,28 @@ module.exports = function (grunt) {
             }
         },
         /**
+         * grunt-modernizr
+         *
+         * Build out a lean, mean Modernizr machine.
+         *
+         * @link https://www.npmjs.com/package/grunt-modernizr
+         */
+        modernizr: {
+            dist: {
+                // Path to save out the built file
+                "dest": 'assets/js/vendor/modernizr.js',
+                shiv: true,
+                parseFiles: true,
+                uglify: false,
+                files: {
+                    src: [
+                        ['assets/js/scripts.js'],
+                        ['assets/css/main.css']
+                    ]
+                }
+            }
+        },
+        /**
          * grunt-contrib-sass
          *
          * Compile Sass to CSS
@@ -319,7 +341,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('css', ['sass', 'cssjanus', 'notify:css']);
 
-    grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'notify:js']);
+    grunt.registerTask('js', ['jshint', 'concat', 'modernizr', 'uglify', 'notify:js']);
 
     grunt.registerTask('default', ['css', 'js', 'makepot', 'notify:default']);
 

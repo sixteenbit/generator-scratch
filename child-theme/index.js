@@ -49,11 +49,11 @@ var ChildThemeGenerator = yeoman.generators.Base.extend({
         }, {
             name: 'projectTitle',
             message: 'Theme name',
-            default: 'Scratch Child'
+            default: 'Scratch Child Theme'
         }, {
             name: 'funcPrefix',
             message: 'PHP function prefix ( lowercase letters and underscores only )',
-            default: 'scratch'
+            default: 'scratch_child_theme'
         }, {
             name: 'description',
             message: 'Description',
@@ -73,11 +73,6 @@ var ChildThemeGenerator = yeoman.generators.Base.extend({
         }, {
             name: 'authorUrl',
             message: 'Author URL'
-        }, {
-            type: 'confirm',
-            name: 'sass',
-            message: 'Use Foundation? (Sass Framework)',
-            default: true
         }];
         // gather initial settings
         this.prompt(prompts, function (props) {
@@ -91,35 +86,13 @@ var ChildThemeGenerator = yeoman.generators.Base.extend({
         }.bind(this));
     },
 
-    autoprefixer: function () {
-        // If we're running Sass, automatically use autoprefixer.
-        if (this.opts.sass) {
-            this.opts.autoprefixer = true;
-            return;
-        }
-
-        // See if we want to use it on it's own, but only if not using Sass.
-        var done = this.async();
-        this.prompt([{
-                type: 'confirm',
-                name: 'autoprefixer',
-                message: 'Use Autoprefixer?',
-                default: true
-            }],
-            function (props) {
-                this.opts.autoprefixer = props.autoprefixer;
-                done();
-            }.bind(this));
-    },
-
     theme: function () {
         this.copy('theme/_style.css', 'style.css');
+        this.copy('theme/_functions.php', 'functions.php');
         this.copy('theme/screenshot.png', 'screenshot.png');
         this.copy('../../shared/theme/icon.png', 'icon.png');
         this.copy('../../shared/theme/_readme.txt', 'readme.txt');
         this.copy('../../shared/theme/_README.md', 'README.md');
-        this.copy('../../shared/theme/editorconfig', '.editorconfig');
-        this.copy('../../shared/theme/csscomb.json', '.csscomb.json');
         this.copy('../../shared/theme/readme-includes.md', 'inc/readme.md');
     },
 
@@ -128,19 +101,8 @@ var ChildThemeGenerator = yeoman.generators.Base.extend({
         this.copy('../../shared/images/readme-sources.md', 'assets/img/src/readme.md');
     },
 
-    js: function () {
-        this.template('../../shared/js/_init.js', 'assets/js/src/init.js');
-        this.copy('../../shared/js/readme-vendor.md', 'assets/js/vendor/readme.md');
-    },
-
     css: function () {
-        if (this.opts.sass) {
-            this.directory('sass', 'assets/css/sass');
-        } else if (this.opts.autoprefixer) {
-            this.template('../../shared/css/_main.css', 'assets/css/src/main.css');
-        } else {
-            this.template('../../shared/css/_main.css', 'assets/css/main.css');
-        }
+        this.directory('sass', 'assets/css/sass');
         this.copy('../../shared/css/readme.md', 'assets/css/readme.md');
     },
 

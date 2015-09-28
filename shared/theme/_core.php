@@ -124,7 +124,12 @@ function <%= opts.funcPrefix %>_scripts() {
 
 	wp_enqueue_style( '<%= opts.projectSlug %>-main', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
 
-	wp_enqueue_script( '<%= opts.projectSlug %>-scripts', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/scripts.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, false );
+	if ( is_child_theme() ){
+		wp_enqueue_style( '<%= opts.projectSlug %>-child', <%= opts.funcPrefix.toUpperCase() %>_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
+	}
+
+	wp_enqueue_script( '<%= opts.projectSlug %>-modernizr', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/vendor/modernizr.js', array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION, false );
+	wp_enqueue_script( '<%= opts.projectSlug %>-scripts', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/scripts.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

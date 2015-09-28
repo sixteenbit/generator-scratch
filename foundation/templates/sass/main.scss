@@ -28,9 +28,9 @@
 
 // 2. Configuration and helpers
 @import
-'utils/variables',
-'utils/functions',
-'utils/mixins';
+	'utils/variables',
+	'utils/functions',
+	'utils/mixins';
 
 @import '../../../bower_components/foundation/scss/foundation';
 
@@ -48,6 +48,7 @@
 // 5. Components
 @import
   'components/accessibility',
+  'components/buttons',
 	'components/galleries',
 	'components/captions';
 

@@ -13,9 +13,8 @@
     "assets/img/src/*",
     "Gruntfile.js",
     "package.json"
-  ]<% if ( opts.sass ) { %>,
+  ],
   "dependencies": {
-    "foundation": "~5.5.2",
-    "bourbon": "~4.2.0"
-  }<% } %>
+    "bourbon": "~4.2.5"
+  }
 }

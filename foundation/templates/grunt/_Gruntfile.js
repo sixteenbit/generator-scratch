@@ -103,9 +103,9 @@ module.exports = function (grunt) {
          * @link https://www.npmjs.com/package/grunt-modernizr
          */
         modernizr: {
-            dev: {
-                devFile: 'bower_components/foundation/js/vendor/modernizr.js',
-                outputFile: 'assets/js/vendor/modernizr.js',
+            dist: {
+                // Path to save out the built file
+                "dest": 'assets/js/vendor/modernizr.js',
                 shiv: true,
                 parseFiles: true,
                 uglify: false,
