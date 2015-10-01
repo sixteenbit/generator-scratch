@@ -15,11 +15,11 @@
  *		Captions
  */
 
-$editor-width: 800px;
+$editor-width: 800px !default;
 
 // 1. Vendors
 @import
-'../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+	'bourbon';
 
 // 2. Configuration and helpers
 @import

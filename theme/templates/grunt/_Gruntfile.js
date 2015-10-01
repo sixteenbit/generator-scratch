@@ -107,6 +107,9 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
+                    loadPath: [
+                        'bower_components/bourbon/app/assets/stylesheets'
+                    ],
                     style: 'expanded'
                 },
                 files: {
