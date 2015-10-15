@@ -8,54 +8,40 @@
  *		Lists
  *		Tables
  * 		Helpers
+ * Layout
+ * 		Header
+ *		Content
+ *		Footer
  * Components
- *		Accessibility
  *		Buttons
  *		Galleries
  *		Captions
  */
-
-$editor-width: 800px !default;
-
-// 1. Vendors
-@import
-	'bourbon';
-
-// 2. Configuration and helpers
-@import
-	'utils/variables',
-	'utils/functions',
-	'utils/mixins';
-
-// 3. Base
-@import
-	'base/base',
-	'base/fonts',
-	'base/typography',
-	'base/lists',
-	'base/tables',
-	'base/helpers';
-
-html,
-body {
-	height: auto;
-}
-
-body {
-	max-width: $editor-width;
-	margin: $column-gutter;
-}
-
-img {
-	max-width: $editor-width;
-	height: auto;
-	border: 0;
-	vertical-align: middle;
-}
-
-// 4. Components
-@import
-	'components/accessibility',
-	'components/buttons',
-	'components/galleries',
-	'components/captions';
+// -----------------------------------------------------------------------------
+// Configuration and helpers
+// -----------------------------------------------------------------------------
+@import "bourbon";
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+// -----------------------------------------------------------------------------
+// Base
+// -----------------------------------------------------------------------------
+@import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/lists";
+@import "base/tables";
+@import "base/helpers";
+// -----------------------------------------------------------------------------
+// Layout-related sections
+// -----------------------------------------------------------------------------
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+// -----------------------------------------------------------------------------
+// Components
+// -----------------------------------------------------------------------------
+@import "components/buttons";
+@import "components/galleries";
+@import "components/captions";

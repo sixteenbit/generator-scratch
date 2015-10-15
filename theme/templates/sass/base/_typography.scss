@@ -9,25 +9,25 @@ textarea {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	color: $text-color;
-	font-family: $text-font-stack;
-	font-size: 1rem;
-	line-height: 1.5;
+	color: $body-text-color;
+	font-family: $body-font-family;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
 	cursor: auto;
 
 }
 
 body {
-	background: $background-body; /* Fallback for when there is no custom background color defined. */
+	background: $body-bg; /* Fallback for when there is no custom background color defined. */
 }
 
 a {
-	color: $brand-color;
-	text-decoration: none;
+	color: $anchor-font-color;
+	text-decoration: $anchor-text-decoration;
 	@include transition(all 0.3s ease-in-out);
 	@include on-event {
-		color: $text-color;
-		text-decoration: none;
+		color: $anchor-font-color-hover;
+		text-decoration: $anchor-text-decoration-hover;
 	}
 	img {
 		border: none;
@@ -66,40 +66,34 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1.5rem;
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 pre {
-	//background: $color__background-pre;
-	//font-family: $font__pre;
-	//@include font-size(0.9375);
-	//line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
+	margin-bottom: 1.6rem;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 1.6rem;
 }
 
 code,
 kbd,
 tt,
 var {
-	font-family: $code-font-stack;
+	font-family: $monospace;
 }
 
 abbr,
 acronym {
-	//border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
 }
 
 mark,
 ins {
-	//background: $color__background-ins;
 	text-decoration: none;
 }
 
@@ -116,7 +110,7 @@ h6 {
 	clear: both;
 	color: $header-font-color;
 	font-family: $header-font-family;
-	font-style: normal;
+	font-style: $header-font-style;
 	font-weight: $header-font-weight;
 	small {
 		font-size: $small-font-size;

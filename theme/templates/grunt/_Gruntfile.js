@@ -26,10 +26,10 @@ module.exports = function (grunt) {
                 separator: ';',
                 stripBanners: true,
                 banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
-                  ' * <%%= pkg.homepage %>\n' +
-                  ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
-                  ' * Licensed GPLv2+' +
-                  ' */\n'
+                ' * <%%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
+                ' * Licensed GPLv2+' +
+                ' */\n'
             },
             main: {
                 src: [
@@ -61,10 +61,10 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 banner: '/*! <%%= pkg.title %> - v<%%= pkg.version %>\n' +
-                  ' * <%%= pkg.homepage %>\n' +
-                  ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
-                  ' * Licensed GPLv2+' +
-                  ' */\n',
+                ' * <%%= pkg.homepage %>\n' +
+                ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
+                ' * Licensed GPLv2+' +
+                ' */\n',
                 mangle: {
                     except: ['jQuery']
                 }

@@ -2,11 +2,12 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-$editor-width: 800px;
+$editor-width: 800px !default;
 
 // Use these to define default font weights
 $font-weight-light: 300;
 $font-weight-normal: 400;
+$font-weight-medium: 500;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
@@ -31,55 +32,22 @@ $oil: #333;
 $jet: #222;
 $black: #000;
 
-/// Regular font family
-/// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$light-grey: #ededed !default;
+$mid-grey: $aluminum !default;
+$dark-grey: $tuatara !default;
 
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-// Body background color
-// @type Background Color
 $background-body: #fff !default;
 $background-body-screen: #f1f1f1 !default;
 
-/// Copy text color
-/// @type Color
 $text-color: $jet !default;
 $text-color-screen: #21759b !default;
 
-/// Main brand color
-/// @type Color
-$brand-color: #4cd8b0 !default;
+$primary-color: #4cd8b0 !default;
+$secondary-color: $light-grey !default;
 
-/// Light grey
-/// @type Color
-$light-grey: #ededed !default;
 
-/// Medium grey
-/// @type Color
-$mid-grey: $aluminum !default;
-
-/// Dark grey
-/// @type Color
-$dark-grey: $tuatara !default;
-
-/// Container's maximum width
-/// Below that is 100%
-/// @type Length
 $max-width: em(1200) !default;
 $column-gutter: 30px;
-
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-/// @see {mixin} respond-to
-$breakpoints: (
-				'small': (min-width: em(320)),
-				'medium': (min-width: em(768)),
-				'large': (min-width: em(1024)),
-) !default;
 
 /// Relative or absolute URL where all assets are served from
 /// @type String
@@ -94,8 +62,15 @@ $global-rounded: rem(1000);
 // Typography
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Use these to control body font styles
+$body-bg: $white;
+$body-text-color: $jet;
+$body-font-family: $helvetica;
+$body-font-size: 1rem;
+$body-line-height: 1.5;
+
 // Use these to control header font styles
-$header-font-family: $text-font-stack;
+$header-font-family: $helvetica;
 $header-font-weight: $font-weight-normal;
 $header-font-style: normal;
 $header-font-color: $jet;
@@ -115,10 +90,16 @@ $h6-font-size: 1rem;
 // A general <small> styling
 $small-font-size: 60%;
 
-// We use these to style paragraphs
+// Use these to style paragraphs
 $paragraph-font-family: inherit;
 $paragraph-font-weight: $font-weight-normal;
 $paragraph-font-size: 1rem;
 $paragraph-line-height: 1.6;
 $paragraph-margin-bottom: rem(20);
 $paragraph-text-rendering: optimizeLegibility;
+
+// Use these to style anchors
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: darken($anchor-font-color, 14%);

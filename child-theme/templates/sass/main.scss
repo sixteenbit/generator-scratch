@@ -5,11 +5,11 @@
  * Copyright (c) <%= new Date().getFullYear() %> <%= opts.authorName %>
  * Licensed under the GPLv2+ license.
  */
-
-// 1. Vendors
-@import
-	'../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
-
-// 2. Configuration and helpers
-@import
-	'utils/variables';
+// -----------------------------------------------------------------------------
+// Bourbon
+// -----------------------------------------------------------------------------
+@import "bourbon";
+// -----------------------------------------------------------------------------
+// Configuration and helpers
+// -----------------------------------------------------------------------------
+@import "utils/variables";
