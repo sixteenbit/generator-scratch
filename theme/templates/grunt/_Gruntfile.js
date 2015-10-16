@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         modernizr: {
             dist: {
                 // Path to save out the built file
-                "dest": 'assets/js/vendor/modernizr.js',
+                dest: 'assets/js/vendor/modernizr.js',
                 shiv: true,
                 parseFiles: true,
                 uglify: false,
