@@ -75,19 +75,19 @@
 
 html,
 body {
-	height: auto;
+    height: auto;
 }
 
 body {
-	max-width: $editor-width;
-	margin: $column-gutter;
+    max-width: $editor-width;
+    margin: $column-gutter;
 }
 
 img {
-	max-width: $editor-width;
-	height: auto;
-	border: 0;
-	vertical-align: middle;
+    max-width: $editor-width;
+    height: auto;
+    border: 0;
+    vertical-align: middle;
 }
 
 // -----------------------------------------------------------------------------

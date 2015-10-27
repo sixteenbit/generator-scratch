@@ -71,7 +71,8 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'assets/js/scripts.min.js': ['assets/js/scripts.js']
+                    'release/<%%= pkg.title %>/assets/js/scripts.js': ['release/<%%= pkg.title %>/assets/js/scripts.js'],
+                    'release/<%= pkg.title %>/assets/js/vendor/modernizr.js': ['release/<%= pkg.title %>/assets/js/vendor/modernizr.js']
                 }
             }
         },
@@ -116,6 +117,33 @@ module.exports = function (grunt) {
                     'assets/css/main.css': 'assets/css/sass/main.scss',
                     'assets/css/editor-style.css': 'assets/css/sass/editor-style.scss'
                 }
+            }
+        },
+        /**
+         * grunt-postcss
+         *
+         * Apply several post-processors to your CSS using PostCSS
+         *
+         * @link https://www.npmjs.com/package/grunt-postcss
+         */
+        postcss: {
+            dev: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes
+                    ]
+                },
+                src: 'assets/css/*.css'
+            },
+            build: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('cssnano')() // minify the result
+                    ]
+                },
+                src: 'release/<%= pkg.name %>/assets/css/*.css'
             }
         },
         /**
@@ -277,6 +305,30 @@ module.exports = function (grunt) {
             }
         },
         /**
+         * grunt-version
+         *
+         * Handle versioning of a project
+         *
+         * @link https://github.com/kswedberg/grunt-version
+         */
+        version: {
+            packages: {
+                src: ['package.json', 'bower.json']
+            },
+            php: {
+                options: {
+                    prefix: '\'<%= opts.funcPrefix.toUpperCase() %>_VERSION\', \''
+                },
+                src: ['functions.php']
+            },
+            style: {
+                options: {
+                    prefix: 'Version: '
+                },
+                src: ['style.css']
+            }
+        },
+        /**
          * grunt-version-check
          *
          * Checks if your NPM or Bower dependencies are out of date.
@@ -319,6 +371,12 @@ module.exports = function (grunt) {
                     message: 'All tasks have completed with no errors.'
                 }
             },
+            minify: {
+                options: {
+                    title: 'Grunt, grunt!',
+                    message: 'Assets have been minified.'
+                }
+            },
             build: {
                 options: {
                     title: 'Grunt, grunt!',
@@ -342,13 +400,15 @@ module.exports = function (grunt) {
     // Register tasks
     grunt.registerTask('sync', ['browserSync', 'watch']);
 
-    grunt.registerTask('css', ['sass', 'cssjanus', 'notify:css']);
+    grunt.registerTask('css', ['sass', 'postcss:dev', 'cssjanus', 'notify:css']);
 
-    grunt.registerTask('js', ['jshint', 'concat', 'modernizr', 'uglify', 'notify:js']);
+    grunt.registerTask('js', ['jshint', 'concat', 'modernizr', 'notify:js']);
+
+    grunt.registerTask('minify', ['postcss:build', 'uglify', 'notify:minify']);
 
     grunt.registerTask('default', ['css', 'js', 'makepot', 'notify:default']);
 
-    grunt.registerTask('build', ['default', 'clean', 'copy:main', 'compress', 'notify:build']);
+    grunt.registerTask('build', ['default', 'clean', 'copy:main', 'minify', 'compress', 'notify:build']);
 
     grunt.util.linefeed = '\n';
 };

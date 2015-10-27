@@ -45,11 +45,18 @@ Checks if your NPM or Bower dependencies are out of date.
 $ grunt versioncheck
 ```
 
+Bump the version of your theme.
+```
+$ grunt version::patch
+$ grunt version::minor
+$ grunt version::major
+```
+
 ## Sass Development
 
 Sass files are located in the `assets/css/sass` directory.
 
-All variables are located in `assets/css/sass/_settings.scss`.
+All variables are located in `assets/css/sass/_variables.scss`.
 
 ## Javascript Development
 

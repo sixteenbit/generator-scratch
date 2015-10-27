@@ -1,3 +1,6 @@
+/**
+ * Buttons
+ */
 input[type="submit"] {
-	@include button;
+	@extend .button;
 }

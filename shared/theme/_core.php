@@ -122,8 +122,10 @@ add_action( 'widgets_init', '<%= opts.funcPrefix %>_widgets_init' );
  */
 function <%= opts.funcPrefix %>_scripts() {
 
+	// Load our main stylesheet.
 	wp_enqueue_style( '<%= opts.projectSlug %>-main', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
 
+	// Load our main stylesheet if child theme.
 	if ( is_child_theme() ){
 		wp_enqueue_style( '<%= opts.projectSlug %>-child', <%= opts.funcPrefix.toUpperCase() %>_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
 	}
