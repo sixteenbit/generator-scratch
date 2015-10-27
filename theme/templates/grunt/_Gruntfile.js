@@ -71,8 +71,8 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'release/<%%= pkg.title %>/assets/js/scripts.js': ['release/<%%= pkg.title %>/assets/js/scripts.js'],
-                    'release/<%= pkg.title %>/assets/js/vendor/modernizr.js': ['release/<%= pkg.title %>/assets/js/vendor/modernizr.js']
+                    'release/<%%= pkg.name %>/assets/js/scripts.js': ['release/<%%= pkg.name %>/assets/js/scripts.js'],
+                    'release/<%%= pkg.name %>/assets/js/vendor/modernizr.js': ['release/<%%= pkg.name %>/assets/js/vendor/modernizr.js']
                 }
             }
         },
@@ -143,7 +143,7 @@ module.exports = function (grunt) {
                         require('cssnano')() // minify the result
                     ]
                 },
-                src: 'release/<%= pkg.name %>/assets/css/*.css'
+                src: 'release/<%%= pkg.name %>/assets/css/*.css'
             }
         },
         /**
