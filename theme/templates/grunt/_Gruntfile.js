@@ -71,8 +71,8 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'release/<%%= pkg.name %>/assets/js/scripts.js': ['release/<%%= pkg.name %>/assets/js/scripts.js'],
-                    'release/<%%= pkg.name %>/assets/js/vendor/modernizr.js': ['release/<%%= pkg.name %>/assets/js/vendor/modernizr.js']
+                    'release/<%%= pkg.title %>/assets/js/scripts.js': ['release/<%%= pkg.title %>/assets/js/scripts.js'],
+                    'release/<%%= pkg.title %>/assets/js/vendor/modernizr.js': ['release/<%%= pkg.title %>/assets/js/vendor/modernizr.js']
                 }
             }
         },
