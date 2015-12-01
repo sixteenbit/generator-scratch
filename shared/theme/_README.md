@@ -18,12 +18,12 @@ $ npm install -g bower
 
 #### Core commands
 
-Compile Sass to CSS and minify
+Compile Sass to CSS
 ```
 $ grunt css
 ```
 
-Concatenate scripts and minify
+Concatenate scripts
 ```
 $ grunt js
 ```
@@ -45,21 +45,12 @@ Checks if your NPM or Bower dependencies are out of date.
 $ grunt versioncheck
 ```
 
-Bump the version of your theme.
-```
-$ grunt version::patch
-$ grunt version::minor
-$ grunt version::major
-```
-
 ## Sass Development
 
 Sass files are located in the `assets/css/sass` directory.
 
-All variables are located in `assets/css/sass/_variables.scss`.
+All variables are located in `assets/css/sass/utils/_variables.scss`.
 
 ## Javascript Development
 
-`grunt js` concatenates all js files on ln 24 of `Gruntfile.js`.
-
-Initialize all js within `assets/js/src/init.js`.
+Initialize all js within `assets/js/src/_init.js`.

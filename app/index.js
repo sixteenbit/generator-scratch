@@ -12,7 +12,8 @@ var ScratchGenerator = yeoman.generators.Base.extend({
         this.log("Available Modules:");
         this.log(chalk.green("\tyo scratch:theme"));
         this.log(chalk.green("\tyo scratch:child-theme"));
-        this.log(chalk.green("\tyo scratch:foundation"));
+        this.log(chalk.green("\tyo scratch:f5"));
+        this.log(chalk.green("\tyo scratch:f6"));
     }
 });
 

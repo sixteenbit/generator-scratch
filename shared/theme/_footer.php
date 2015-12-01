@@ -14,8 +14,10 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php echo '&copy; ', date( "Y" ); echo " "; bloginfo( 'name' ); ?>
+		<div class="site-info container">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '<%= opts.projectSlug %>' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', '<%= opts.projectSlug %>' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', '<%= opts.projectSlug %>' ), '<%= opts.projectTitle %>', '<a href="https://sixteenbit.com/" rel="designer">Sixteenbit</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

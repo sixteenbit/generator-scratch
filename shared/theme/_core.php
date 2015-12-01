@@ -22,7 +22,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 		 * If you're building a theme based on <%= opts.projectTitle %>, use a find and replace
 		 * to change '<%= opts.projectSlug %>' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( '<%= opts.projectSlug %>', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/languages' );
+		load_theme_textdomain( '<%= opts.projectSlug %>', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', '<%= opts.projectSlug %>' ),
-			'social' => esc_html__( 'Social Menu', '<%= opts.projectSlug %>' )
+			'primary' => esc_html__( 'Primary', '<%= opts.projectSlug %>' ),
 		) );
 
 		/*
@@ -82,7 +81,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style( array( 'assets/css/editor-style.css' ) );
+		add_editor_style( array( 'assets/css/editor-style.css', <%= opts.funcPrefix %>_fonts_url() ) );
 	}
 endif; // <%= opts.funcPrefix %>_setup
 add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_setup' );
@@ -97,6 +96,7 @@ add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_setup' );
 function <%= opts.funcPrefix %>_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '<%= opts.funcPrefix %>_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_content_width', 0 );
 
 /**
@@ -115,26 +115,84 @@ function <%= opts.funcPrefix %>_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
+
 add_action( 'widgets_init', '<%= opts.funcPrefix %>_widgets_init' );
+
+if ( ! function_exists( '<%= opts.funcPrefix %>_fonts_url' ) ) :
+	/**
+	 * Register Google fonts for <%= opts.projectTitle %>.
+	 *
+	 * @return string Google fonts URL for the theme.
+	 */
+	function <%= opts.funcPrefix %>_fonts_url() {
+		$fonts_url = '';
+		$fonts     = array();
+		$subsets   = 'latin,latin-ext';
+
+		/*
+		 * Translators: If there are characters in your language that are not supported
+		 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
+		 */
+		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', '<%= opts.projectSlug %>' ) ) {
+			$fonts[] = 'Source Sans Pro:400,300,600,700,400italic';
+		}
+
+		/*
+		 * Translators: If there are characters in your language that are not supported
+		 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
+		 */
+		if ( 'off' !== _x( 'on', 'Source Code Pro font: on or off', '<%= opts.projectSlug %>' ) ) {
+			$fonts[] = 'Source Code Pro:400,700';
+		}
+
+		/*
+		 * Translators: To add an additional character subset specific to your language,
+		 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+		 */
+		$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', '<%= opts.projectSlug %>' );
+
+		if ( 'cyrillic' == $subset ) {
+			$subsets .= ',cyrillic,cyrillic-ext';
+		} elseif ( 'greek' == $subset ) {
+			$subsets .= ',greek,greek-ext';
+		} elseif ( 'devanagari' == $subset ) {
+			$subsets .= ',devanagari';
+		} elseif ( 'vietnamese' == $subset ) {
+			$subsets .= ',vietnamese';
+		}
+
+		if ( $fonts ) {
+			$fonts_url = add_query_arg( array(
+				'family' => urlencode( implode( '|', $fonts ) ),
+				'subset' => urlencode( $subsets ),
+			), 'https://fonts.googleapis.com/css' );
+		}
+
+		return $fonts_url;
+	}
+endif;
 
 /**
  * Enqueue scripts and styles.
  */
 function <%= opts.funcPrefix %>_scripts() {
 
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( '<%= opts.projectSlug %>-fonts', <%= opts.funcPrefix %>_fonts_url(), array(), null );
+
 	// Load our main stylesheet.
-	wp_enqueue_style( '<%= opts.projectSlug %>-main', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
+	wp_enqueue_style( '<%= opts.projectSlug %>-app', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/css/app.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null );
 
 	// Load our main stylesheet if child theme.
-	if ( is_child_theme() ){
-		wp_enqueue_style( '<%= opts.projectSlug %>-child', <%= opts.funcPrefix.toUpperCase() %>_URL . '/assets/css/main.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null);
+	if ( is_child_theme() ) {
+		wp_enqueue_style( '<%= opts.projectSlug %>-child', <%= opts.funcPrefix.toUpperCase() %>_URL . '/assets/css/app.css', false, <%= opts.funcPrefix.toUpperCase() %>_VERSION, null );
 	}
 
-	wp_enqueue_script( '<%= opts.projectSlug %>-modernizr', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/vendor/modernizr.js', array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION, false );
 	wp_enqueue_script( '<%= opts.projectSlug %>-scripts', <%= opts.funcPrefix.toUpperCase() %>_TEMPLATE_URL . '/assets/js/scripts.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', '<%= opts.funcPrefix %>_scripts' );
