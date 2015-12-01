@@ -46,7 +46,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'projectTitle',
             message: 'Theme name',
-            default: 'Foundation 6 from Scratch'
+            default: 'Foundation Theme from Scratch'
         }, {
             name: 'funcPrefix',
             message: 'PHP function prefix ( lowercase letters and underscores only )',

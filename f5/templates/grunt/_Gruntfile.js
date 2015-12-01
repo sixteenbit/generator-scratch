@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                     'bower_components/foundation/js/foundation/foundation.tab.js',
                     'bower_components/foundation/js/foundation/foundation.tooltip.js',
                     'bower_components/foundation/js/foundation/foundation.topbar.js',
-                    'assets/js/src/init.js'
+                    'assets/js/src/_init.js'
                 ],
                 dest: 'assets/js/scripts.js'
             }
@@ -91,8 +91,8 @@ module.exports = function (grunt) {
             },
             all: {
                 files: {
-                    'release/<%%= pkg.title %>/assets/js/scripts.js': ['release/<%%= pkg.title %>/assets/js/scripts.js'],
-                    'release/<%%= pkg.title %>/assets/js/vendor/modernizr.js': ['release/<%%= pkg.title %>/assets/js/vendor/modernizr.js']
+                    'release/<%%= pkg.name %>/assets/js/scripts.js': ['release/<%%= pkg.name %>/assets/js/scripts.js'],
+                    'release/<%%= pkg.name %>/assets/js/vendor/modernizr.js': ['release/<%%= pkg.name %>/assets/js/vendor/modernizr.js']
                 }
             }
         },

@@ -46,11 +46,11 @@ var ThemeGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'projectTitle',
             message: 'Theme name',
-            default: 'Scratch Foundation'
+            default: 'Foundation Theme from Scratch'
         }, {
             name: 'funcPrefix',
             message: 'PHP function prefix ( lowercase letters and underscores only )',
-            default: 'scratch_foundation'
+            default: 'scratch'
         }, {
             name: 'description',
             message: 'Description',
@@ -120,7 +120,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     },
 
     js: function () {
-        this.template('js/_init.js', 'assets/js/src/init.js');
+        this.template('js/_init.js', 'assets/js/src/_init.js');
         this.copy('../../shared/js/readme-vendor.md', 'assets/js/vendor/readme.md');
     },
 

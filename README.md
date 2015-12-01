@@ -35,6 +35,15 @@ For each project type you get:
 - NPM to manage development dependencies (like Grunt)
 - Grunt to streamline development
 
+### Foundation Support
+
+Choose from using Foundation 5 or 6 using the following.
+
+```
+$ yo scratch:f5
+$ yo scratch:f6
+```
+
 ### Theme
 
 This subgenerator scaffolds out a standard WordPress theme.
