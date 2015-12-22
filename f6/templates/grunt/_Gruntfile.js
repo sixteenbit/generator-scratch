@@ -34,6 +34,7 @@ module.exports = function (grunt) {
             main: {
                 src: [
                     'bower_components/what-input/what-input.js',
+                    'bower_components/motion-ui/motion-ui.js',
                     'bower_components/foundation-sites/js/foundation.core.js',
                     'bower_components/foundation-sites/js/foundation.util.*.js',
                     // Paths to individual JS components defined below
@@ -112,8 +113,10 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 options: {
+                    sourceMap: true,
                     includePaths: [
-                        'bower_components/foundation-sites/scss'
+                        'bower_components/foundation-sites/scss',
+                        'bower_components/motion-ui'
                     ],
                     outputStyle: 'expanded'
                 },
