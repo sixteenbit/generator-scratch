@@ -83,19 +83,19 @@ module.exports = function (grunt) {
             }
         },
         /**
-         * grunt-contrib-sass
+         * grunt-sass
          *
-         * Compile Sass to CSS
+         * Compile Sass to CSS using node-sass
          *
-         * @link https://www.npmjs.com/package/grunt-contrib-sass
+         * @link https://www.npmjs.com/package/grunt-sass
          */
         sass: {
             dist: {
                 options: {
-                    loadPath: [
+                    includePaths: [
                         'bower_components/foundation-sites/scss'
                     ],
-                    style: 'expanded'
+                    outputStyle: 'expanded'
                 },
                 files: {
                     'assets/css/app.css': 'assets/css/sass/app.scss',
@@ -292,7 +292,7 @@ module.exports = function (grunt) {
             main: {
                 options: {
                     mode: 'zip',
-                    archive: './release/ <%%=pkg.name %>.<%%= pkg.version %>.zip'
+                    archive: './release/<%%=pkg.name %>.<%%= pkg.version %>.zip'
                 },
                 expand: true,
                 cwd: 'release/<%%= pkg.name %>/',
