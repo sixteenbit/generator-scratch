@@ -35,6 +35,7 @@ module.exports = function (grunt) {
                 src: [
                     'bower_components/what-input/what-input.js',
                     'bower_components/motion-ui/motion-ui.js',
+                    'bower_components/headroom.js/dist/headroom.js',
                     'bower_components/foundation-sites/js/foundation.core.js',
                     'bower_components/foundation-sites/js/foundation.util.*.js',
                     // Paths to individual JS components defined below
@@ -122,7 +123,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'assets/css/app.css': 'assets/css/sass/app.scss',
-                    'assets/css/editor-style.css': 'assets/css/sass/editor-style.scss'
+                    'assets/css/editor-style.css': 'assets/css/sass/editor-style.scss',
+                    'assets/css/font-awesome.css': 'bower_components/font-awesome/scss/font-awesome.scss'
                 }
             }
         },
@@ -157,7 +159,7 @@ module.exports = function (grunt) {
             },
             build: {
                 options: {
-                    map: true,
+                    map: false,
                     processors: [
                         require('cssnano')() // minify the result
                     ]
@@ -293,6 +295,7 @@ module.exports = function (grunt) {
                     '!release/**',
                     '!assets/css/sass/**',
                     '!assets/css/src/**',
+                    '!assets/css/*.map',
                     '!assets/js/src/**',
                     '!assets/img/src/**',
                     '!bower.json',
@@ -300,6 +303,13 @@ module.exports = function (grunt) {
                     '!package.json'
                 ],
                 dest: 'release/<%%= pkg.name %>/'
+            },
+            fontawesome: {
+                expand: true,
+                flatten: true,
+                filter: 'isFile',
+                src: ['bower_components/font-awesome/fonts/**'],
+                dest: 'assets/fonts/'
             }
         },
         /**
@@ -401,7 +411,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('minify', ['postcss:build', 'uglify', 'notify:minify']);
 
-    grunt.registerTask('default', ['css', 'js', 'makepot', 'notify:default']);
+    grunt.registerTask('copy:fontawesome', 'default', ['css', 'js', 'makepot', 'notify:default']);
 
     grunt.registerTask('build', ['default', 'clean', 'copy:main', 'minify', 'compress', 'notify:build']);
 
