@@ -130,6 +130,7 @@ var ThemeGenerator = yeoman.generators.Base.extend({
     },
 
     grunt: function () {
+        this.directory('grunt/grunt', 'grunt');
         this.template('grunt/_package.json', 'package.json');
         this.template('grunt/_Gruntfile.js', 'Gruntfile.js');
         this.copy('../../shared/grunt/_jshintrc', '.jshintrc');

@@ -17,6 +17,8 @@
     "package.json"
   ],
   "dependencies": {
-    "foundation-sites": "~6.0.5"
+    "foundation-sites": "~6.1.1",
+    "motion-ui": "~1.1.1",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }
