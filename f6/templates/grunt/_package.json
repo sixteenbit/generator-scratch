@@ -39,6 +39,7 @@
     "time-grunt": "latest",
     "versioncheck": "latest",
     "load-grunt-config": "latest",
-    "grunt-contrib-imagemin": "latest"
+    "grunt-contrib-imagemin": "latest",
+    "grunt-phpcs": "latest",
   }
 }
