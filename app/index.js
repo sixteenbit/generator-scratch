@@ -108,6 +108,8 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
     this.template( 'theme/search.php', 'search.php' );
     this.template( 'theme/sidebar.php', 'sidebar.php' );
     this.template( 'theme/single.php', 'single.php' );
+    this.copy( 'theme/.editorconfig', '.editorconfig' );
+    this.copy( 'theme/.scss-lint.yml', '.scss-lint.yml' );
     this.copy( 'theme/icon.png', 'icon.png' );
     this.copy( 'theme/README.md', 'README.md' );
     this.copy( 'theme/readme.txt', 'readme.txt' );

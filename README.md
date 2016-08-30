@@ -1,6 +1,6 @@
 # Scratch
 
-Scratch is a [Yeoman generator](http://yeoman.io) that builds a WordPress theme based on _s and Foundation.
+Hi. I'm a starter theme generator called <code>Scratch</code> based on <code>_s</code> and <code>Foundation</code>. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 ## Getting Started
 

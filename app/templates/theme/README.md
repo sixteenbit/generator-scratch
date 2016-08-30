@@ -21,7 +21,7 @@ Then run `grunt` to build the project.
 
 ## Browsersync
 
-Run `grunt server` to sync your browsers as well as watch for chnages in files.
+Run `grunt server` to sync your browsers as well as watch for changes in files.
 
 ## Production
 
