@@ -23,21 +23,11 @@ Finally, in the desired project directory, initiate the generator:
 $ yo scratch
 ```
 
-## Project Types
-
-Scratch ships with two default project types, each invoked with a subgenerator.
-
-For each project type you get:
+## Theme details
 
 - Bower to manage front-end dependencies
 - NPM to manage development dependencies (like Grunt)
 - Grunt to streamline development
-
-### Foundation Support
-
-```
-$ yo scratch
-```
 
 ## License
 
