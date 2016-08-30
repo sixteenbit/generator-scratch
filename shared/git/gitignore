@@ -1,7 +1,0 @@
-bower_components
-node_modules
-release
-language
-.sass-cache
-.idea
-.DS_Store
