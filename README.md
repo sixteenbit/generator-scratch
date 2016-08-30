@@ -1,6 +1,6 @@
 # Scratch
 
-Scratch is a [Yeoman generator](http://yeoman.io) for quickly creating new WordPress projects.
+Scratch is a [Yeoman generator](http://yeoman.io) that builds a WordPress theme based on _s and Foundation.
 
 ## Getting Started
 
@@ -42,7 +42,3 @@ $ yo scratch
 ## License
 
 MIT
-
-## Credit
-
-glass by juan manjarrez from the Noun Project
