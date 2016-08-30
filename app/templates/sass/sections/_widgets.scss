@@ -1,0 +1,51 @@
+.widget {
+  margin: 0 0 $global-margin;
+
+  /*! Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
+}
+
+/*! Recent Posts Widget */
+.widget_recent_entries {
+  .post-date {
+    display: block;
+  }
+}
+
+/*! RSS Widget */
+.rsswidget {
+  img {
+    margin-top: -4px;
+  }
+}
+
+.rssSummary {
+  margin: rem-calc(9 0);
+}
+
+.rss-date {
+  display: block;
+}
+
+.widget_rss {
+  li {
+    margin-bottom: $global-margin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*! Text Widget */
+.textwidget {
+
+}
+
+.widget_text {
+  & > div > :last-child {
+    margin-bottom: 0;
+  }
+}

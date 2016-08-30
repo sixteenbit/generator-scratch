@@ -1,0 +1,18 @@
+.alignleft {
+  display: inline;
+  float: left;
+  margin: rem-calc(4 24 24 0);
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin: rem-calc(4 0 24 24);
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto rem-calc(24);
+}
+

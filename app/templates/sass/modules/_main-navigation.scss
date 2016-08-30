@@ -1,0 +1,26 @@
+/*!-------------------------------------------------------------
+## Main Navigation
+--------------------------------------------------------------*/
+.main-navigation {
+  position: relative;
+
+  & > .top-bar-right,
+  & > .top-bar-left {
+    & > .menu {
+      @include menu-direction(vertical);
+
+      @include breakpoint(medium up) {
+        @include menu-direction(horizontal);
+      }
+    }
+  }
+
+  .menu > li > a {
+    font-weight: $global-weight-bold;
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+}
