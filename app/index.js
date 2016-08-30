@@ -18,7 +18,7 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
         },
         installers = ['npm', 'bower'];
 
-      this.log( chalk.green.bold( 'Your theme has been generated.' ) );
+      this.log( chalk.green.bold( 'Your theme has been generated. Run grunt setup before running initial build.' ) );
 
       for ( i = 0, length = installers.length; i < length; i ++ ) {
         if ( this.options['skip-install'] || this.options['skip-' + installers[i]] ) {
