@@ -1,34 +1,86 @@
 # Scratch
 
-Hi. I'm a starter theme generator called <code>Scratch</code> based on <code>_s</code> and <code>Foundation</code>. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## About
 
-## Getting Started
+Scratch is a starter theme generator based on <code>_s</code> and <code>Foundation</code>. It's a theme meant for hacking so don't use it as a <em>Parent Theme</em>. Instead try turning it into the next, most awesome, WordPress theme out there.
 
-If you need it, install Yeoman through npm:
+## Setup
 
-```
-$ npm install -g yo
-```
+Install the package on your machine using:
 
-To install generator-scratch clone this repository, enter the directory, and link it to npm:
+    npm install generator-scratch
 
-```
-$ git clone git@github.com:sixteenbit/generator-scratch.git && cd generator-scratch
-$ npm link
-```
+Lot's of code will happen. This may take a few minutes. Go make a beverage! When it's done you can use the generator like so... Navigate to your development WordPress theme folder [change path as needed]:
 
-Finally, in the desired project directory, initiate the generator:
+    cd ~/Sites/Development/Wordpress/wp-content/themes
 
-```
-$ yo scratch
-```
+Run the generator
 
-## Theme details
+    yo scratch
 
-- Bower to manage front-end dependencies
-- NPM to manage development dependencies (like Grunt)
-- Grunt to streamline development
+You will be prompted with a few basic questions to help the setup get started. Once you get past the description question you will again see lots of code. That's grunt and bower doing their thing. It's also time to drink your beverage!
 
-## License
+Navigate to your new theme:
 
-MIT
+    cd newtheme
+    
+In the root of your theme, run the following:
+
+`npm i && bower i`
+
+Then run `grunt` to build the project.
+
+
+## Development
+
+In your wp-content/themes folder you will now have a folder with the name of your theme which is setup with the basics to get a theme off the ground quickly. In the root of your newly created theme you'll have the following grunt tasks you can run:
+
+    grunt setup # copies foundation dev files from bower to dev directory
+    grunt # runs the default task that builds the assets
+    grunt server # initiates Browsersync and watches files for changes
+
+## Production
+
+When you're done and ready to go live you'll need to minify your js and whatnot. You can do this by using:
+
+    grunt build
+    
+This will minify all your assets and copy the theme to a dist/ directory then compresses to a .zip.
+
+### Theme structure
+
+/assets/sass/ - Development Sass files that is compiled into assets/css/main.css.
+/assets/js/src/ - Development js that is concatenated to /assets/js/.
+
+style.css - names and sets up your theme as far as WordPress is concerned.
+functions.php - your theme functions
+*.php your theme files
+
+    themename
+    |
+    |-assets
+    | |-css
+    | |-img
+    | |-js
+    | |-sass
+    |   |-layout
+    |   |-mixins
+    |   |-modules
+    |   |-sections
+    |   |-shared
+    |   |-variables
+    |
+    |-components
+    | |-header
+    | |-navigation
+    | |-page
+    | |-post
+    |
+    |-grunt
+    |
+    |-inc
+    |
+    |-languages
+    |
+    |*.php
+    |style.css
