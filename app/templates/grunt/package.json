@@ -15,10 +15,10 @@
     "url": "<%= opts.authorUrl %>"
   },
   "dependencies": {
-    "autoprefixer": "latest",
-    "cssnano": "latest",
     "load-grunt-config": "latest",
     "load-grunt-tasks": "latest",
+    "autoprefixer": "latest",
+    "cssnano": "latest",
     "node-sass": "latest",
     "pixrem": "latest",
     "time-grunt": "latest"
@@ -31,15 +31,11 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-cssjanus": "latest",
     "grunt-notify": "latest",
     "grunt-postcss": "latest",
     "grunt-sass": "latest",
-    "grunt-version": "latest",
-    "grunt-version-check": "latest",
-    "grunt-webfont": "latest",
     "grunt-wp-i18n": "latest"
   }
 }

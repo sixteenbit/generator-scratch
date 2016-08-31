@@ -28,12 +28,12 @@ module.exports = {
 		dest: 'dist/<%%= package.name %>/'
 	},
   foundation: {
-    expand: true,
+    filter: 'isFile',
     src: 'bower_components/foundation-sites/scss/foundation.scss',
     dest: 'assets/sass/_foundation.scss'
   },
   foundation_variables: {
-    expand: true,
+    filter: 'isFile',
     src: 'bower_components/foundation-sites/scss/settings/_settings.scss',
     dest: 'assets/sass/variables/_foundation.scss'
   }

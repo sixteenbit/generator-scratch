@@ -24,9 +24,8 @@ module.exports = {
 		'clean',
 		'default',
 		'postcss:build',
-		'uglify',
 		'copy:main',
-		'compress',
+    'compress',
 		'notify:build'
 	],
 	'server': [
