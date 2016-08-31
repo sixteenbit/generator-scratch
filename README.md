@@ -6,9 +6,17 @@ Scratch is a starter theme generator based on <code>_s</code> and <code>Foundati
 
 ## Setup
 
-Install the package on your machine using:
+#### Install Yeoman
 
-    npm install generator-scratch
+    npm install -g yo
+    
+#### Install Grunt.js
+
+    npm install -g grunt-cli
+
+#### Install generator-scratch
+
+    npm install -g generator-scratch
 
 Lot's of code will happen. This may take a few minutes. Go make a beverage! When it's done you can use the generator like so... Navigate to your development WordPress theme folder [change path as needed]:
 
@@ -41,7 +49,7 @@ In your wp-content/themes folder you will now have a folder with the name of you
 
 ## Production
 
-When you're done and ready to go live you'll need to minify your js and whatnot. You can do this by using:
+When you're done and ready to go live you'll need to minify your assets and whatnot. You can do this by using:
 
     grunt build
     
@@ -49,12 +57,12 @@ This will minify all your assets and copy the theme to a dist/ directory then co
 
 ### Theme structure
 
-/assets/sass/ - Development Sass files that is compiled into assets/css/main.css.
-/assets/js/src/ - Development js that is concatenated to /assets/js/.
-
-style.css - names and sets up your theme as far as WordPress is concerned.
+- /assets/sass/ - Development Sass files that is compiled into assets/css/main.css.
+- /assets/js/src/ - Development js that is concatenated to /assets/js/.
+- style.css - names and sets up your theme as far as WordPress is concerned.
 functions.php - your theme functions
-*.php your theme files
+- *.php your theme files
+
 
     themename
     |
