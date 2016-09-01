@@ -1,6 +1,6 @@
 {
   "name": "generator-scratch",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Starter theme based on _s and Foundation generator.",
   "license": "MIT",
   "main": "app/index.js",
@@ -25,6 +25,7 @@
     "app"
   ],
   "keywords": [
+    "yeoman-generator",
     "wordpress",
     "theme",
     "front-end",
