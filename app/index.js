@@ -8,10 +8,10 @@ var async = require( 'async' );
 
 var ThemeGenerator = yeoman.generators.Base.extend( {
   init: function () {
-    this.log( chalk.magenta( 'Lets build a theme from Scratch.' ) );
+    this.log( chalk.magenta( 'Lets build a theme from Scratch!' ) );
 
     this.on( 'end', function () {
-      this.log( chalk.green.bold( 'Your theme has been generated. Run grunt setup before running initial build.' ) );
+      this.log( chalk.green.bold( 'Your new theme has been generated.' ) );
     } );
   },
 
