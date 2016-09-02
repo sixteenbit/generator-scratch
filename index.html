@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>generator-scratch by sixteenbit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">generator-scratch</h1>
+      <h2 class="project-tagline">Scratch is a starter theme generator based on &lt;code&gt;_s&lt;/code&gt; and &lt;code&gt;Foundation&lt;/code&gt;. It&#39;s a theme meant for hacking so don&#39;t use it as a &lt;em&gt;Parent Theme&lt;/em&gt;. Instead try turning it into the next, most awesome, WordPress theme out there.</h2>
+      <a href="https://github.com/sixteenbit/generator-scratch" class="btn">View on GitHub</a>
+      <a href="https://github.com/sixteenbit/generator-scratch/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sixteenbit/generator-scratch/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
+
+<p>Scratch is a starter theme generator based on <code>_s</code> and <code>Foundation</code>. It's a theme meant for hacking so don't use it as a <em>Parent Theme</em>. Instead try turning it into the next, most awesome, WordPress theme out there.</p>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<h4>
+<a id="install-yeoman" class="anchor" href="#install-yeoman" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Yeoman</h4>
+
+<pre><code>npm install -g yo
+</code></pre>
+
+<h4>
+<a id="install-gruntjs" class="anchor" href="#install-gruntjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Grunt.js</h4>
+
+<pre><code>npm install -g grunt-cli
+</code></pre>
+
+<h4>
+<a id="install-bower" class="anchor" href="#install-bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Bower</h4>
+
+<pre><code>npm install -g bower
+</code></pre>
+
+<h4>
+<a id="install-generator-scratch" class="anchor" href="#install-generator-scratch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install generator-scratch</h4>
+
+<pre><code>npm install -g generator-scratch
+</code></pre>
+
+<p>Lot's of code will happen. This may take a few minutes. Go make a beverage! When it's done you can use the generator like so... Navigate to your development WordPress theme folder [change path as needed]:</p>
+
+<pre><code>cd ~/Sites/Development/Wordpress/wp-content/themes
+</code></pre>
+
+<p>Run the generator</p>
+
+<pre><code>yo scratch
+</code></pre>
+
+<p>You will be prompted with a few basic questions to help the setup get started. Once you get past the description question you will again see lots of code. That's grunt and bower doing their thing. It's also time to drink your beverage!</p>
+
+<p>Navigate to your new theme:</p>
+
+<pre><code>cd newtheme
+</code></pre>
+
+<p>In the root of your theme, run the following:</p>
+
+<p><code>npm i &amp;&amp; bower i</code></p>
+
+<p>Then run <code>grunt</code> to build the project.</p>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<p>In your wp-content/themes folder you will now have a folder with the name of your theme which is setup with the basics to get a theme off the ground quickly. In the root of your newly created theme you'll have the following grunt tasks you can run:</p>
+
+<p>Copies foundation dev files from bower to dev directory</p>
+
+<pre><code>grunt setup
+</code></pre>
+
+<p>Runs the default task that builds the assets</p>
+
+<pre><code>grunt
+</code></pre>
+
+<p>Initiates Browsersync and watches files for changes</p>
+
+<pre><code>grunt server
+</code></pre>
+
+<h2>
+<a id="production" class="anchor" href="#production" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Production</h2>
+
+<p>When you're done and ready to go live you'll need to minify your assets and whatnot. You can do this by using:</p>
+
+<pre><code>grunt build
+</code></pre>
+
+<p>This will minify all your assets and copy the theme to a dist/ directory then compresses to a .zip.</p>
+
+<h3>
+<a id="theme-structure" class="anchor" href="#theme-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Theme structure</h3>
+
+<ul>
+<li>/assets/sass/ - Development Sass files that is compiled into assets/css/main.css.</li>
+<li>/assets/js/src/ - Development js that is concatenated to /assets/js/.</li>
+<li>style.css - names and sets up your theme as far as WordPress is concerned.
+functions.php - your theme functions</li>
+<li>
+<p>*.php your theme files</p>
+
+<p>themename
+|
+|-assets
+| |-css
+| |-img
+| |-js
+| |-sass
+|   |-layout
+|   |-mixins
+|   |-modules
+|   |-sections
+|   |-shared
+|   |-variables
+|
+|-components
+| |-header
+| |-navigation
+| |-page
+| |-post
+|
+|-grunt
+|
+|-inc
+|
+|-languages
+|
+|*.php
+|style.css</p>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sixteenbit/generator-scratch">generator-scratch</a> is maintained by <a href="https://github.com/sixteenbit">sixteenbit</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
