@@ -1,6 +1,6 @@
 {
   "name": "generator-scratch",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Starter theme based on _s and Foundation generator.",
   "license": "MIT",
   "main": "app/index.js",

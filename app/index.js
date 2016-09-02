@@ -81,8 +81,8 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
     this.template( 'theme/search.php', this.fileSlug + '/search.php' );
     this.template( 'theme/sidebar.php', this.fileSlug + '/sidebar.php' );
     this.template( 'theme/single.php', this.fileSlug + '/single.php' );
-    this.copy( 'theme/.editorconfig', this.fileSlug + '/.editorconfig' );
-    this.copy( 'theme/.scss-lint.yml', this.fileSlug + '/.scss-lint.yml' );
+    this.copy( 'theme/_editorconfig', this.fileSlug + '/.editorconfig' );
+    this.copy( 'theme/_scss-lint.yml', this.fileSlug + '/.scss-lint.yml' );
     this.copy( 'theme/icon.png', this.fileSlug + '/icon.png' );
     this.copy( 'theme/README.md', this.fileSlug + '/README.md' );
     this.copy( 'theme/readme.txt', this.fileSlug + '/readme.txt' );
@@ -115,11 +115,11 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
 
   bower: function () {
     this.template( 'bower/bower.json', this.fileSlug + '/bower.json' );
-    this.copy( 'bower/.bowerrc', this.fileSlug + '/.bowerrc' );
+    this.copy( 'bower/_bowerrc', this.fileSlug + '/.bowerrc' );
   },
 
   git: function () {
-    this.copy( 'git/.gitignore', this.fileSlug + '/.gitignore' );
+    this.copy( 'git/_gitignore', this.fileSlug + '/.gitignore' );
   }
 } );
 
