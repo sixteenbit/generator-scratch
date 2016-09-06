@@ -75,32 +75,33 @@ This will minify all your assets and copy the theme to a dist/ directory then co
 functions.php - your theme functions
 - *.php your theme files
 
-
-    themename
-    |
-    |-assets
-    | |-css
-    | |-img
-    | |-js
-    | |-sass
-    |   |-layout
-    |   |-mixins
-    |   |-modules
-    |   |-sections
-    |   |-shared
-    |   |-variables
-    |
-    |-components
-    | |-header
-    | |-navigation
-    | |-page
-    | |-post
-    |
-    |-grunt
-    |
-    |-inc
-    |
-    |-languages
-    |
-    |*.php
-    |style.css
+```
+themename
+|
+|-assets
+| |-css
+| |-img
+| |-js
+| |-sass
+|   |-layout
+|   |-mixins
+|   |-modules
+|   |-sections
+|   |-shared
+|   |-variables
+|
+|-components
+| |-header
+| |-navigation
+| |-page
+| |-post
+|
+|-grunt
+|
+|-inc
+|
+|-languages
+|
+|*.php
+|style.css
+```
