@@ -1,35 +1,31 @@
 module.exports = {
-	'default': [
-		'styles',
-		'scripts',
-		'makepot',
-		'notify:default'
-	],
-  'setup': [
-    'copy:foundation',
-    'copy:foundation_variables'
+  'default': [
+    'styles',
+    'scripts',
+    'makepot',
+    'notify:default'
   ],
-	'styles': [
-		'sass',
-		'postcss:dev',
-		'cssjanus',
-		'notify:styles'
-	],
-	'scripts': [
-		'jshint',
-		'concat',
-		'notify:scripts'
-	],
-	'build': [
-		'clean',
-		'default',
-		'postcss:build',
-		'copy:main',
+  'styles': [
+    'sass',
+    'postcss:dev',
+    'cssjanus',
+    'notify:styles'
+  ],
+  'scripts': [
+    'jshint',
+    'concat',
+    'notify:scripts'
+  ],
+  'build': [
+    'clean',
+    'default',
+    'postcss:build',
+    'copy:main',
     'compress',
-		'notify:build'
-	],
-	'server': [
-		'browserSync',
-		'watch'
-	]
+    'notify:build'
+  ],
+  'server': [
+    'browserSync',
+    'watch'
+  ]
 };

@@ -83,7 +83,6 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
     this.template( 'theme/single.php', this.fileSlug + '/single.php' );
     this.copy( 'theme/_editorconfig', this.fileSlug + '/.editorconfig' );
     this.copy( 'theme/_scss-lint.yml', this.fileSlug + '/.scss-lint.yml' );
-    this.copy( 'theme/icon.png', this.fileSlug + '/icon.png' );
     this.copy( 'theme/README.md', this.fileSlug + '/README.md' );
     this.copy( 'theme/readme.txt', this.fileSlug + '/readme.txt' );
     this.copy( 'theme/readme-includes.md', this.fileSlug + '/inc/readme.md' );

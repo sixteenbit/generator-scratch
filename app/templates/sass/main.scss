@@ -1,3 +1,9 @@
+// Sass utilities
+@import 'util/util';
+
+// Global variables and styles
+@import 'global';
+
 // Variables and mixins
 @import 'variables/variables-base';
 @import 'mixins/mixins-base';
