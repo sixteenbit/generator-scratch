@@ -6,7 +6,7 @@ Author: <%= opts.authorName %>
 Author URI: <%= opts.authorUrl %>
 Version: 0.1.0
 Text Domain: <%= opts.projectSlug %>
-Tags: responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, rtl-language-support, translation-ready, custom-background
+Tags: custom-menu, editor-style, featured-images, rtl-language-support, translation-ready, custom-background
 
 License: GPLv2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

@@ -154,8 +154,10 @@ add_action( 'wp_head', '<%= opts.funcPrefix %>_javascript_detection', 0 );
  * Enqueue scripts and styles.
  */
 function <%= opts.funcPrefix %>_scripts() {
+	$suffix = is_rtl() ? '-rtl' : '';
+
 	// Load our main stylesheet.
-	wp_enqueue_style( '<%= opts.projectSlug %>-styles', get_template_directory_uri() . '/assets/css/main.css', array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION );
+	wp_enqueue_style( '<%= opts.projectSlug %>-styles', get_template_directory_uri() . '/assets/css/main' . $suffix . '.css', array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION );
 
 	// Helps with accessibility for keyboard only users.
 	wp_enqueue_script( '<%= opts.projectSlug %>-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );

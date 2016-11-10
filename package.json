@@ -1,6 +1,6 @@
 {
   "name": "generator-scratch",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Starter theme based on _s and Foundation generator.",
   "license": "MIT",
   "main": "app/index.js",
@@ -29,11 +29,10 @@
     "wordpress",
     "theme",
     "front-end",
-    "gulp",
+    "grunt",
     "starter theme",
     "_s",
     "underscores",
-    "grunt",
     "sass",
     "foundation"
   ],

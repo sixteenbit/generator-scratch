@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "grunt": "latest",
+    "grunt-accessibility": "latest",
     "grunt-browser-sync": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-compress": "latest",
@@ -32,7 +33,7 @@
     "grunt-contrib-copy": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-cssjanus": "latest",
+    "grunt-rtlcss": "latest",
     "grunt-notify": "latest",
     "grunt-postcss": "latest",
     "grunt-sass": "latest",
