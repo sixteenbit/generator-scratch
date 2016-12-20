@@ -18,148 +18,48 @@
 
 (function ( $ ) {
 
-  // Use this variable to set up the common and page specific functions. If you
-  // rename this variable, you will also need to rename the namespace below.
-  var <%= opts.funcPrefix.toUpperCase() %> = {
-    // All pages
-    common: {
-      init: function () {
-        // JavaScript to be fired on all pages
+	// Use this variable to set up the common and page specific functions. If you
+	// rename this variable, you will also need to rename the namespace below.
+	var <%= opts.funcPrefix.toUpperCase() %> = {
+		// All pages
+		common: {
+			init: function () {
+				// JavaScript to be fired on all pages
 
-        // Foundation JavaScript
-        // @link http://foundation.zurb.com/docs
-        $( document ).foundation();
+				// Foundation JavaScript
+				// @link http://foundation.zurb.com/docs
+				$( document ).foundation();
 
-        // Sticky footer
-        // @link https://byjust.in/sticky-footer-with-absolute-positioning/
-        function stickyFooter () {
-          var $body = $( document.body ),
-            page = $( '#page' ),
-            footer = $( '#colophon' ).outerHeight(),
-            toolbarHeight;
+			}
+		},
+		// Home page
+		home: {
+			init: function () {
+				// JavaScript to be fired on the home page
 
-          $( window ).resize( function () {
-            toolbarHeight = $body.is( '.admin-bar' ) ? $( '#wpadminbar' ).height() : 0;
+			}
+		}
+	};
 
-            page.css( {
-              'padding-bottom': footer + toolbarHeight + 'px'
-            } );
-          } );
-          $( window ).trigger( 'resize' );
-        }
+	// The routing fires all common scripts, followed by the page specific scripts.
+	// Add additional events for more control over timing e.g. a finalize event
+	var UTIL = {
+		fire: function ( func, funcname, args ) {
+			var namespace = <%= opts.funcPrefix.toUpperCase() %>;
+			funcname = (funcname === undefined) ? 'init' : funcname;
+			if ( func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function' ) {
+				namespace[func][funcname]( args );
+			}
+		},
+		loadEvents: function () {
+			UTIL.fire( 'common' );
 
-        $( document ).ready( function () {
-          stickyFooter();
-        } );
+			$.each( document.body.className.replace( /-/g, '_' ).split( /\s+/ ), function ( i, classnm ) {
+				UTIL.fire( classnm );
+			} );
+		}
+	};
 
-        // iPhone scaling bug fix by @mathias, @cheeaun and @jdalton
-        (function ( doc ) {
-
-          var addEvent = 'addEventListener',
-            type = 'gesturestart',
-            qsa = 'querySelectorAll',
-            scales = [1, 1],
-            meta = qsa in doc ? doc[qsa]( 'meta[name=viewport]' ) : [];
-
-          function fix () {
-            meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
-            doc.removeEventListener( type, fix, true );
-          }
-
-          if ( (meta = meta[meta.length - 1]) && addEvent in doc ) {
-            fix();
-            scales = [0.25, 1.6];
-            doc[addEvent]( type, fix, true );
-          }
-
-        }( document ));
-
-        // iPhone scaling bug fix by @mathias, @cheeaun and @jdalton
-        (function ( doc ) {
-
-          var addEvent = 'addEventListener',
-            type = 'gesturestart',
-            qsa = 'querySelectorAll',
-            scales = [1, 1],
-            meta = qsa in doc ? doc[qsa]( 'meta[name=viewport]' ) : [];
-
-          function fix () {
-            meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
-            doc.removeEventListener( type, fix, true );
-          }
-
-          if ( (meta = meta[meta.length - 1]) && addEvent in doc ) {
-            fix();
-            scales = [0.25, 1.6];
-            doc[addEvent]( type, fix, true );
-          }
-
-        }( document ));
-
-        /**
-         * skip-link-focus-fix.js
-         *
-         * Helps with accessibility for keyboard only users.
-         *
-         * Learn more: https://git.io/vWdr2
-         */
-        (function () {
-          var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > - 1,
-            is_opera = navigator.userAgent.toLowerCase().indexOf( 'opera' ) > - 1,
-            is_ie = navigator.userAgent.toLowerCase().indexOf( 'msie' ) > - 1;
-
-          if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
-            window.addEventListener( 'hashchange', function () {
-              var id = location.hash.substring( 1 ),
-                element;
-
-              if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-                return;
-              }
-
-              element = document.getElementById( id );
-
-              if ( element ) {
-                if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-                  element.tabIndex = - 1;
-                }
-
-                element.focus();
-              }
-            }, false );
-          }
-        })();
-
-      }
-    },
-    // Home page
-    home: {
-      init: function () {
-        // JavaScript to be fired on the home page
-
-      }
-    }
-  };
-
-  // The routing fires all common scripts, followed by the page specific scripts.
-  // Add additional events for more control over timing e.g. a finalize event
-  var UTIL = {
-    fire: function ( func, funcname, args ) {
-      var namespace = <%= opts.funcPrefix.toUpperCase() %>;
-      funcname = (funcname === undefined) ? 'init' : funcname;
-      if ( func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function' ) {
-        namespace[func][funcname]( args );
-      }
-    },
-    loadEvents: function () {
-      UTIL.fire( 'common' );
-
-      $.each( document.body.className.replace( /-/g, '_' ).split( /\s+/ ), function ( i, classnm ) {
-        UTIL.fire( classnm );
-      } );
-    }
-  };
-
-  $( document ).ready( UTIL.loadEvents );
+	$( document ).ready( UTIL.loadEvents );
 
 })( jQuery ); // Fully reference jQuery after this point.

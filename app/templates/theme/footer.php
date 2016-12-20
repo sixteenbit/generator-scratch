@@ -16,11 +16,11 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="row column expanded">
 			<?php
-			if ( has_nav_menu( 'primary-1' ) ) :
+			if ( has_nav_menu( 'primary' ) ) :
 				wp_nav_menu(
 					array(
 						'container'      => false,
-						'theme_location' => 'primary-1',
+						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
 						'menu_class'     => 'dropdown menu',
 						'depth'          => 1

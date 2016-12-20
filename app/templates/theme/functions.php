@@ -51,7 +51,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary-1' => esc_html__( 'Primary', '<%= opts.projectSlug %>' ),
+			'primary' => esc_html__( 'Primary', '<%= opts.projectSlug %>' )
 		) );
 
 		/**
@@ -82,6 +82,9 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
@@ -92,6 +95,7 @@ if ( ! function_exists( '<%= opts.funcPrefix %>_setup' ) ) :
 		) );
 	}
 endif;
+
 add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_setup' );
 
 /**

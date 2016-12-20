@@ -1,11 +1,11 @@
-<?php if ( has_nav_menu( 'primary-1' ) ) : ?>
+<?php if ( has_nav_menu( 'primary' ) ) : ?>
 	<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 		<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
 		<?php
 		wp_nav_menu(
 			array(
-				'theme_location'  => 'primary-1',
+				'theme_location'  => 'primary',
 				'menu_id'         => 'primary-menu',
 				'container_class' => 'top-bar-right',
 				'menu_class'      => 'dropdown menu',
