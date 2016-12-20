@@ -1,7 +1,7 @@
 {
   "name": "generator-scratch",
-  "version": "0.1.9",
-  "description": "Starter theme based on _s and Foundation generator.",
+  "version": "0.2.0",
+  "description": "Starter theme generator based on _s and Foundation.",
   "license": "MIT",
   "main": "app/index.js",
   "homepage": "https://www.npmjs.com/package/generator-scratch",
