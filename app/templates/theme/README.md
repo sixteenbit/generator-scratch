@@ -15,9 +15,7 @@ Make sure you have the following installed:
 
 In the root of your project, run the following:
 
-`npm i && bower i`
-
-Then run `grunt` to build the project.
+`npm i && bower i && grunt`
 
 ## Development
 

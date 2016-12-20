@@ -26,8 +26,6 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php <%= opts.funcPrefix %>_the_custom_logo(); ?>
-
 		<?php get_template_part( 'components/navigation/title', 'bar' ); ?>
 
 		<?php get_template_part( 'components/navigation/main', 'navigation' ); ?>

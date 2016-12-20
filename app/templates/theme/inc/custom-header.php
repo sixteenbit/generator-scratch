@@ -26,6 +26,7 @@ function <%= opts.funcPrefix %>_custom_header_setup() {
 		'width'              => 2000,
 		'height'             => 250,
 		'flex-height'        => true,
+//		'video'              => true,
 		'wp-head-callback'   => '<%= opts.funcPrefix %>_header_style',
 	) ) );
 }

@@ -22,7 +22,7 @@ Scratch is a starter theme generator based on <code>_s</code> and <code>Foundati
 
     npm install -g generator-scratch
 
-Lot's of code will happen. This may take a few minutes. Go make a beverage! When it's done you can use the generator like so... Navigate to your development WordPress theme folder [change path as needed]:
+Lots of code will happen. This may take a few minutes. Go make a beverage! When it's done you can use the generator like so... Navigate to your development WordPress theme folder [change path as needed]:
 
     cd ~/Sites/Development/Wordpress/wp-content/themes
 

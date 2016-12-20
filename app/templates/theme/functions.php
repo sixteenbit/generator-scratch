@@ -7,6 +7,15 @@
  * @package <%= opts.projectTitle %>
  */
 
+/**
+ * <%= opts.projectTitle %> only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+
+	return;
+}
+
 $theme_data    = wp_get_theme( get_option( 'template' ) );
 $theme_version = $theme_data->Version;
 
@@ -112,19 +121,6 @@ function <%= opts.funcPrefix %>_content_width() {
 add_action( 'after_setup_theme', '<%= opts.funcPrefix %>_content_width', 0 );
 
 /**
- * Return early if Custom Logos are not available.
- *
- * @todo Remove after WP 4.7
- */
-function <%= opts.funcPrefix %>_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
-		the_custom_logo();
-	}
-}
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -155,22 +151,35 @@ function <%= opts.funcPrefix %>_javascript_detection() {
 add_action( 'wp_head', '<%= opts.funcPrefix %>_javascript_detection', 0 );
 
 /**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function <%= opts.funcPrefix %>_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', '<%= opts.funcPrefix %>_pingback_header' );
+
+/**
  * Enqueue scripts and styles.
  */
 function <%= opts.funcPrefix %>_scripts() {
 	$suffix = is_rtl() ? '-rtl' : '';
 
 	// Load our main stylesheet.
-	wp_enqueue_style( '<%= opts.projectSlug %>-styles', get_template_directory_uri() . '/assets/css/main' . $suffix . '.css', array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION );
+	wp_enqueue_style( '<%= opts.projectSlug %>-main', get_theme_file_uri( '/assets/css/main' . $suffix . '.css' ), array( '<%= opts.projectSlug %>-style' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION );
+
+	// Theme stylesheet.
+	wp_enqueue_style( '<%= opts.projectSlug %>-style', get_stylesheet_uri() );
 
 	// Helps with accessibility for keyboard only users.
-	wp_enqueue_script( '<%= opts.projectSlug %>-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( '<%= opts.projectSlug %>-foundation', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
 
 	// Load our Foundation scripts.
-	wp_enqueue_script( '<%= opts.projectSlug %>-foundation', get_template_directory_uri() . '/assets/js/foundation.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
+	wp_enqueue_script( '<%= opts.projectSlug %>-skip-link-focus-fix', get_theme_file_uri( '/assets/js/foundation.js' ), array(), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
 
 	// Load our functions scripts.
-	wp_enqueue_script( '<%= opts.projectSlug %>-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
+	wp_enqueue_script( '<%= opts.projectSlug %>-scripts', get_theme_file_uri( '/assets/js/scripts.js' ), array( 'jquery' ), <%= opts.funcPrefix.toUpperCase() %>_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -182,24 +191,24 @@ add_action( 'wp_enqueue_scripts', '<%= opts.funcPrefix %>_scripts' );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_parent_theme_file_path( '/inc/template-tags.php' );
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_parent_theme_file_path( '/inc/extras.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_parent_theme_file_path( '/inc/customizer.php' );
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_parent_theme_file_path( '/inc/jetpack.php' );
 
 /**
  * Load custom menu walkers.
  */
-require get_template_directory() . '/inc/walkers.php';
+require get_parent_theme_file_path( '/inc/walkers.php' );
