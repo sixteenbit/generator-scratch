@@ -1,20 +1,20 @@
 .widget {
   margin: 0 0 $global-margin;
 
-  /*! Make sure select elements fit in widgets. */
+  /* Make sure select elements fit in widgets. */
   select {
     max-width: 100%;
   }
 }
 
-/*! Recent Posts Widget */
+/* Recent Posts Widget */
 .widget_recent_entries {
   .post-date {
     display: block;
   }
 }
 
-/*! RSS Widget */
+/* RSS Widget */
 .rsswidget {
   img {
     margin-top: -4px;
@@ -39,7 +39,7 @@
   }
 }
 
-/*! Text Widget */
+/* Text Widget */
 .textwidget {
 
 }

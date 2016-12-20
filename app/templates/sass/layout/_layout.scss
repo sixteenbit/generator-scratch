@@ -6,12 +6,3 @@
 a {
   transition: background-color .2s, color .2s, border-color .2s;
 }
-
-// Structure
-@import 'header';
-@import 'sidebar';
-@import 'footer';
-
-// Content
-@import 'posts';
-@import 'pages';

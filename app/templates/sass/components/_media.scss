@@ -1,6 +1,6 @@
 img {
-  height: auto; /*! Make sure images are scaled correctly. */
-  max-width: 100%; /*! Adhere to container width. */
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
 }
 
 .page-content .wp-smiley,
@@ -12,7 +12,7 @@ img {
   padding: 0;
 }
 
-/*! Make sure embeds and iframes fit their containers. */
+/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
@@ -47,19 +47,6 @@ object {
 
   .wp-caption-text {
     margin: .8075rem 0;
-  }
-}
-
-.size-big {
-  clear: both;
-  display: block;
-  float: none;
-
-  @include breakpoint(medium up) {
-    margin-left: -237px;
-    margin-right: -237px;
-    max-width: 1088px;
-    width: 1088px;
   }
 }
 

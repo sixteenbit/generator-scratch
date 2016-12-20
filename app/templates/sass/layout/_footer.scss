@@ -1,17 +1,10 @@
-/*!-------------------------------------------------------------
-## Footer
---------------------------------------------------------------*/
 .site-footer {
   @include clearfix;
   background: $topbar-background;
-  bottom: 0;
   color: $dark-gray;
   font-size: rem-calc(12);
-  left: 0;
   line-height: 1;
   padding: $global-padding 0;
-  position: absolute;
-  right: 0;
 
   .menu {
     @include menu-direction(vertical);
