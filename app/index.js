@@ -61,9 +61,9 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
   },
 
   misc: function () {
-    this.copy( 'misc/.editorconfig', this.fileSlug + '/.editorconfig' );
-    this.copy( 'misc/.gitignore', this.fileSlug + '/.gitignore' );
-    this.copy( 'misc/.sass-lint.yml', this.fileSlug + '/.sass-lint.yml' );
+    this.copy( 'misc/_editorconfig', this.fileSlug + '/.editorconfig' );
+    this.copy( 'misc/_gitignore', this.fileSlug + '/.gitignore' );
+    this.copy( 'misc/_sass-lint.yml', this.fileSlug + '/.sass-lint.yml' );
   },
 } );
 
