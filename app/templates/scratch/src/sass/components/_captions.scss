@@ -2,10 +2,12 @@
   max-width: 100%;
   margin-bottom: 1.5rem;
 
-  img[class*="wp-image-"] {
-    align-self: baseline;
-    margin-right: auto;
-    margin-left: auto;
+  img {
+    &[class*='wp-image-'] {
+      align-self: baseline;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 
   .wp-caption-text {

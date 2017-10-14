@@ -26,7 +26,6 @@
 
 // Base stuff
 @import 'base/base';
-@import 'base/fonts';
 @import 'base/helpers';
 
 // Layout-related sections
@@ -45,10 +44,7 @@
 @import 'components/captions';
 @import 'components/galleries';
 @import 'components/comments';
-@import 'components/scroll-to-top';
 
 // Page-specific styles
-@import 'pages/home';
 
 // Themes
-@import 'themes/default';
