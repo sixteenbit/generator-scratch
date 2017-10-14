@@ -61,7 +61,6 @@ var ThemeGenerator = yeoman.generators.Base.extend( {
   },
 
   misc: function () {
-    this.copy( 'misc/class-scratch-menu-walker.php', this.fileSlug + '/inc/class-' + this.fileSlug + '-menu-walker.php' );
     this.copy( 'misc/.editorconfig', this.fileSlug + '/.editorconfig' );
     this.copy( 'misc/.gitignore', this.fileSlug + '/.gitignore' );
     this.copy( 'misc/.sass-lint.yml', this.fileSlug + '/.sass-lint.yml' );

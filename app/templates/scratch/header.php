@@ -79,7 +79,7 @@ if ( $description || is_customize_preview() ) :
 							'menu_id'        => 'primary-menu',
 							'menu_class'     => 'dropdown menu',
 							'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-							'walker'         => new <%= opts.projectTitle %>_Menu_Walker(),
+							'walker'         => new Menu_Dropdown_Walker(),
 						)
 					);
 					?>

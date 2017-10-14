@@ -198,7 +198,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Custom menu walker.
  */
-require get_template_directory() . '/inc/class-<%= opts.projectSlug %>-menu-walker.php';
+require get_template_directory() . '/inc/class-menu-dropdown-walker.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -2,7 +2,7 @@
 Theme Name: <%= opts.projectTitle %>
 Theme URI: <%= opts.projectHome %>
 Author: <%= opts.authorName %>
-Author URI: https://byjust.in
+Author URI: <%= opts.authorUrl %>
 Description: <%= opts.description %>
 Version: 0.1.0
 License: GNU General Public License v2 or later

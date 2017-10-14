@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class <%= opts.projectTitle %>_Menu_Walker
+ * Class Menu_Dropdown_Walker
  */
-class <%= opts.projectTitle %>_Menu_Walker extends Walker_Nav_Menu {
+class Menu_Dropdown_Walker extends Walker_Nav_Menu {
 	/**
 	 * Add vertical menu class and submenu data attribute to sub menus
 	 *

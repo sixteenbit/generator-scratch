@@ -5,6 +5,11 @@
   "version": "0.1.0",
   "license": "GPL-2.0",
   "homepage": "<%= opts.projectHome %>",
+  "author": {
+   "name": "<%= opts.authorName %>",
+   "email": "<%= opts.authorEmail %>",
+   "url": "<%= opts.authorUrl %>"
+ },
   "repository": {
     "type": "git",
     "url": "<%= opts.projectHome %>"
