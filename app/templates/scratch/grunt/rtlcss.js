@@ -12,7 +12,8 @@ module.exports = {
 		dest: '.',
 		ext: '-rtl.css',
 		src: [
-			'assets/css/*.css'
+			'assets/css/*.css',
+			'!assets/css/editor-style.css'
 		]
 	}
 };

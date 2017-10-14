@@ -5,4 +5,3 @@ dist/
 assets/
 .DS_Store
 languages/*.pot
-package-lock.json
