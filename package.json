@@ -1,6 +1,6 @@
 {
   "name": "generator-scratch",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Scratch is a starter theme generator based on _s and Foundation. It's a theme meant for hacking so don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there.",
   "license": "MIT",
   "main": "app/index.js",
