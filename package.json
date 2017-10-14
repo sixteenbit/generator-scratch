@@ -1,7 +1,7 @@
 {
   "name": "generator-scratch",
-  "version": "0.2.1",
-  "description": "Starter theme generator based on _s and Foundation.",
+  "version": "0.3.0",
+  "description": "Scratch is a starter theme generator based on _s and Foundation. It's a theme meant for hacking so don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there.",
   "license": "MIT",
   "main": "app/index.js",
   "homepage": "https://www.npmjs.com/package/generator-scratch",
@@ -12,8 +12,8 @@
   },
   "author": {
     "name": "Justin Peacock",
-    "email": "justin@sixteenbit.com",
-    "url": "https://sixteenbit.com"
+    "email": "hello@byjust.in",
+    "url": "https://byjust.in"
   },
   "engines": {
     "node": ">=0.10.0"

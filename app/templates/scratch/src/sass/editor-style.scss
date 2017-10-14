@@ -1,0 +1,23 @@
+/*
+Theme Name: <%= opts.projectTitle %>
+Description: Used to style the TinyMCE editor.
+*/
+@import 'abstracts/variables';
+
+html,
+body {
+  height: auto;
+}
+
+body {
+  max-width: $editor-width;
+  margin: ($global-margin * 2);
+  background: $white;
+}
+
+img {
+  vertical-align: middle;
+  max-width: $editor-width;
+  height: auto;
+  border: 0;
+}

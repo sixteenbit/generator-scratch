@@ -2,21 +2,17 @@
 
 ## About
 
-Scratch is a starter theme generator based on <code>_s</code> and <code>Foundation</code>. It's a theme meant for hacking so don't use it as a <em>Parent Theme</em>. Instead try turning it into the next, most awesome, WordPress theme out there.
+Scratch is a starter theme generator based on _s and Foundation. It's a theme meant for hacking so don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there.
 
 ## Setup
 
 #### Install Yeoman
 
     npm install -g yo
-    
+
 #### Install Grunt.js
 
     npm install -g grunt-cli
-
-#### Install Bower
-
-    npm install -g bower
 
 #### Install generator-scratch
 
@@ -35,10 +31,10 @@ You will be prompted with a few basic questions to help the setup get started. O
 Navigate to your new theme:
 
     cd newtheme
-    
+
 In the root of your theme, run the following:
 
-`npm i && bower i`
+`npm i`
 
 Then run `grunt` to build the project.
 
@@ -46,13 +42,13 @@ Then run `grunt` to build the project.
 ## Development
 
 In your wp-content/themes folder you will now have a folder with the name of your theme which is setup with the basics to get a theme off the ground quickly. In the root of your newly created theme you'll have the following grunt tasks you can run:
-    
+
 Runs the default task that builds the assets
-    
+
     grunt
 
 Initiates Browsersync and watches files for changes
-    
+
     grunt server
 
 ## Production
@@ -60,13 +56,13 @@ Initiates Browsersync and watches files for changes
 When you're done and ready to go live you'll need to minify your assets and whatnot. You can do this by using:
 
     grunt build
-    
+
 This will minify all your assets and copy the theme to a dist/ directory then compresses to a .zip.
 
 ### Theme structure
 
-- /assets/sass/ - Development Sass files that is compiled into assets/css/main.css.
-- /assets/js/src/ - Development js that is concatenated to /assets/js/.
+- /src/sass/ - Development Sass files that is compiled into assets/css/main.css.
+- /src/js/src/ - Development js that is concatenated to /assets/js/.
 - style.css - names and sets up your theme as far as WordPress is concerned.
 functions.php - your theme functions
 - *.php your theme files

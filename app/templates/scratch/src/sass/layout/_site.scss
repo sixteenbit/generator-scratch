@@ -1,0 +1,52 @@
+$boxed-layout-background: $light-gray;
+$site-body-background: $body-background;
+
+.boxed-layout {
+  background-color: $boxed-layout-background;
+}
+
+.site {
+  @include xy-grid-container(100%, 0);
+  background-color: $site-body-background;
+
+  .boxed-layout & {
+    max-width: $global-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.site-content {
+  @include flex-grid-row($size: 100%);
+
+  .boxed-layout & {
+    max-width: $global-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .content-area,
+  .widget-area {
+    @include flex-grid-column();
+    flex: flex-grid-column(12);
+    max-width: grid-column(12);
+  }
+
+  @include breakpoint(medium up) {
+
+    .content-area {
+      flex: flex-grid-column(8);
+      max-width: grid-column(8);
+
+      .page-template-full-width & {
+        flex: flex-grid-column(12);
+        max-width: grid-column(12);
+      }
+    }
+
+    .widget-area {
+      flex: flex-grid-column(4);
+      max-width: grid-column(4);
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.social-navigation {
+  .menu {
+    & > li {
+      & > a {
+        position: relative;
+        color: $anchor-color;
+
+        @include on-event() {
+          color: $anchor-color-hover;
+        }
+
+        &::before {
+          content: '';
+          font-family: 'FontAwesome';
+          text-align: center;
+        }
+      }
+
+      a[href*='facebook.com']::before {
+        content: '';
+      }
+
+      a[href*='flickr.com']::before {
+        content: '';
+      }
+
+      a[href*='foursquare.com']::before {
+        content: '';
+      }
+
+      a[href*='plus.google.com']::before {
+        content: '';
+      }
+
+      a[href*='github.com']::before {
+        content: '';
+      }
+
+      a[href*='instagram.com']::before {
+        content: '';
+      }
+
+      a[href*='linkedin.com']::before {
+        content: '';
+      }
+
+      a[href*='pinterest.com']::before {
+        content: '';
+      }
+
+      a[href*='slack.com']::before {
+        content: '';
+      }
+
+      a[href*='tumblr.com']::before {
+        content: '';
+      }
+
+      a[href*='twitter.com']::before {
+        content: '';
+      }
+
+      a[href*='vimeo.com']::before {
+        content: '';
+      }
+
+      a[href*='wordpress.com']::before,
+      a[href*='wordpress.org']::before {
+        content: '';
+      }
+
+      a[href*='youtube.com']::before,
+      a[href*='youtu.be']::before {
+        content: '';
+      }
+
+      a[href*='mailto:']::before,
+      a[href*='/contact/']::before,
+      a[href*='/contact-us/']::before {
+        content: '';
+      }
+
+      a[href$='/feed/']::before {
+        content: '';
+      }
+    }
+  }
+}

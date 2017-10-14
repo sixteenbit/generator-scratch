@@ -1,0 +1,20 @@
+.off-canvas {
+  padding-top: ($global-padding * 2);
+
+  .admin-bar & {
+    @media screen and (max-width: 782px) {
+      top: 46px;
+    }
+  }
+
+  .menu {
+    @include flex-grid-column();
+    margin-bottom: $global-margin;
+  }
+
+  .widget-area {
+    @include flex-grid-column();
+    flex: flex-grid-column(12);
+    max-width: grid-column(12);
+  }
+}

@@ -1,0 +1,27 @@
+.menu-item-has-children {
+  .submenu {
+    .no-js & {
+      display: none;
+    }
+  }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  .site-main & {
+    margin: 0 0 $global-margin;
+    overflow: hidden;
+  }
+
+  .nav-previous {
+    float: left;
+    width: 50%;
+  }
+
+  .nav-next {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+}

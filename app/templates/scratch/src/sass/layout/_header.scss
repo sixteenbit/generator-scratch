@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.site-header {
+  @include clearfix;
+  position: relative;
+  padding: $global-padding;
+
+  .site-branding {
+    display: inline-block;
+    float: left;
+    padding: rem-calc(0 $global-padding 0 0);
+  }
+
+  .main-navigation {
+    float: left;
+  }
+
+  .social-navigation {
+    float: right;
+  }
+
+  .menu-toggle {
+    @include hamburger();
+    @include vertical-center();
+    @include hide-for(medium);
+    right: $global-margin;
+  }
+}
+
+.site-title {
+  margin-bottom: 0;
+  font-size: rem-calc(28);
+  line-height: 1.4;
+
+  a {
+    color: $body-font-color;
+  }
+}
+
+.site-description {
+  display: none;
+}

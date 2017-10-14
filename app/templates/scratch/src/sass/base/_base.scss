@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+::selection {
+  background: $highlight-text-color;
+}
+
+::-moz-selection {
+  background: $highlight-text-color;
+}
+
+a {
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}

@@ -1,0 +1,17 @@
+.scroll-to-top {
+  @include button(
+    $background: $light-gray,
+    $background-hover: scale-color($light-gray, $lightness: -15%)
+  );
+  position: fixed;
+  right: $global-margin;
+  bottom: 20vh;
+  z-index: 10000;
+  opacity: 0.75;
+  visibility: hidden;
+  text-align: center;
+
+  &.active {
+    visibility: visible;
+  }
+}

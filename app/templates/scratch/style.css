@@ -1,0 +1,15 @@
+/*!
+Theme Name: <%= opts.projectTitle %>
+Theme URI: <%= opts.projectHome %>
+Author: <%= opts.authorName %>
+Author URI: https://byjust.in
+Description: <%= opts.description %>
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: <%= opts.projectSlug %>
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/

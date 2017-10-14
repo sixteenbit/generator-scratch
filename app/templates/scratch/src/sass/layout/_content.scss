@@ -1,0 +1,39 @@
+.custom-header,
+.single-featured-image-header {
+  margin-bottom: $global-margin;
+}
+
+.sticky-post {
+  display: block;
+}
+
+.hentry {
+  margin: 0 0 1.5rem;
+  word-wrap: break-word;
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: rem-calc(5);
+    border-radius: 100%;
+  }
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5rem 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5rem;
+}
+
+.edit-link {
+  display: block;
+}

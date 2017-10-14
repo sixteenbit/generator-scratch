@@ -1,0 +1,15 @@
+.wp-pagenavi {
+  @include pagination-container();
+
+  & > a {
+    display: inline-block;
+  }
+
+  & > .current {
+    @include pagination-item-current;
+  }
+
+  .pages {
+    @include element-invisible;
+  }
+}
